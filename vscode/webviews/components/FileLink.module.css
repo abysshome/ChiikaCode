@@ -1,0 +1,9 @@
+.path {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.excluded {
+    text-decoration: line-through !important;
+}

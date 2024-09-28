@@ -1,0 +1,44 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false, // sourcemaps come from esbuild/vite
+    "rootDir": ".",
+    "outDir": "dist/tsc",
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": [
+      "@testing-library/jest-dom"
+    ],
+    "paths": {
+      "@/*": ["./webviews/*"],
+    },
+  },
+  "include": [
+    "src",
+    "src/commands/execute/cody.json",
+    "test/fixtures",
+    "playwright.config.ts",
+    "test/e2e",
+    "test/e2e/utils/commands.json",
+    "e2e",
+    "webviews",
+    "webviews/*.d.ts",
+    "package.json",
+  ],
+  "exclude": [
+    "typehacks",
+    "scripts",
+    "dist",
+    "test/integration",
+    "**/test-data",
+    "webviews/vite.config.mts",
+  ],
+  "references": [
+    {
+      "path": "../lib/shared"
+    },
+    {
+      "path": "../lib/prompt-editor"
+    }
+  ]
+}
