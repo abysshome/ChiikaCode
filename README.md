@@ -69,7 +69,6 @@ Cody is often magical and sometimes frustratingly wrong. Cody's goal is to be po
 - [Discussions](https://github.com/sourcegraph/cody/discussions)
 - [Discord](https://discord.gg/s2qDtYGnAE)
 
-## Usage
 
 ### Individual usage
 
