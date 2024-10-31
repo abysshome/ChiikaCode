@@ -1,0 +1,32 @@
+{
+    "name": "project",
+    "type": "folder",
+    "children": [
+        {
+            "name": "src/",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "game.py",
+                    "type": "code",
+                    "content": "# project/src/game.py\n\nimport os\nfrom src.snake import Snake\nfrom src.food import Food\nfrom src.constants import BOARD_SIZE, ScoresFile\n\ndef start_game():\n    snake = Snake(BOARD_SIZE // 2, BOARD_SIZE - 1))\n    food = Food(BOARD_SIZE // 2)\n    \n    while not snake.has_eaten(food):\n        snake.move()\n        board_status = snake.draw_board()\n        print(board_status)\n\n    score = ScoresFile.read_score(snake.name)\n    ScoresFile.write_score(score + 1, snake.name))\n\nif __name__ == \"__main__\":\n    start_game()"
+                },
+                {
+                    "name": "snake.py",
+                    "type": "code",
+                    "content": "# project/src/snake.py\n\nimport os\nimport random\nfrom src.constants import snake_length, food_spawn_interval\n\nclass Snake:\n    def __init__(self):\n        self.body = [tuple(os.path.dirname(__file__)) + (0, 0)) for _ in range(snake_length)]\n        self.head = self.body[0]\n        self.tail = self.body[-1]\n        self.direction = 'up'\n\n    # ...\u5176\u4f59\u7684\u86c7\u79fb\u52a8\u3001\u78b0\u649e\u68c0\u67e5\u3001\u98df\u7269\u83b7\u53d6\u7b49\u65b9\u6cd5...\n\n    def move(self, direction):\n        if direction not in ['up', 'down', 'left', 'right']:\n            return \"Invalid direction!\"\n\n        self.direction = direction\n\n        for index, body_part in enumerate(self.body[:-1]] + [self.tail]):\n            x, y = body_part\n            next_pos = (x, y) + (0 if self.direction == 'up' else 1, 0 if self.direction == 'right' else -1))\n\n            # \u78b0\u649e\u68c0\u6d4b\uff0c\u82e5\u78b0\u5230\u81ea\u8eab\u6216\u5176\u4ed6\u8fb9\u754c\uff0c\u5219\u8fd4\u56de\u9519\u8bef\n            if index == len(self.body[:-1]]) or \\\n                    (x, y) in [part for part in self.body], \\\n                    x < 0 or x > os.path.dirname(__file__)[-1] or \\\n                    y < 0 or y > os.path.dirname(__file__)[-2]:\n                return \"Collision detected!\"\n\n            # \u5982\u679c\u5230\u8fbe\u7ec8\u70b9\uff0c\u5219\u8fd4\u56de\u6210\u529f\uff0c\u5426\u5219\u66f4\u65b0\u4e0b\u4e00\u4e2a\u4f4d\u7f6e\n            if (x, y) == (os.path.dirname(__file__))[-2], -1:\n                return \"Success! You reached the end.\"\n\n            self.body[index] = next_pos\n\n        # \u751f\u6210\u98df\u7269\n        if random.random() < food_spawn_interval:\n            x, y = os.path.dirname(__file__) + [(random.randint(-5, 5)), random.randint(-5, 5)))],\n            snake_body_index = random.choice(range(len(self.body)) - 1))\n            if (x, y) not in [part for part in self.body]]:\n                self.body[snake_body_index]] = (x, y)\n                return \"New food generated!\"\n\n    # ...\u5176\u4f59\u7684\u65b9\u6cd5...\n\nif __name__ == \"__main__\":\n    snake = Snake()\n    while True:\n        user_input = input(\"Enter direction (up/down/left/right): \").lower()\n        if user_input in ['up', 'down', 'left', 'right']:\n            snake.move(user_input)\n            print(snake.body)\n        else:\n            print(\"Invalid direction! Try again.\")"
+                },
+                {
+                    "name": "\u98df\u7269.py",
+                    "type": "code",
+                    "content": "# project/src/food.py\n\nimport random\n\nclass Food:\n    def __init__(self):\n        self.position = (random.randint(0, constants.SCREEN_WIDTH - 1), \n                                      random.randint(0, constants.SCREEN_HEIGHT - 1)))\n        self.is eaten = False\n\n    def move(self):\n        # \u8bbe\u8ba1\u86c7\u7684\u98df\u7269\u79fb\u52a8\u903b\u8f91\uff0c\u4f8b\u5982\u968f\u673a\u65b9\u5411\u6216\u8ddf\u968f\u86c7\u5934\n        pass\n\n# \u5728 game.py \u6216 snake.py \u4e2d\u5bfc\u5165\u5e76\u4f7f\u7528 Food \u7c7b"
+                },
+                {
+                    "name": "constants.py",
+                    "type": "code",
+                    "content": "# src/Constants.py\n\n# \u5e38\u91cf\u5b9a\u4e49\nSNAKE_COLOR = 'green'  # \u86c7\u7684\u989c\u8272\nFLOOR_COLOR = 'lightgray'  # \u5730\u9762\u989c\u8272\nFOOD_COLOR = 'red'  # \u98df\u7269\u989c\u8272\nFPS = 60  # \u6bcf\u79d2\u5e27\u6570\n\n# \u5176\u4ed6\u53ef\u80fd\u7684\u5e38\u91cf\u5b9a\u4e49..."
+                }
+            ]
+        }
+    ]
+}

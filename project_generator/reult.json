@@ -1,0 +1,41 @@
+{
+    "name": "project",
+    "type": "folder",
+    "children": [
+        {
+            "name": "src/",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "main/",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "snake.h",
+                            "type": "code",
+                            "content": "// snake.h - Snake\u6e38\u620f\u7684\u57fa\u672c\u5b9a\u4e49\n\n#ifndef SNAKE_H\n#define SNAKE_H\n\n#include <stdio.h> // \u7528\u4e8e\u8f93\u51fa\n#include <stdlib.h> // \u4e3a\u52a8\u6001\u5185\u5b58\u5206\u914d\u4f7f\u7528\n\n// Snake\u7c7b\ntypedef struct {\n    int x; // \u86c7\u7684\u4f4d\u7f6e\u7684x\u5750\u6807\n    int y; // \u86c7\u7684\u4f4d\u7f6e\u7684y\u5750\u6807\n    int length; // \u86c7\u5f53\u524d\u957f\u5ea6\n    int direction; // \u73b0\u5728\u86c7\u662f\u5411\u4e0a\u3001\u5411\u4e0b\u3001\u5411\u5de6\u8fd8\u662f\u5411\u53f3\u79fb\u52a8\n} Snake;\n\n// Snake\u6e38\u620f\u76f8\u5173\u7684\u51fd\u6570\u58f0\u660e\n\n#endif // SNAKE_H"
+                        },
+                        {
+                            "name": "snake.c",
+                            "type": "code",
+                            "content": "// snake.h \u90e8\u5206\u5185\u5bb9\n\n// snake.c\n#include \"snake.h\"\n\nint main() {\n    // \u521d\u59cb\u5316\u86c7\u5b9e\u4f8b\n    Snake my_snake = init_snake();\n\n    // \u6e38\u620f\u5faa\u73af\n    while (!game_over(my_snake))) {\n        // \u83b7\u53d6\u73a9\u5bb6\u8f93\u5165\uff08\u6a21\u62df\uff09\n        int direction = get_player_input();\n\n        // \u6839\u636e\u65b9\u5411\u66f4\u65b0\u86c7\u7684\u4f4d\u7f6e\n        update_snake(my_snake, direction));\n    }\n\n    // \u6e38\u620f\u7ed3\u675f\uff0c\u6e05\u7406\u8d44\u6e90\n    cleanup();\n\n    return 0;\n}"
+                        },
+                        {
+                            "name": "game.cpp",
+                            "type": "file"
+                        },
+                        {
+                            "name": "graphics.cpp",
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "name": "include/",
+                    "type": "folder",
+                    "children": []
+                }
+            ]
+        }
+    ]
+}

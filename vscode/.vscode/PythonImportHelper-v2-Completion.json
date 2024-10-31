@@ -1,0 +1,500 @@
+[
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "comb",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "comb",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "comb",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "class Agent:\n    #   |\n    pass\n# ------------------------------------\nclass AgentMultiLine(\n    BaseClass1,\n    BaseClass2):\n    #   |\n    def __init__(self, name):\n        self.name = name",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "AgentMultiLine",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "class AgentMultiLine(\n    BaseClass1,\n    BaseClass2):\n    #   |\n    def __init__(self, name):\n        self.name = name\n# ------------------------------------\nclass Agent:\n    def __init__(self, name):\n    #      |",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "class Agent:\n    def __init__(self, name):\n    #      |\n        self.name = name\n# ------------------------------------\nclass Agent:\n    def __init__(self, name):\n        self.name = name\n    def test(self):\n    #    |",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "class Agent:\n    def __init__(self, name):\n        self.name = name\n    def test(self):\n    #    |\n        pass\n# ------------------------------------\ndef return_statement():\n    return\n    #    |",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "wrapper",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "def wrapper():\n    print('wrapper')\n    def test():\n        # |\n        pass\n# ------------------------------------\ndef test():\n    # |\n    pass\n# ------------------------------------",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "def test():\n    # |\n    pass\n# ------------------------------------\ndef test_multiline_func_declaration(\n    #              |\n    val,\n    val2\n):\n    wrapper()",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "test_multiline_func_declaration",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "def test_multiline_func_declaration(\n    #              |\n    val,\n    val2\n):\n    wrapper()\n# ------------------------------------\ndef test_parameter(val):\n    #              |\n    wrapper()",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "test_parameter",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "def test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\nclass Agent:\n    #   |\n    pass\n# ------------------------------------\nclass AgentMultiLine(\n    BaseClass1,",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "return_statement",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "def return_statement():\n    return\n    #    |\n# ------------------------------------\nreturn_statement('value')\n#       |\n# ------------------------------------\nuser_name = 'Tom'\n    #  |\n# ------------------------------------",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "user_name",
+        "kind": 5,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "user_name = 'Tom'\n    #  |\n# ------------------------------------\nuser_name = 'Tom'\n    #         |",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "user_name",
+        "kind": 5,
+        "importPath": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "description": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "peekOfCode": "user_name = 'Tom'\n    #         |",
+        "detail": "src.tree-sitter.query-tests.test-data.documentable-node",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "description": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "peekOfCode": "class Agent:\n    pass\n#   |\n# ------------------------------------\nclass Agent:\n    def __init__(self, name):\n        self.name = name\n    #      |\n# ------------------------------------\nclass Agent:",
+        "detail": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "description": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "peekOfCode": "class Agent:\n    def __init__(self, name):\n        self.name = name\n    #      |\n# ------------------------------------\nclass Agent:\n    def __init__(self, name):\n        self.name = name\n    def test(self):\n        pass",
+        "detail": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "description": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "peekOfCode": "class Agent:\n    def __init__(self, name):\n        self.name = name\n    def test(self):\n        pass\n    #    |",
+        "detail": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "documentation": {}
+    },
+    {
+        "label": "wrapper",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "description": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "peekOfCode": "def wrapper():\n    print('wrapper')\n    def test():\n        pass\n        # |\n# ------------------------------------\ndef test():\n    pass\n    # |\n# ------------------------------------",
+        "detail": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "description": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "peekOfCode": "def test():\n    pass\n    # |\n# ------------------------------------\ndef test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\nclass Agent:\n    pass",
+        "detail": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "documentation": {}
+    },
+    {
+        "label": "test_parameter",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "description": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "peekOfCode": "def test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\nclass Agent:\n    pass\n#   |\n# ------------------------------------\nclass Agent:\n    def __init__(self, name):",
+        "detail": "src.tree-sitter.query-tests.test-data.enclosing-function",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.enclosing-function.snap",
+        "description": "src.tree-sitter.query-tests.test-data.enclosing-function.snap",
+        "peekOfCode": "class Agent:\n    pass\n#   |\n# ------------------------------------\n class Agent:\n     def __init__(self, name):\n#    ^ start range.function[1]\n         self.name = name\n#                       ^ end range.function[1]\n#           █",
+        "detail": "src.tree-sitter.query-tests.test-data.enclosing-function.snap",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "peekOfCode": "class Agent:\n    #      |\n    pass\n# ------------------------------------\ndef signature():\n    #          |\n    pass\n# ------------------------------------\n# comment\n# |",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "documentation": {}
+    },
+    {
+        "label": "wrapper",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "peekOfCode": "def wrapper():\n    print('wrapper')\n    def test():\n        #     |\n        pass\n# ------------------------------------\ndef test_params():\n    #          |\n    wrapper()\n# ------------------------------------",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "documentation": {}
+    },
+    {
+        "label": "test_params",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "peekOfCode": "def test_params():\n    #          |\n    wrapper()\n# ------------------------------------\ndef test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\ndef arrow_wrapper():\n    arrow = lambda value: None",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "documentation": {}
+    },
+    {
+        "label": "test_parameter",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "peekOfCode": "def test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\ndef arrow_wrapper():\n    arrow = lambda value: None\n    #                   |\n# ------------------------------------\nclass Agent:\n    #      |",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "documentation": {}
+    },
+    {
+        "label": "arrow_wrapper",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "peekOfCode": "def arrow_wrapper():\n    arrow = lambda value: None\n    #                   |\n# ------------------------------------\nclass Agent:\n    #      |\n    pass\n# ------------------------------------\ndef signature():\n    #          |",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "documentation": {}
+    },
+    {
+        "label": "signature",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "peekOfCode": "def signature():\n    #          |\n    pass\n# ------------------------------------\n# comment\n# |\n# ------------------------------------\ndef function_name():\n    #           |\n    pass",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "documentation": {}
+    },
+    {
+        "label": "function_name",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "peekOfCode": "def function_name():\n    #           |\n    pass\n# ------------------------------------\ndef return_statement():\n    return\n    #    |\n# ------------------------------------\ndef return_statement_value(value: str, flag: bool = False):\n    return 'asd'",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "documentation": {}
+    },
+    {
+        "label": "return_statement",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "peekOfCode": "def return_statement():\n    return\n    #    |\n# ------------------------------------\ndef return_statement_value(value: str, flag: bool = False):\n    return 'asd'\n    #      |\n# ------------------------------------\nreturn_statement_value('value')\n#                      |",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "documentation": {}
+    },
+    {
+        "label": "return_statement_value",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "peekOfCode": "def return_statement_value(value: str, flag: bool = False):\n    return 'asd'\n    #      |\n# ------------------------------------\nreturn_statement_value('value')\n#                      |\n# ------------------------------------\nreturn_statement_value('value', False)\n#                               |\n# ------------------------------------",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "peekOfCode": "class Agent:\n    #      |\n    pass\n# ------------------------------------\ndef signature():\n    #          |\n    pass\n# ------------------------------------\n# comment\n# |",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "documentation": {}
+    },
+    {
+        "label": "test_params",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "peekOfCode": "def test_params():\n    #          |\n    wrapper()\n# ------------------------------------\ndef test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\ndef arrow_wrapper():\n    arrow = lambda value: None",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "documentation": {}
+    },
+    {
+        "label": "test_parameter",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "peekOfCode": "def test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\ndef arrow_wrapper():\n    arrow = lambda value: None\n    #                   |\n# ------------------------------------\nclass Agent:\n    #      |",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "documentation": {}
+    },
+    {
+        "label": "arrow_wrapper",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "peekOfCode": "def arrow_wrapper():\n    arrow = lambda value: None\n    #                   |\n# ------------------------------------\nclass Agent:\n    #      |\n    pass\n# ------------------------------------\ndef signature():\n    #          |",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "documentation": {}
+    },
+    {
+        "label": "signature",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "peekOfCode": "def signature():\n    #          |\n    pass\n# ------------------------------------\n# comment\n# |\n# ------------------------------------\ndef function_name():\n    #           |\n    pass",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "documentation": {}
+    },
+    {
+        "label": "function_name",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "peekOfCode": "def function_name():\n    #           |\n    pass\n# ------------------------------------\ndef return_statement():\n    return\n    #    |\n# ------------------------------------\ndef return_statement_value(value: str, flag: bool = False):\n    return 'asd'",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "documentation": {}
+    },
+    {
+        "label": "return_statement",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "peekOfCode": "def return_statement():\n    return\n    #    |\n# ------------------------------------\ndef return_statement_value(value: str, flag: bool = False):\n    return 'asd'\n    #      |\n# ------------------------------------\n return_statement_value('value')\n#^^^^^^^^^^^^^^^^^^^^^^ identifier[1]",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "documentation": {}
+    },
+    {
+        "label": "return_statement_value",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "description": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "peekOfCode": "def return_statement_value(value: str, flag: bool = False):\n    return 'asd'\n    #      |\n# ------------------------------------\n return_statement_value('value')\n#^^^^^^^^^^^^^^^^^^^^^^ identifier[1]\n#                       █\n# Nodes types:\n# identifier[1]: identifier\n# ------------------------------------",
+        "detail": "src.tree-sitter.query-tests.test-data.graph-identifiers.snap",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.intents",
+        "description": "src.tree-sitter.query-tests.test-data.intents",
+        "peekOfCode": "class Agent:\n    #      |\n    pass\n# ------------------------------------\ndef signature():\n    #          |\n    pass\n# ------------------------------------\n# comment\n# |",
+        "detail": "src.tree-sitter.query-tests.test-data.intents",
+        "documentation": {}
+    },
+    {
+        "label": "wrapper",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.intents",
+        "description": "src.tree-sitter.query-tests.test-data.intents",
+        "peekOfCode": "def wrapper():\n    print('wrapper')\n    def test():\n        #     |\n        pass\n# ------------------------------------\ndef test_params():\n    #          |\n    wrapper()\n# ------------------------------------",
+        "detail": "src.tree-sitter.query-tests.test-data.intents",
+        "documentation": {}
+    },
+    {
+        "label": "test_params",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.intents",
+        "description": "src.tree-sitter.query-tests.test-data.intents",
+        "peekOfCode": "def test_params():\n    #          |\n    wrapper()\n# ------------------------------------\ndef test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\ndef arrow_wrapper():\n    arrow = lambda value: None",
+        "detail": "src.tree-sitter.query-tests.test-data.intents",
+        "documentation": {}
+    },
+    {
+        "label": "test_parameter",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.intents",
+        "description": "src.tree-sitter.query-tests.test-data.intents",
+        "peekOfCode": "def test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\ndef arrow_wrapper():\n    arrow = lambda value: None\n    #                   |\n# ------------------------------------\nclass Agent:\n    #      |",
+        "detail": "src.tree-sitter.query-tests.test-data.intents",
+        "documentation": {}
+    },
+    {
+        "label": "arrow_wrapper",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.intents",
+        "description": "src.tree-sitter.query-tests.test-data.intents",
+        "peekOfCode": "def arrow_wrapper():\n    arrow = lambda value: None\n    #                   |\n# ------------------------------------\nclass Agent:\n    #      |\n    pass\n# ------------------------------------\ndef signature():\n    #          |",
+        "detail": "src.tree-sitter.query-tests.test-data.intents",
+        "documentation": {}
+    },
+    {
+        "label": "signature",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.intents",
+        "description": "src.tree-sitter.query-tests.test-data.intents",
+        "peekOfCode": "def signature():\n    #          |\n    pass\n# ------------------------------------\n# comment\n# |\n# ------------------------------------\ndef function_name():\n    #           |\n    pass",
+        "detail": "src.tree-sitter.query-tests.test-data.intents",
+        "documentation": {}
+    },
+    {
+        "label": "function_name",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.intents",
+        "description": "src.tree-sitter.query-tests.test-data.intents",
+        "peekOfCode": "def function_name():\n    #           |\n    pass\n# ------------------------------------\ndef return_statement():\n    return\n    #    |\n# ------------------------------------\ndef return_statement_value(value: str, flag: bool = False):\n    return 'asd'",
+        "detail": "src.tree-sitter.query-tests.test-data.intents",
+        "documentation": {}
+    },
+    {
+        "label": "return_statement",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.intents",
+        "description": "src.tree-sitter.query-tests.test-data.intents",
+        "peekOfCode": "def return_statement():\n    return\n    #    |\n# ------------------------------------\ndef return_statement_value(value: str, flag: bool = False):\n    return 'asd'\n    #      |\n# ------------------------------------\nreturn_statement_value('value')\n#                      |",
+        "detail": "src.tree-sitter.query-tests.test-data.intents",
+        "documentation": {}
+    },
+    {
+        "label": "return_statement_value",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.intents",
+        "description": "src.tree-sitter.query-tests.test-data.intents",
+        "peekOfCode": "def return_statement_value(value: str, flag: bool = False):\n    return 'asd'\n    #      |\n# ------------------------------------\nreturn_statement_value('value')\n#                      |\n# ------------------------------------\nreturn_statement_value('value', False)\n#                               |\n# ------------------------------------",
+        "detail": "src.tree-sitter.query-tests.test-data.intents",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.testable-node",
+        "description": "src.tree-sitter.query-tests.test-data.testable-node",
+        "peekOfCode": "class Agent:\n    def __init__(self, name):\n        #      |\n        self.name = name\n# ------------------------------------\nclass Agent:\n    def __init__(self, name):\n        self.name = name\n    def test(self):\n    #    |",
+        "detail": "src.tree-sitter.query-tests.test-data.testable-node",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "kind": 6,
+        "importPath": "src.tree-sitter.query-tests.test-data.testable-node",
+        "description": "src.tree-sitter.query-tests.test-data.testable-node",
+        "peekOfCode": "class Agent:\n    def __init__(self, name):\n        self.name = name\n    def test(self):\n    #    |\n        pass",
+        "detail": "src.tree-sitter.query-tests.test-data.testable-node",
+        "documentation": {}
+    },
+    {
+        "label": "wrapper",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.testable-node",
+        "description": "src.tree-sitter.query-tests.test-data.testable-node",
+        "peekOfCode": "def wrapper():\n    print('wrapper')\n    def test():\n        # |\n        pass\n# ------------------------------------\ndef test():\n    # |\n    pass\n# ------------------------------------",
+        "detail": "src.tree-sitter.query-tests.test-data.testable-node",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.testable-node",
+        "description": "src.tree-sitter.query-tests.test-data.testable-node",
+        "peekOfCode": "def test():\n    # |\n    pass\n# ------------------------------------\ndef test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\nclass Agent:\n    def __init__(self, name):",
+        "detail": "src.tree-sitter.query-tests.test-data.testable-node",
+        "documentation": {}
+    },
+    {
+        "label": "test_parameter",
+        "kind": 2,
+        "importPath": "src.tree-sitter.query-tests.test-data.testable-node",
+        "description": "src.tree-sitter.query-tests.test-data.testable-node",
+        "peekOfCode": "def test_parameter(val):\n    #              |\n    wrapper()\n# ------------------------------------\nclass Agent:\n    def __init__(self, name):\n        #      |\n        self.name = name\n# ------------------------------------\nclass Agent:",
+        "detail": "src.tree-sitter.query-tests.test-data.testable-node",
+        "documentation": {}
+    },
+    {
+        "label": "greet",
+        "kind": 2,
+        "importPath": "walkthroughs.cody_tutorial",
+        "description": "walkthroughs.cody_tutorial",
+        "peekOfCode": "def greet(name, surname):\n    \"\"\"Greets a user with a simple message\"\"\"\n#    ^ Autocomplete: Place cursor above\n# When you see a suggestion, press Tab to accept or Alt+\\ to generate another.",
+        "detail": "walkthroughs.cody_tutorial",
+        "documentation": {}
+    }
+]

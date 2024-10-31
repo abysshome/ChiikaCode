@@ -1,0 +1,11 @@
+cd project_generator
+// 运行前端
+streamlit run main.py
+
+// 运行api
+uvicorn api_service:app --host 127.0.0.1 --port 8000
+
+// build vscode 插件
+cd vscode
+pnpm install
+pnpm run build

@@ -2,6 +2,7 @@
 import { NodeSentryService } from './services/sentry/sentry.node'
 
 import * as vscode from 'vscode'
+import { NewViewProvider } from './newSidebar/NewViewProvider'
 
 import { defaultAuthStatus } from '@sourcegraph/cody-shared'
 import { startTokenReceiver } from './auth/token-receiver'
@@ -34,17 +35,17 @@ export function activate(
     context: vscode.ExtensionContext,
     extensionClient?: ExtensionClient
 ): Promise<ExtensionApi> {
+    console.log('Extension "Cody: AI Coding Assistant" is now active!')
     initializeNetworkAgent(context)
 
-    // When activated by VSCode, we are only passed the extension context.
-    // Create the default client for VSCode.
+    // 当由 VSCode 激活时，只传递了扩展上下文。
+    // 创建 VSCode 的默认客户端。
     extensionClient ||= defaultVSCodeExtensionClient()
 
-    // NOTE: local embeddings are only going to be supported in VSC for now.
-    // Until we revisit this decision, we disable local embeddings in the agent.
+    // 本地嵌入暂时只在 VSC 中支持。
     let isLocalEmbeddingsEnabled = !isRunningInsideAgent()
 
-    // Optional override for local testing.
+    // 可选的本地测试覆盖。
     isLocalEmbeddingsEnabled = vscode.workspace
         .getConfiguration()
         .get<boolean>('cody.experimental.localEmbeddings.enabled', isLocalEmbeddingsEnabled)
@@ -57,6 +58,14 @@ export function activate(
         .getConfiguration()
         .get<boolean>('cody.experimental.telemetry.enabled', true)
 
+    const newViewProvider = new NewViewProvider();
+    context.subscriptions.push(
+        vscode.window.registerWebviewViewProvider(
+            NewViewProvider.viewType, // 'newView'
+            newViewProvider
+        )
+    );
+    
     return activateCommon(context, {
         createLocalEmbeddingsController: isLocalEmbeddingsEnabled
             ? (config: LocalEmbeddingsConfig): Promise<LocalEmbeddingsController> =>
@@ -76,9 +85,9 @@ export function activate(
     })
 }
 
-// When Cody is deactivated, we serialize the current configuration to disk,
-// so that it can be sent with Telemetry when the post-uninstall script runs.
-// The vscode API is not available in the post-uninstall script.
+// 当 Cody 被停用时，我们将当前配置序列化到磁盘，
+// 这样它可以与 Telemetry 一起发送，当 post-uninstall 脚本运行时。
+// 在 post-uninstall 脚本中，vscode API 不可用。
 export async function deactivate(): Promise<void> {
     const config = localStorage.getConfig() ?? (await getFullConfig())
     const authStatus = authProvider.instance?.getAuthStatus() ?? defaultAuthStatus
