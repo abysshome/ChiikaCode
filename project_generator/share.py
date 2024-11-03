@@ -1,9 +1,12 @@
 from langchain_community.chat_models import ChatOllama
 
-llm = ChatOllama(model='qwen:7b')
+llm = ChatOllama(model='llama3.2:latest')
 
 supported_langs = [
     'c', 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'typescript'
+]
+supported_model=[
+    '项目级代码生成','文档阅读','ai对话'
 ]
 lang_exts = {
     'c': ['.c', '.h'],

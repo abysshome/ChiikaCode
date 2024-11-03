@@ -7,7 +7,7 @@ from share import llm, supported_langs
 
 
 def getRawCodeStream(user_requirement: str, code_structure: str, filename: str, language: str) -> Iterator[str]:
-    """ 通过用户需求、代码结构、语言、文件名，生成大模型回答的原始字符流 """
+    """通过用户需求、代码结构、语言、文件名，生成大模型回答的原始字符流"""
 
     language = language.lower()
     if language not in supported_langs:
