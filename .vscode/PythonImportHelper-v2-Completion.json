@@ -9,6 +9,1066 @@
         "documentation": {}
     },
     {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "StrOutputParser",
+        "importPath": "langchain.schema.output_parser",
+        "description": "langchain.schema.output_parser",
+        "isExtraImport": true,
+        "detail": "langchain.schema.output_parser",
+        "documentation": {}
+    },
+    {
+        "label": "StrOutputParser",
+        "importPath": "langchain.schema.output_parser",
+        "description": "langchain.schema.output_parser",
+        "isExtraImport": true,
+        "detail": "langchain.schema.output_parser",
+        "documentation": {}
+    },
+    {
+        "label": "StrOutputParser",
+        "importPath": "langchain.schema.output_parser",
+        "description": "langchain.schema.output_parser",
+        "isExtraImport": true,
+        "detail": "langchain.schema.output_parser",
+        "documentation": {}
+    },
+    {
+        "label": "StrOutputParser",
+        "importPath": "langchain.schema.output_parser",
+        "description": "langchain.schema.output_parser",
+        "isExtraImport": true,
+        "detail": "langchain.schema.output_parser",
+        "documentation": {}
+    },
+    {
+        "label": "StrOutputParser",
+        "importPath": "langchain.schema.output_parser",
+        "description": "langchain.schema.output_parser",
+        "isExtraImport": true,
+        "detail": "langchain.schema.output_parser",
+        "documentation": {}
+    },
+    {
+        "label": "StrOutputParser",
+        "importPath": "langchain.schema.output_parser",
+        "description": "langchain.schema.output_parser",
+        "isExtraImport": true,
+        "detail": "langchain.schema.output_parser",
+        "documentation": {}
+    },
+    {
+        "label": "StrOutputParser",
+        "importPath": "langchain.schema.output_parser",
+        "description": "langchain.schema.output_parser",
+        "isExtraImport": true,
+        "detail": "langchain.schema.output_parser",
+        "documentation": {}
+    },
+    {
+        "label": "StrOutputParser",
+        "importPath": "langchain.schema.output_parser",
+        "description": "langchain.schema.output_parser",
+        "isExtraImport": true,
+        "detail": "langchain.schema.output_parser",
+        "documentation": {}
+    },
+    {
+        "label": "StrOutputParser",
+        "importPath": "langchain.schema.output_parser",
+        "description": "langchain.schema.output_parser",
+        "isExtraImport": true,
+        "detail": "langchain.schema.output_parser",
+        "documentation": {}
+    },
+    {
+        "label": "getLongestCodeBlock",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "lang_exts",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_langs",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "getLongestCodeBlock",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "lang_exts",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_langs",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "getLongestCodeBlock",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "lang_exts",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_langs",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "getLongestCodeBlock",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "lang_exts",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_langs",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "getLongestCodeBlock",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "lang_exts",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_langs",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_langs",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "getLongestCodeBlock",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "lang_exts",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_langs",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_model",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "getLongestCodeBlock",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "lang_exts",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_langs",
+        "importPath": "share",
+        "description": "share",
+        "isExtraImport": true,
+        "detail": "share",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "getRawStructureStream",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "parseStructureString",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "getRawStructureStream",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "parseStructureString",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "getRawStructureStream",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "parseStructureString",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "getRawStructureStream",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "parseStructureString",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "getRawStructureStream",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "parseStructureString",
+        "importPath": "structure",
+        "description": "structure",
+        "isExtraImport": true,
+        "detail": "structure",
+        "documentation": {}
+    },
+    {
+        "label": "http.client",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "http.client",
+        "description": "http.client",
+        "detail": "http.client",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "uvicorn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uvicorn",
+        "description": "uvicorn",
+        "detail": "uvicorn",
+        "documentation": {}
+    },
+    {
+        "label": "RunnablePassthrough",
+        "importPath": "langchain.schema.runnable",
+        "description": "langchain.schema.runnable",
+        "isExtraImport": true,
+        "detail": "langchain.schema.runnable",
+        "documentation": {}
+    },
+    {
+        "label": "RunnablePassthrough",
+        "importPath": "langchain.schema.runnable",
+        "description": "langchain.schema.runnable",
+        "isExtraImport": true,
+        "detail": "langchain.schema.runnable",
+        "documentation": {}
+    },
+    {
+        "label": "RunnablePassthrough",
+        "importPath": "langchain.schema.runnable",
+        "description": "langchain.schema.runnable",
+        "isExtraImport": true,
+        "detail": "langchain.schema.runnable",
+        "documentation": {}
+    },
+    {
+        "label": "RunnablePassthrough",
+        "importPath": "langchain.schema.runnable",
+        "description": "langchain.schema.runnable",
+        "isExtraImport": true,
+        "detail": "langchain.schema.runnable",
+        "documentation": {}
+    },
+    {
+        "label": "RunnablePassthrough",
+        "importPath": "langchain.schema.runnable",
+        "description": "langchain.schema.runnable",
+        "isExtraImport": true,
+        "detail": "langchain.schema.runnable",
+        "documentation": {}
+    },
+    {
+        "label": "RunnablePassthrough",
+        "importPath": "langchain.schema.runnable",
+        "description": "langchain.schema.runnable",
+        "isExtraImport": true,
+        "detail": "langchain.schema.runnable",
+        "documentation": {}
+    },
+    {
+        "label": "CharacterTextSplitter",
+        "importPath": "langchain.text_splitter",
+        "description": "langchain.text_splitter",
+        "isExtraImport": true,
+        "detail": "langchain.text_splitter",
+        "documentation": {}
+    },
+    {
+        "label": "RecursiveCharacterTextSplitter",
+        "importPath": "langchain.text_splitter",
+        "description": "langchain.text_splitter",
+        "isExtraImport": true,
+        "detail": "langchain.text_splitter",
+        "documentation": {}
+    },
+    {
+        "label": "CharacterTextSplitter",
+        "importPath": "langchain.text_splitter",
+        "description": "langchain.text_splitter",
+        "isExtraImport": true,
+        "detail": "langchain.text_splitter",
+        "documentation": {}
+    },
+    {
+        "label": "CharacterTextSplitter",
+        "importPath": "langchain.text_splitter",
+        "description": "langchain.text_splitter",
+        "isExtraImport": true,
+        "detail": "langchain.text_splitter",
+        "documentation": {}
+    },
+    {
+        "label": "RecursiveCharacterTextSplitter",
+        "importPath": "langchain.text_splitter",
+        "description": "langchain.text_splitter",
+        "isExtraImport": true,
+        "detail": "langchain.text_splitter",
+        "documentation": {}
+    },
+    {
+        "label": "CharacterTextSplitter",
+        "importPath": "langchain.text_splitter",
+        "description": "langchain.text_splitter",
+        "isExtraImport": true,
+        "detail": "langchain.text_splitter",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "CSVLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "PyPDFLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "PythonLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "TextLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "PythonLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "PyPDFLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "TextLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "CSVLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "PythonLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "PyPDFLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "TextLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "CSVLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "PythonLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "PyPDFLoader",
+        "importPath": "langchain_community.document_loaders",
+        "description": "langchain_community.document_loaders",
+        "isExtraImport": true,
+        "detail": "langchain_community.document_loaders",
+        "documentation": {}
+    },
+    {
+        "label": "HuggingFaceBgeEmbeddings",
+        "importPath": "langchain_community.embeddings",
+        "description": "langchain_community.embeddings",
+        "isExtraImport": true,
+        "detail": "langchain_community.embeddings",
+        "documentation": {}
+    },
+    {
+        "label": "HuggingFaceBgeEmbeddings",
+        "importPath": "langchain_community.embeddings",
+        "description": "langchain_community.embeddings",
+        "isExtraImport": true,
+        "detail": "langchain_community.embeddings",
+        "documentation": {}
+    },
+    {
+        "label": "HuggingFaceBgeEmbeddings",
+        "importPath": "langchain_community.embeddings",
+        "description": "langchain_community.embeddings",
+        "isExtraImport": true,
+        "detail": "langchain_community.embeddings",
+        "documentation": {}
+    },
+    {
+        "label": "HuggingFaceBgeEmbeddings",
+        "importPath": "langchain_community.embeddings",
+        "description": "langchain_community.embeddings",
+        "isExtraImport": true,
+        "detail": "langchain_community.embeddings",
+        "documentation": {}
+    },
+    {
+        "label": "Chroma",
+        "importPath": "langchain_community.vectorstores",
+        "description": "langchain_community.vectorstores",
+        "isExtraImport": true,
+        "detail": "langchain_community.vectorstores",
+        "documentation": {}
+    },
+    {
+        "label": "Chroma",
+        "importPath": "langchain_community.vectorstores",
+        "description": "langchain_community.vectorstores",
+        "isExtraImport": true,
+        "detail": "langchain_community.vectorstores",
+        "documentation": {}
+    },
+    {
+        "label": "Chroma",
+        "importPath": "langchain_community.vectorstores",
+        "description": "langchain_community.vectorstores",
+        "isExtraImport": true,
+        "detail": "langchain_community.vectorstores",
+        "documentation": {}
+    },
+    {
+        "label": "Chroma",
+        "importPath": "langchain_community.vectorstores",
+        "description": "langchain_community.vectorstores",
+        "isExtraImport": true,
+        "detail": "langchain_community.vectorstores",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
         "label": "stringify",
         "importPath": "flatted",
         "description": "flatted",
@@ -175,15 +1235,6 @@
         "description": "gyp.common",
         "isExtraImport": true,
         "detail": "gyp.common",
-        "documentation": {}
-    },
-    {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
         "documentation": {}
     },
     {
@@ -969,11 +2020,37 @@
         "documentation": {}
     },
     {
-        "label": "getRawCodeStream",
-        "importPath": "gencode",
-        "description": "gencode",
+        "label": "RecursiveCharacterTextSplitter",
+        "importPath": "langchain_text_splitters",
+        "description": "langchain_text_splitters",
         "isExtraImport": true,
-        "detail": "gencode",
+        "detail": "langchain_text_splitters",
+        "documentation": {}
+    },
+    {
+        "label": "RecursiveCharacterTextSplitter",
+        "importPath": "langchain_text_splitters",
+        "description": "langchain_text_splitters",
+        "isExtraImport": true,
+        "detail": "langchain_text_splitters",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "pdfplumber",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pdfplumber",
+        "description": "pdfplumber",
+        "detail": "pdfplumber",
         "documentation": {}
     },
     {
@@ -993,211 +2070,19 @@
         "documentation": {}
     },
     {
-        "label": "getLongestCodeBlock",
-        "importPath": "share",
-        "description": "share",
+        "label": "getRawCodeStream",
+        "importPath": "gencode",
+        "description": "gencode",
         "isExtraImport": true,
-        "detail": "share",
+        "detail": "gencode",
         "documentation": {}
     },
     {
-        "label": "lang_exts",
-        "importPath": "share",
-        "description": "share",
+        "label": "getRawCodeStream",
+        "importPath": "gencode",
+        "description": "gencode",
         "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "supported_langs",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "getLongestCodeBlock",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "lang_exts",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "supported_langs",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "llm",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "supported_langs",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "getLongestCodeBlock",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "lang_exts",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "supported_langs",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "getLongestCodeBlock",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "lang_exts",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "llm",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "supported_langs",
-        "importPath": "share",
-        "description": "share",
-        "isExtraImport": true,
-        "detail": "share",
-        "documentation": {}
-    },
-    {
-        "label": "Node",
-        "importPath": "structure",
-        "description": "structure",
-        "isExtraImport": true,
-        "detail": "structure",
-        "documentation": {}
-    },
-    {
-        "label": "getRawStructureStream",
-        "importPath": "structure",
-        "description": "structure",
-        "isExtraImport": true,
-        "detail": "structure",
-        "documentation": {}
-    },
-    {
-        "label": "parseStructureString",
-        "importPath": "structure",
-        "description": "structure",
-        "isExtraImport": true,
-        "detail": "structure",
-        "documentation": {}
-    },
-    {
-        "label": "Node",
-        "importPath": "structure",
-        "description": "structure",
-        "isExtraImport": true,
-        "detail": "structure",
-        "documentation": {}
-    },
-    {
-        "label": "getRawStructureStream",
-        "importPath": "structure",
-        "description": "structure",
-        "isExtraImport": true,
-        "detail": "structure",
-        "documentation": {}
-    },
-    {
-        "label": "parseStructureString",
-        "importPath": "structure",
-        "description": "structure",
-        "isExtraImport": true,
-        "detail": "structure",
-        "documentation": {}
-    },
-    {
-        "label": "Node",
-        "importPath": "structure",
-        "description": "structure",
-        "isExtraImport": true,
-        "detail": "structure",
-        "documentation": {}
-    },
-    {
-        "label": "getRawStructureStream",
-        "importPath": "structure",
-        "description": "structure",
-        "isExtraImport": true,
-        "detail": "structure",
-        "documentation": {}
-    },
-    {
-        "label": "parseStructureString",
-        "importPath": "structure",
-        "description": "structure",
-        "isExtraImport": true,
-        "detail": "structure",
-        "documentation": {}
-    },
-    {
-        "label": "FastAPI",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
+        "detail": "gencode",
         "documentation": {}
     },
     {
@@ -1218,92 +2103,84 @@
         "documentation": {}
     },
     {
-        "label": "Iterator",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "split_documents",
+        "importPath": "apis.rag",
+        "description": "apis.rag",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "apis.rag",
         "documentation": {}
     },
     {
-        "label": "Iterator",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "get_embedding",
+        "importPath": "apis.rag",
+        "description": "apis.rag",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "apis.rag",
         "documentation": {}
     },
     {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "build_vector_db",
+        "importPath": "apis.rag",
+        "description": "apis.rag",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "apis.rag",
         "documentation": {}
     },
     {
-        "label": "Iterator",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "build_retriever",
+        "importPath": "apis.rag",
+        "description": "apis.rag",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "apis.rag",
         "documentation": {}
     },
     {
-        "label": "ChatPromptTemplate",
-        "importPath": "langchain.prompts",
-        "description": "langchain.prompts",
+        "label": "upload_file",
+        "importPath": "apis.rag",
+        "description": "apis.rag",
         "isExtraImport": true,
-        "detail": "langchain.prompts",
+        "detail": "apis.rag",
         "documentation": {}
     },
     {
-        "label": "ChatPromptTemplate",
-        "importPath": "langchain.prompts",
-        "description": "langchain.prompts",
+        "label": "build_rag_chain",
+        "importPath": "apis.rag",
+        "description": "apis.rag",
         "isExtraImport": true,
-        "detail": "langchain.prompts",
+        "detail": "apis.rag",
         "documentation": {}
     },
     {
-        "label": "StrOutputParser",
-        "importPath": "langchain.schema.output_parser",
-        "description": "langchain.schema.output_parser",
+        "label": "chat",
+        "importPath": "apis.rag",
+        "description": "apis.rag",
         "isExtraImport": true,
-        "detail": "langchain.schema.output_parser",
+        "detail": "apis.rag",
         "documentation": {}
     },
     {
-        "label": "StrOutputParser",
-        "importPath": "langchain.schema.output_parser",
-        "description": "langchain.schema.output_parser",
+        "label": "rag_main",
+        "importPath": "apis.rag",
+        "description": "apis.rag",
         "isExtraImport": true,
-        "detail": "langchain.schema.output_parser",
+        "detail": "apis.rag",
         "documentation": {}
     },
     {
-        "label": "streamlit",
+        "label": "Document",
+        "importPath": "langchain.schema",
+        "description": "langchain.schema",
+        "isExtraImport": true,
+        "detail": "langchain.schema",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "streamlit",
-        "description": "streamlit",
-        "detail": "streamlit",
-        "documentation": {}
-    },
-    {
-        "label": "ChatOllama",
-        "importPath": "langchain_community.chat_models",
-        "description": "langchain_community.chat_models",
-        "isExtraImport": true,
-        "detail": "langchain_community.chat_models",
-        "documentation": {}
-    },
-    {
-        "label": "RunnablePassthrough",
-        "importPath": "langchain.schema.runnable",
-        "description": "langchain.schema.runnable",
-        "isExtraImport": true,
-        "detail": "langchain.schema.runnable",
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
         "documentation": {}
     },
     {
@@ -1315,108 +2192,432 @@
         "documentation": {}
     },
     {
-        "label": "requests",
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "comb",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "comb",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "comb",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "comb",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "comb",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "comb",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "RequestData",
         "kind": 6,
-        "isExtraImport": true,
-        "importPath": "requests",
-        "description": "requests",
-        "detail": "requests",
+        "importPath": "apis.generate",
+        "description": "apis.generate",
+        "peekOfCode": "class RequestData(BaseModel):\n    question: str\n    language: str\n# 读取 result.json 文件并返回内容\ndef read_result_json() -> Dict:\n    try:\n        with open('result.json', 'r', encoding='utf-8') as f:\n            result_json = json.load(f)\n        return result_json\n    except Exception as e:",
+        "detail": "apis.generate",
         "documentation": {}
     },
     {
-        "label": "cos",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "read_result_json",
+        "kind": 2,
+        "importPath": "apis.generate",
+        "description": "apis.generate",
+        "peekOfCode": "def read_result_json() -> Dict:\n    try:\n        with open('result.json', 'r', encoding='utf-8') as f:\n            result_json = json.load(f)\n        return result_json\n    except Exception as e:\n        raise HTTPException(status_code=500, detail=f\"读取 result.json 文件时出错: {str(e)}\")\n# 创建替代接口，直接读取 result.json 文件并返回\n@app.post(\"/generate\")\nasync def generate_project(data: RequestData):",
+        "detail": "apis.generate",
         "documentation": {}
     },
     {
-        "label": "comb",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "app",
+        "kind": 5,
+        "importPath": "apis.generate",
+        "description": "apis.generate",
+        "peekOfCode": "app = FastAPI()\n# 请求体数据模型\nclass RequestData(BaseModel):\n    question: str\n    language: str\n# 读取 result.json 文件并返回内容\ndef read_result_json() -> Dict:\n    try:\n        with open('result.json', 'r', encoding='utf-8') as f:\n            result_json = json.load(f)",
+        "detail": "apis.generate",
         "documentation": {}
     },
     {
-        "label": "cos",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "RequestData",
+        "kind": 6,
+        "importPath": "apis.generate_code_api",
+        "description": "apis.generate_code_api",
+        "peekOfCode": "class RequestData(BaseModel):\n    question: str\n    language: str\ndef getRawCodeStream(user_requirement: str, code_structure: str, filename: str, language: str) -> Iterator[str]:\n    \"\"\"通过用户需求、代码结构、语言、文件名，生成大模型回答的原始字符流\"\"\"\n    language = language.lower()\n    if language not in supported_langs:\n        raise ValueError(f\"Unsupported language: {language}. (Support: {supported_langs})\")\n    template = f\"\"\"\n        请根据以下信息，为指定文件生成基本 {language} 代码。",
+        "detail": "apis.generate_code_api",
         "documentation": {}
     },
     {
-        "label": "comb",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "getRawCodeStream",
+        "kind": 2,
+        "importPath": "apis.generate_code_api",
+        "description": "apis.generate_code_api",
+        "peekOfCode": "def getRawCodeStream(user_requirement: str, code_structure: str, filename: str, language: str) -> Iterator[str]:\n    \"\"\"通过用户需求、代码结构、语言、文件名，生成大模型回答的原始字符流\"\"\"\n    language = language.lower()\n    if language not in supported_langs:\n        raise ValueError(f\"Unsupported language: {language}. (Support: {supported_langs})\")\n    template = f\"\"\"\n        请根据以下信息，为指定文件生成基本 {language} 代码。\n        用户需求：{user_requirement}\n        代码框架：\n        ```markdown",
+        "detail": "apis.generate_code_api",
         "documentation": {}
     },
     {
-        "label": "cos",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "generate_code_structure",
+        "kind": 2,
+        "importPath": "apis.generate_code_api",
+        "description": "apis.generate_code_api",
+        "peekOfCode": "def generate_code_structure(question: str, language: str) -> dict:\n    # 获取项目结构流\n    structure_content =\"\".join(getRawStructureStream(question, language))\n    print(\"getRawStructureStream 成功\")\n    print(structure_content)\n    # 解析项目结构字符串为 Node 对象\n    node = parseStructureString(structure_content, language)\n    print(\"parseStructureString 成功\")\n    if not node:\n        raise HTTPException(status_code=500, detail=\"生成项目结构失败\")",
+        "detail": "apis.generate_code_api",
         "documentation": {}
     },
     {
-        "label": "comb",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "app",
+        "kind": 5,
+        "importPath": "apis.generate_code_api",
+        "description": "apis.generate_code_api",
+        "peekOfCode": "app = FastAPI()\n# 请求体数据模型\nclass RequestData(BaseModel):\n    question: str\n    language: str\ndef getRawCodeStream(user_requirement: str, code_structure: str, filename: str, language: str) -> Iterator[str]:\n    \"\"\"通过用户需求、代码结构、语言、文件名，生成大模型回答的原始字符流\"\"\"\n    language = language.lower()\n    if language not in supported_langs:\n        raise ValueError(f\"Unsupported language: {language}. (Support: {supported_langs})\")",
+        "detail": "apis.generate_code_api",
         "documentation": {}
     },
     {
-        "label": "cos",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "conn",
+        "kind": 5,
+        "importPath": "apis.generate_code_api测试",
+        "description": "apis.generate_code_api测试",
+        "peekOfCode": "conn = http.client.HTTPConnection(\"127.0.0.1\", 8000)\npayload = json.dumps({\n   \"question\": \"生成一个贪吃蛇项目\",\n   \"language\": \"python\"\n})\nheaders = {\n   'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',\n   'Content-Type': 'application/json'\n}\nconn.request(\"POST\", \"/generate\", payload, headers)",
+        "detail": "apis.generate_code_api测试",
         "documentation": {}
     },
     {
-        "label": "comb",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "payload",
+        "kind": 5,
+        "importPath": "apis.generate_code_api测试",
+        "description": "apis.generate_code_api测试",
+        "peekOfCode": "payload = json.dumps({\n   \"question\": \"生成一个贪吃蛇项目\",\n   \"language\": \"python\"\n})\nheaders = {\n   'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',\n   'Content-Type': 'application/json'\n}\nconn.request(\"POST\", \"/generate\", payload, headers)\nres = conn.getresponse()",
+        "detail": "apis.generate_code_api测试",
         "documentation": {}
     },
     {
-        "label": "cos",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "headers",
+        "kind": 5,
+        "importPath": "apis.generate_code_api测试",
+        "description": "apis.generate_code_api测试",
+        "peekOfCode": "headers = {\n   'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',\n   'Content-Type': 'application/json'\n}\nconn.request(\"POST\", \"/generate\", payload, headers)\nres = conn.getresponse()\ndata = res.read()\nprint(data.decode(\"utf-8\"))",
+        "detail": "apis.generate_code_api测试",
         "documentation": {}
     },
     {
-        "label": "comb",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "res",
+        "kind": 5,
+        "importPath": "apis.generate_code_api测试",
+        "description": "apis.generate_code_api测试",
+        "peekOfCode": "res = conn.getresponse()\ndata = res.read()\nprint(data.decode(\"utf-8\"))",
+        "detail": "apis.generate_code_api测试",
         "documentation": {}
     },
     {
-        "label": "cos",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "data",
+        "kind": 5,
+        "importPath": "apis.generate_code_api测试",
+        "description": "apis.generate_code_api测试",
+        "peekOfCode": "data = res.read()\nprint(data.decode(\"utf-8\"))",
+        "detail": "apis.generate_code_api测试",
         "documentation": {}
     },
     {
-        "label": "comb",
-        "importPath": "math",
-        "description": "math",
-        "isExtraImport": true,
-        "detail": "math",
+        "label": "FilePathRequest",
+        "kind": 6,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "class FilePathRequest(BaseModel):\n    file_path: str\n# 数据加载\ndef load_file(file_path):\n    if not os.path.exists(file_path):\n        raise HTTPException(status_code=400, detail=\"文件路径不存在\")\n    if file_path.endswith('.py'):\n        loader = PythonLoader(file_path)\n    elif file_path.endswith('.pdf'):\n        loader = PyPDFLoader(file_path)",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionRequest",
+        "kind": 6,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "class QuestionRequest(BaseModel):\n    question: str\n# 提问并获取答案\n@app.post(\"/ask\")\nasync def ask_question(request: QuestionRequest):\n    global rag_chain\n    if not rag_chain:\n        raise HTTPException(status_code=400, detail=\"RAG链尚未初始化，请先上传文件路径\")\n    question = request.question\n    answer = \"\"",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "load_file",
+        "kind": 2,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "def load_file(file_path):\n    if not os.path.exists(file_path):\n        raise HTTPException(status_code=400, detail=\"文件路径不存在\")\n    if file_path.endswith('.py'):\n        loader = PythonLoader(file_path)\n    elif file_path.endswith('.pdf'):\n        loader = PyPDFLoader(file_path)\n    elif file_path.endswith('.txt'):\n        loader = TextLoader(file_path)\n    elif file_path.endswith('.csv'):",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "split_documents",
+        "kind": 2,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "def split_documents(documents):\n    text_splitter = RecursiveCharacterTextSplitter(chunk_size=65536, chunk_overlap=10)\n    documents = text_splitter.split_documents(documents)\n    return documents\n# 嵌入向量获取\ndef get_embedding():\n    model_name = 'moka-ai/m3e-base'\n    model_kwargs = {'device': 'cpu'}\n    encode_kwargs = {'normalize_embeddings': True}\n    embedding = HuggingFaceBgeEmbeddings(",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_embedding",
+        "kind": 2,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "def get_embedding():\n    model_name = 'moka-ai/m3e-base'\n    model_kwargs = {'device': 'cpu'}\n    encode_kwargs = {'normalize_embeddings': True}\n    embedding = HuggingFaceBgeEmbeddings(\n        model_name=model_name, \n        model_kwargs=model_kwargs, \n        encode_kwargs=encode_kwargs\n    )\n    return embedding",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "build_vector_db",
+        "kind": 2,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "def build_vector_db(documents, embedding):\n    persist_directory = 'db'\n    db = Chroma.from_documents(\n        documents, \n        embedding, \n        persist_directory=persist_directory\n    )\n    return db\n# 构建检索器\ndef build_retriever(db):",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "build_retriever",
+        "kind": 2,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "def build_retriever(db):\n    retriever = db.as_retriever()\n    return retriever\n# 构建RAG链\ndef build_rag_chain(retriever):\n    template = \"\"\"\n        根据context详细解释有关question的内容，并给出答案。\n        Question: {question} Context: {context} Answer: \"\"\"\n    prompt = ChatPromptTemplate.from_template(template)\n    llm = ChatOllama(model='llama3.2:latest')",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "build_rag_chain",
+        "kind": 2,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "def build_rag_chain(retriever):\n    template = \"\"\"\n        根据context详细解释有关question的内容，并给出答案。\n        Question: {question} Context: {context} Answer: \"\"\"\n    prompt = ChatPromptTemplate.from_template(template)\n    llm = ChatOllama(model='llama3.2:latest')\n    rag_chain = (\n        {\"context\": retriever, \"question\": RunnablePassthrough()} |\n        prompt |\n        llm |",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "app = FastAPI()\n# 定义一个请求模型，用于接收文件路径\nclass FilePathRequest(BaseModel):\n    file_path: str\n# 数据加载\ndef load_file(file_path):\n    if not os.path.exists(file_path):\n        raise HTTPException(status_code=400, detail=\"文件路径不存在\")\n    if file_path.endswith('.py'):\n        loader = PythonLoader(file_path)",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "rag_chain",
+        "kind": 5,
+        "importPath": "apis.rag_api",
+        "description": "apis.rag_api",
+        "peekOfCode": "rag_chain = None\n# 上传文件路径并初始化 RAG 链\n@app.post(\"/upload_file_path\")\nasync def upload_file_path(request: FilePathRequest):\n    global rag_chain\n    try:\n        # 加载文件\n        documents = load_file(request.file_path)\n        documents = split_documents(documents)\n        embedding = get_embedding()",
+        "detail": "apis.rag_api",
+        "documentation": {}
+    },
+    {
+        "label": "ask_url",
+        "kind": 5,
+        "importPath": "apis.rag_api_ask测试",
+        "description": "apis.rag_api_ask测试",
+        "peekOfCode": "ask_url = \"http://127.0.0.1:8000/ask\"\nquestion_payload = {\n    \"question\": \"报名截止日期是哪一天\"  # 替换为实际问题\n}\n# 发送 POST 请求\nresponse = requests.post(ask_url, json=question_payload)\nprint(response.json())",
+        "detail": "apis.rag_api_ask测试",
+        "documentation": {}
+    },
+    {
+        "label": "question_payload",
+        "kind": 5,
+        "importPath": "apis.rag_api_ask测试",
+        "description": "apis.rag_api_ask测试",
+        "peekOfCode": "question_payload = {\n    \"question\": \"报名截止日期是哪一天\"  # 替换为实际问题\n}\n# 发送 POST 请求\nresponse = requests.post(ask_url, json=question_payload)\nprint(response.json())",
+        "detail": "apis.rag_api_ask测试",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "apis.rag_api_ask测试",
+        "description": "apis.rag_api_ask测试",
+        "peekOfCode": "response = requests.post(ask_url, json=question_payload)\nprint(response.json())",
+        "detail": "apis.rag_api_ask测试",
+        "documentation": {}
+    },
+    {
+        "label": "upload_url",
+        "kind": 5,
+        "importPath": "apis.rag_api_upload_file_path测试",
+        "description": "apis.rag_api_upload_file_path测试",
+        "peekOfCode": "upload_url = \"http://127.0.0.1:8000/upload_file_path\"\n# 当前目录的路径加上文件相对路径\nfile_path=os.path.join(os.getcwd(), \"apis\\关于举办第十八届全国大学生软件创新大赛-软件设计创新赛的参赛通知.pdf\")\nprint(file_path)\nfile_path_payload = {\n    \"file_path\": file_path\n}\n# 发送 POST 请求\nresponse = requests.post(upload_url, json=file_path_payload)\nprint(response.json())",
+        "detail": "apis.rag_api_upload_file_path测试",
+        "documentation": {}
+    },
+    {
+        "label": "file_path_payload",
+        "kind": 5,
+        "importPath": "apis.rag_api_upload_file_path测试",
+        "description": "apis.rag_api_upload_file_path测试",
+        "peekOfCode": "file_path_payload = {\n    \"file_path\": file_path\n}\n# 发送 POST 请求\nresponse = requests.post(upload_url, json=file_path_payload)\nprint(response.json())",
+        "detail": "apis.rag_api_upload_file_path测试",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "apis.rag_api_upload_file_path测试",
+        "description": "apis.rag_api_upload_file_path测试",
+        "peekOfCode": "response = requests.post(upload_url, json=file_path_payload)\nprint(response.json())",
+        "detail": "apis.rag_api_upload_file_path测试",
+        "documentation": {}
+    },
+    {
+        "label": "getLongestCodeBlock",
+        "kind": 2,
+        "importPath": "apis.share",
+        "description": "apis.share",
+        "peekOfCode": "def getLongestCodeBlock(raw_text: str) -> str:\n    \"\"\" 返回文本中的代码块, 如果有多个, 则返回最长的那个, 否则返回空字符串 \"\"\"\n    # 如果没有代码块, 则直接返回空字符串\n    if not '```' in raw_text:\n        return ''\n    lines = raw_text.split('\\n')\n    code_sep_count = 0\n    start_incidies = []\n    end_incidies = []\n    for i, line in enumerate(lines):",
+        "detail": "apis.share",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "kind": 5,
+        "importPath": "apis.share",
+        "description": "apis.share",
+        "peekOfCode": "llm = ChatOllama(model='llama3.2:latest')\nsupported_langs = [\n    'c', 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'typescript'\n]\nsupported_model=[\n    '项目级代码生成','文档阅读','ai对话'\n]\nlang_exts = {\n    'c': ['.c', '.h'],\n    'cpp': ['.cpp', '.h', '.hpp'],",
+        "detail": "apis.share",
+        "documentation": {}
+    },
+    {
+        "label": "supported_langs",
+        "kind": 5,
+        "importPath": "apis.share",
+        "description": "apis.share",
+        "peekOfCode": "supported_langs = [\n    'c', 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'typescript'\n]\nsupported_model=[\n    '项目级代码生成','文档阅读','ai对话'\n]\nlang_exts = {\n    'c': ['.c', '.h'],\n    'cpp': ['.cpp', '.h', '.hpp'],\n    'csharp': ['.cs'],",
+        "detail": "apis.share",
+        "documentation": {}
+    },
+    {
+        "label": "lang_exts",
+        "kind": 5,
+        "importPath": "apis.share",
+        "description": "apis.share",
+        "peekOfCode": "lang_exts = {\n    'c': ['.c', '.h'],\n    'cpp': ['.cpp', '.h', '.hpp'],\n    'csharp': ['.cs'],\n    'go': ['.go'],\n    'java': ['.java'],\n    'javascript': ['.js'],\n    'python': ['.py', '.pyi', '.ipynb'],\n    'typescript': ['.ts']\n}",
+        "detail": "apis.share",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "kind": 6,
+        "importPath": "apis.structure",
+        "description": "apis.structure",
+        "peekOfCode": "class Node:\n    \"\"\" 文件系统节点, type 为 'folder' 或 'code' 或 'file' \"\"\"\n    def __init__(self, name: str, type: str, parent: 'Node' = None):\n        self.name = name\n        self.type = type\n        self.parent = parent\n        self.children: List[Node] = []\n        # 该变量由 Node.addChild() 自动维护\n        self.depth = 0\n        # 只有 type = 'code' 的节点才有 content 属性",
+        "detail": "apis.structure",
+        "documentation": {}
+    },
+    {
+        "label": "getRawStructureStream",
+        "kind": 2,
+        "importPath": "apis.structure",
+        "description": "apis.structure",
+        "peekOfCode": "def getRawStructureStream(requirement: str, languange: str = 'python') -> Iterator[str]:\n    \"\"\" 输入需求, 返回大语言模型生成的项目结构数据流 \"\"\"\n    languange = languange.lower()\n    if languange not in supported_langs:\n        raise ValueError(f\"Unsupported language: {languange}. (Support: {supported_langs})\")\n    template = '项目需求：{requirement}\\n'\\\n        f'你将为该项目生成基本的 {languange} 代码框架。\\n'\\\n        '请给出项目的文件目录结构，应尽可能包含所有的模块可能用到的文件。\\n'\\\n        '路径中不要包含中文，请使用英文。\\n'\\\n        '只需用4个空格的缩进表示文件的层级关系，请不要包含其它符号。\\n'\\",
+        "detail": "apis.structure",
+        "documentation": {}
+    },
+    {
+        "label": "parseStructureString",
+        "kind": 2,
+        "importPath": "apis.structure",
+        "description": "apis.structure",
+        "peekOfCode": "def parseStructureString(structure_str: str, languange: str = 'python') -> Node:\n    \"\"\" 解析项目结构数据流, 返回根节点 \"\"\"\n    code_block = getLongestCodeBlock(structure_str)\n    exts = lang_exts[languange.lower()]\n    indent = 4\n    current_indent = 0\n    stack: List[Node] = [Node(name='project', type='folder')]\n    for line in code_block.split('\\n'):\n        if line.startswith('--') and line.endswith('--'):\n            continue",
+        "detail": "apis.structure",
+        "documentation": {}
+    },
+    {
+        "label": "makeFolder",
+        "kind": 2,
+        "importPath": "apis.structure",
+        "description": "apis.structure",
+        "peekOfCode": "def makeFolder(path: str) -> None:\n    ''' Check if this folder exists, ohterwize build recursively. '''\n    head, tail = os.path.split(path)\n    if head and not os.path.exists(head):\n        makeFolder(head)\n    if not os.path.exists(path):\n        os.mkdir(path)\ndef __loadNodeFromJsonDict(node_dict: dict, parent: Node = None) -> Node:\n    ret = Node(node_dict['name'], node_dict['type'], parent)\n    if ret.type == 'folder':",
+        "detail": "apis.structure",
+        "documentation": {}
+    },
+    {
+        "label": "writeNodeJsonDictIntoFolder",
+        "kind": 2,
+        "importPath": "apis.structure",
+        "description": "apis.structure",
+        "peekOfCode": "def writeNodeJsonDictIntoFolder(root: str, node_dict: dict):\n    node = __loadNodeFromJsonDict(node_dict)\n    __writeNodeIntoFolder(root, node)\nif __name__ == '__main__':\n    # with open('result.txt', 'r', encoding='utf-8') as f:\n    #     structure_str = f.read()\n    # root = parseStructureString(structure_str, 'java')\n    # import json\n    # print(json.dumps(root.getJsonDict(), indent=4))\n    # print(root.getStrucureString())",
+        "detail": "apis.structure",
         "documentation": {}
     },
     {
@@ -13318,6 +14519,222 @@
         "documentation": {}
     },
     {
+        "label": "ask_url",
+        "kind": 5,
+        "importPath": "project_generator.apis.ask测试",
+        "description": "project_generator.apis.ask测试",
+        "peekOfCode": "ask_url = \"http://127.0.0.1:8000/ask\"\nquestion_payload = {\n    \"question\": \"报名截止日期是哪一天\"  # 替换为实际问题\n}\n# 发送 POST 请求\nresponse = requests.post(ask_url, json=question_payload)\nprint(response.json())",
+        "detail": "project_generator.apis.ask测试",
+        "documentation": {}
+    },
+    {
+        "label": "question_payload",
+        "kind": 5,
+        "importPath": "project_generator.apis.ask测试",
+        "description": "project_generator.apis.ask测试",
+        "peekOfCode": "question_payload = {\n    \"question\": \"报名截止日期是哪一天\"  # 替换为实际问题\n}\n# 发送 POST 请求\nresponse = requests.post(ask_url, json=question_payload)\nprint(response.json())",
+        "detail": "project_generator.apis.ask测试",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "project_generator.apis.ask测试",
+        "description": "project_generator.apis.ask测试",
+        "peekOfCode": "response = requests.post(ask_url, json=question_payload)\nprint(response.json())",
+        "detail": "project_generator.apis.ask测试",
+        "documentation": {}
+    },
+    {
+        "label": "upload_file",
+        "kind": 2,
+        "importPath": "project_generator.apis.rag",
+        "description": "project_generator.apis.rag",
+        "peekOfCode": "def upload_file(file_path):\n    if file_path.endswith('.py'):\n        loader = PythonLoader(file_path)\n    elif file_path.endswith('.pdf'):\n        loader = PyPDFLoader(file_path)\n    elif file_path.endswith('.txt'):\n        loader = TextLoader(file_path)\n    elif file_path.endswith('.csv'):\n        loader = CSVLoader(file_path)\n    else:",
+        "detail": "project_generator.apis.rag",
+        "documentation": {}
+    },
+    {
+        "label": "split_documents",
+        "kind": 2,
+        "importPath": "project_generator.apis.rag",
+        "description": "project_generator.apis.rag",
+        "peekOfCode": "def split_documents(documents):\n    text_splitter = RecursiveCharacterTextSplitter(chunk_size=65536, chunk_overlap=10)\n    documents = text_splitter.split_documents(documents)\n    print(\"文档分割完成\")\n    return documents\n# 嵌入向量\ndef get_embedding():\n    model_name = 'moka-ai/m3e-base'\n    model_kwargs = {'device': 'cpu'}\n    encode_kwargs = {'normalize_embeddings': True}",
+        "detail": "project_generator.apis.rag",
+        "documentation": {}
+    },
+    {
+        "label": "get_embedding",
+        "kind": 2,
+        "importPath": "project_generator.apis.rag",
+        "description": "project_generator.apis.rag",
+        "peekOfCode": "def get_embedding():\n    model_name = 'moka-ai/m3e-base'\n    model_kwargs = {'device': 'cpu'}\n    encode_kwargs = {'normalize_embeddings': True}\n    embedding = HuggingFaceBgeEmbeddings(\n        model_name=model_name, \n        model_kwargs=model_kwargs, \n        encode_kwargs=encode_kwargs\n    )\n    print(\"嵌入向量获取完成\")",
+        "detail": "project_generator.apis.rag",
+        "documentation": {}
+    },
+    {
+        "label": "build_vector_db",
+        "kind": 2,
+        "importPath": "project_generator.apis.rag",
+        "description": "project_generator.apis.rag",
+        "peekOfCode": "def build_vector_db(documents, embedding):\n    persist_directory = 'db'\n    db = Chroma.from_documents(\n        documents, \n        embedding, \n        persist_directory=persist_directory\n    )\n    print(\"向量数据库构建完成\")\n    return db\n# 构建检索器",
+        "detail": "project_generator.apis.rag",
+        "documentation": {}
+    },
+    {
+        "label": "build_retriever",
+        "kind": 2,
+        "importPath": "project_generator.apis.rag",
+        "description": "project_generator.apis.rag",
+        "peekOfCode": "def build_retriever(db):\n    retriever = db.as_retriever()\n    print(\"检索器构建完成\")\n    return retriever\n# 构建RAG链\ndef build_rag_chain(retriever):\n    template = \"\"\"\n        根据context详细解释有关question的内容，并给出答案。\n        Question: {question} Context: {context} Answer: \"\"\"\n    prompt = ChatPromptTemplate.from_template(template)",
+        "detail": "project_generator.apis.rag",
+        "documentation": {}
+    },
+    {
+        "label": "build_rag_chain",
+        "kind": 2,
+        "importPath": "project_generator.apis.rag",
+        "description": "project_generator.apis.rag",
+        "peekOfCode": "def build_rag_chain(retriever):\n    template = \"\"\"\n        根据context详细解释有关question的内容，并给出答案。\n        Question: {question} Context: {context} Answer: \"\"\"\n    prompt = ChatPromptTemplate.from_template(template)\n    llm = ChatOllama(model='llama3.2:latest')\n    rag_chain = (\n        {\"context\": retriever, \"question\": RunnablePassthrough()} |\n        prompt |\n        llm |",
+        "detail": "project_generator.apis.rag",
+        "documentation": {}
+    },
+    {
+        "label": "FilePathRequest",
+        "kind": 6,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "class FilePathRequest(BaseModel):\n    file_path: str\n# 数据加载\ndef load_file(file_path):\n    if not os.path.exists(file_path):\n        raise HTTPException(status_code=400, detail=\"文件路径不存在\")\n    if file_path.endswith('.py'):\n        loader = PythonLoader(file_path)\n    elif file_path.endswith('.pdf'):\n        loader = PyPDFLoader(file_path)",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionRequest",
+        "kind": 6,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "class QuestionRequest(BaseModel):\n    question: str\n# 提问并获取答案\n@app.post(\"/ask\")\nasync def ask_question(request: QuestionRequest):\n    global rag_chain\n    if not rag_chain:\n        raise HTTPException(status_code=400, detail=\"RAG链尚未初始化，请先上传文件路径\")\n    question = request.question\n    answer = \"\"",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "load_file",
+        "kind": 2,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "def load_file(file_path):\n    if not os.path.exists(file_path):\n        raise HTTPException(status_code=400, detail=\"文件路径不存在\")\n    if file_path.endswith('.py'):\n        loader = PythonLoader(file_path)\n    elif file_path.endswith('.pdf'):\n        loader = PyPDFLoader(file_path)\n    elif file_path.endswith('.txt'):\n        loader = TextLoader(file_path)\n    elif file_path.endswith('.csv'):",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "split_documents",
+        "kind": 2,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "def split_documents(documents):\n    text_splitter = RecursiveCharacterTextSplitter(chunk_size=65536, chunk_overlap=10)\n    documents = text_splitter.split_documents(documents)\n    return documents\n# 嵌入向量获取\ndef get_embedding():\n    model_name = 'moka-ai/m3e-base'\n    model_kwargs = {'device': 'cpu'}\n    encode_kwargs = {'normalize_embeddings': True}\n    embedding = HuggingFaceBgeEmbeddings(",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "get_embedding",
+        "kind": 2,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "def get_embedding():\n    model_name = 'moka-ai/m3e-base'\n    model_kwargs = {'device': 'cpu'}\n    encode_kwargs = {'normalize_embeddings': True}\n    embedding = HuggingFaceBgeEmbeddings(\n        model_name=model_name, \n        model_kwargs=model_kwargs, \n        encode_kwargs=encode_kwargs\n    )\n    return embedding",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "build_vector_db",
+        "kind": 2,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "def build_vector_db(documents, embedding):\n    persist_directory = 'db'\n    db = Chroma.from_documents(\n        documents, \n        embedding, \n        persist_directory=persist_directory\n    )\n    return db\n# 构建检索器\ndef build_retriever(db):",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "build_retriever",
+        "kind": 2,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "def build_retriever(db):\n    retriever = db.as_retriever()\n    return retriever\n# 构建RAG链\ndef build_rag_chain(retriever):\n    template = \"\"\"\n        根据context详细解释有关question的内容，并给出答案。\n        Question: {question} Context: {context} Answer: \"\"\"\n    prompt = ChatPromptTemplate.from_template(template)\n    llm = ChatOllama(model='llama3.2:latest')",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "build_rag_chain",
+        "kind": 2,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "def build_rag_chain(retriever):\n    template = \"\"\"\n        根据context详细解释有关question的内容，并给出答案。\n        Question: {question} Context: {context} Answer: \"\"\"\n    prompt = ChatPromptTemplate.from_template(template)\n    llm = ChatOllama(model='llama3.2:latest')\n    rag_chain = (\n        {\"context\": retriever, \"question\": RunnablePassthrough()} |\n        prompt |\n        llm |",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "app = FastAPI()\n# 定义一个请求模型，用于接收文件路径\nclass FilePathRequest(BaseModel):\n    file_path: str\n# 数据加载\ndef load_file(file_path):\n    if not os.path.exists(file_path):\n        raise HTTPException(status_code=400, detail=\"文件路径不存在\")\n    if file_path.endswith('.py'):\n        loader = PythonLoader(file_path)",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "rag_chain",
+        "kind": 5,
+        "importPath": "project_generator.apis.ragapi",
+        "description": "project_generator.apis.ragapi",
+        "peekOfCode": "rag_chain = None\n# 上传文件路径并初始化 RAG 链\n@app.post(\"/upload_file_path\")\nasync def upload_file_path(request: FilePathRequest):\n    global rag_chain\n    try:\n        # 加载文件\n        documents = load_file(request.file_path)\n        documents = split_documents(documents)\n        embedding = get_embedding()",
+        "detail": "project_generator.apis.ragapi",
+        "documentation": {}
+    },
+    {
+        "label": "read_file_as_string",
+        "kind": 2,
+        "importPath": "project_generator.apis.try",
+        "description": "project_generator.apis.try",
+        "peekOfCode": "def read_file_as_string(uploaded_file):\n    file_content = None\n    # 检查文件类型并读取内容\n    if uploaded_file.type in [\"text/plain\", \"text/markdown\"]:  # 纯文本或 Markdown 文件\n        file_content = uploaded_file.read().decode(\"utf-8\")\n    elif uploaded_file.type == \"application/pdf\":  # PDF 文件\n        file_content = \"\"\n        with pdfplumber.open(uploaded_file) as pdf:\n            for page in pdf.pages:\n                file_content += page.extract_text() or \"\"",
+        "detail": "project_generator.apis.try",
+        "documentation": {}
+    },
+    {
+        "label": "uploaded_file",
+        "kind": 5,
+        "importPath": "project_generator.apis.try",
+        "description": "project_generator.apis.try",
+        "peekOfCode": "uploaded_file = st.file_uploader(\"上传文件以提供需求说明\", type=[\"txt\", \"pdf\", \"md\", \"json\"])\n# 处理上传的文件\nif uploaded_file:\n    file_content = read_file_as_string(uploaded_file)\n    # 检查文件内容是否成功读取\n    if file_content:\n        st.write(\"文件内容：\")\n        st.text(file_content)\n    else:\n        st.error(\"文件内容无法读取，请检查文件格式\")",
+        "detail": "project_generator.apis.try",
+        "documentation": {}
+    },
+    {
+        "label": "upload_url",
+        "kind": 5,
+        "importPath": "project_generator.apis.upload_file_path测试",
+        "description": "project_generator.apis.upload_file_path测试",
+        "peekOfCode": "upload_url = \"http://127.0.0.1:8000/upload_file_path\"\n# 当前目录的路径加上文件相对路径\nfile_path=os.path.join(os.getcwd(), \"apis\\关于举办第十八届全国大学生软件创新大赛-软件设计创新赛的参赛通知.pdf\")\nprint(file_path)\nfile_path_payload = {\n    \"file_path\": file_path\n}\n# 发送 POST 请求\nresponse = requests.post(upload_url, json=file_path_payload)\nprint(response.json())",
+        "detail": "project_generator.apis.upload_file_path测试",
+        "documentation": {}
+    },
+    {
+        "label": "file_path_payload",
+        "kind": 5,
+        "importPath": "project_generator.apis.upload_file_path测试",
+        "description": "project_generator.apis.upload_file_path测试",
+        "peekOfCode": "file_path_payload = {\n    \"file_path\": file_path\n}\n# 发送 POST 请求\nresponse = requests.post(upload_url, json=file_path_payload)\nprint(response.json())",
+        "detail": "project_generator.apis.upload_file_path测试",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "project_generator.apis.upload_file_path测试",
+        "description": "project_generator.apis.upload_file_path测试",
+        "peekOfCode": "response = requests.post(upload_url, json=file_path_payload)\nprint(response.json())",
+        "detail": "project_generator.apis.upload_file_path测试",
+        "documentation": {}
+    },
+    {
         "label": "directGetJsonString",
         "kind": 2,
         "importPath": "project_generator.api",
@@ -13349,7 +14766,7 @@
         "kind": 2,
         "importPath": "project_generator.api_service",
         "description": "project_generator.api_service",
-        "peekOfCode": "def generate_project(request: GenerateRequest):\n    try:\n        question = request.question\n        language = request.language\n        # 调用您的生成逻辑\n        content = getRawStructureStream(question, language)\n        node = parseStructureString(content, language)\n        project_structure = node.getStrucureString()\n        # 生成代码文件内容\n        files = {}",
+        "peekOfCode": "def generate_project(request: GenerateRequest):\n    try:\n        question = request.question\n        language = request.language\n        # Call your generation logic\n        content = getRawStructureStream(question, language)\n        node = parseStructureString(content, language)\n        project_structure = node.getStrucureString()\n        files = {}\n        for f_node in node.getFileNodes(lang_exts[language]):",
         "detail": "project_generator.api_service",
         "documentation": {}
     },
@@ -13363,12 +14780,57 @@
         "documentation": {}
     },
     {
+        "label": "RequestData",
+        "kind": 6,
+        "importPath": "project_generator.app",
+        "description": "project_generator.app",
+        "peekOfCode": "class RequestData(BaseModel):\n    question: str\n    language: str\n# 初始化 FastAPI应用\n@app.on_event(\"startup\")\nasync def startup_event():\n    print(\"FastAPI 服务已启动...\")\n# 生成代码结构的函数\ndef generate_code_structure(question: str, language: str) -> dict:\n    # 获取项目结构流",
+        "detail": "project_generator.app",
+        "documentation": {}
+    },
+    {
+        "label": "generate_code_structure",
+        "kind": 2,
+        "importPath": "project_generator.app",
+        "description": "project_generator.app",
+        "peekOfCode": "def generate_code_structure(question: str, language: str) -> dict:\n    # 获取项目结构流\n    structure_content =\"\".join(getRawStructureStream(question, language))\n    print(\"getRawStructureStream 成功\")\n    print(structure_content)\n    # 解析项目结构字符串为 Node 对象\n    node = parseStructureString(structure_content, language)\n    print(\"parseStructureString 成功\")\n    if not node:\n        raise HTTPException(status_code=500, detail=\"生成项目结构失败\")",
+        "detail": "project_generator.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "project_generator.app",
+        "description": "project_generator.app",
+        "peekOfCode": "app = FastAPI()\n# 请求体数据模型\nclass RequestData(BaseModel):\n    question: str\n    language: str\n# 初始化 FastAPI应用\n@app.on_event(\"startup\")\nasync def startup_event():\n    print(\"FastAPI 服务已启动...\")\n# 生成代码结构的函数",
+        "detail": "project_generator.app",
+        "documentation": {}
+    },
+    {
         "label": "getRawCodeStream",
         "kind": 2,
         "importPath": "project_generator.gencode",
         "description": "project_generator.gencode",
-        "peekOfCode": "def getRawCodeStream(user_requirement: str, code_structure: str, filename: str, language: str) -> Iterator[str]:\n    \"\"\" 通过用户需求、代码结构、语言、文件名，生成大模型回答的原始字符流 \"\"\"\n    language = language.lower()\n    if language not in supported_langs:\n        raise ValueError(f\"Unsupported language: {language}. (Support: {supported_langs})\")\n    template = f\"\"\"\n        请根据以下信息，为指定文件生成基本 {language} 代码。\n        用户需求：{user_requirement}\n        代码框架：\n        ```markdown",
+        "peekOfCode": "def getRawCodeStream(user_requirement: str, code_structure: str, filename: str, language: str) -> Iterator[str]:\n    \"\"\"通过用户需求、代码结构、语言、文件名，生成大模型回答的原始字符流\"\"\"\n    language = language.lower()\n    if language not in supported_langs:\n        raise ValueError(f\"Unsupported language: {language}. (Support: {supported_langs})\")\n    template = f\"\"\"\n        请根据以下信息，为指定文件生成基本 {language} 代码。\n        用户需求：{user_requirement}\n        代码框架：\n        ```markdown",
         "detail": "project_generator.gencode",
+        "documentation": {}
+    },
+    {
+        "label": "read_file_as_string",
+        "kind": 2,
+        "importPath": "project_generator.main",
+        "description": "project_generator.main",
+        "peekOfCode": "def read_file_as_string(uploaded_file):\n    file_content = None\n    # 检查文件类型并读取内容\n    if uploaded_file.type in [\"text/plain\", \"text/markdown\"]:  # 纯文本或 Markdown 文件\n        file_content = uploaded_file.read().decode(\"utf-8\")\n    elif uploaded_file.type == \"application/pdf\":  # PDF 文件\n        file_content = \"\"\n        with pdfplumber.open(uploaded_file) as pdf:\n            for page in pdf.pages:\n                file_content += page.extract_text() or \"\"",
+        "detail": "project_generator.main",
+        "documentation": {}
+    },
+    {
+        "label": "generate_project",
+        "kind": 2,
+        "importPath": "project_generator.main",
+        "description": "project_generator.main",
+        "peekOfCode": "def generate_project():\n    if st.session_state['question']: # 如果有输入或上传文件\n        language = st.session_state['language'] # 获取语言\n        question = st.session_state['question'] or \"\"  # 获取问题输入\n        # add_message(\"user\", \"text\", question)  # 添加用户消息\n        st_helper.stAddMessage(\"user\", \"text\", question)  # 添加用户消息\n        with st.empty(): # st.empty() 可以显示加载动画\n            content = st_helper.stWrite(st.chat_message(\"ai\"), getRawStructureStream(question,  language)) # 获取项目结构流\n            st_helper.stAddMessage(\"ai\", \"text\", \"根据你的需求，我生成了以下项目结构：\")  # 添加AI消息\n            # 将生成器内容拼接成一个完整的字符串",
+        "detail": "project_generator.main",
         "documentation": {}
     },
     {
@@ -13376,7 +14838,16 @@
         "kind": 2,
         "importPath": "project_generator.main",
         "description": "project_generator.main",
-        "peekOfCode": "def init():\n    st.session_state[\"messages\"] = []\n    st.session_state[\"generating\"] = False\n    st.session_state['node'] = None\n    st.session_state['question'] = None\n    st.session_state['language'] = None\n    st.session_state['button_ok'] = False\n    st.session_state['button_cancel'] = False\n    st_helper.stAddMessage(\"ai\", \"text\", \"你需要生成什么项目?\", wirte=False)\n    st.session_state[\"initialized\"] = True",
+        "peekOfCode": "def init():\n    if \"conversations\" not in st.session_state:\n        st.session_state[\"conversations\"] = {} # 初始化对话状态\n    if \"current_conversation\" not in st.session_state:\n        st.session_state[\"current_conversation\"] = \"default\" # 初始化当前对话\n    st.session_state[\"generating\"] = False # 初始化生成状态\n    st.session_state['node'] = None # 初始化节点状态\n    st.session_state['question'] = None # 初始化问题状态\n    st.session_state['language'] = None  # 初始化语言状态\n    st.session_state['button_ok'] = False # 初始化确认按钮状态",
+        "detail": "project_generator.main",
+        "documentation": {}
+    },
+    {
+        "label": "sidebar",
+        "kind": 2,
+        "importPath": "project_generator.main",
+        "description": "project_generator.main",
+        "peekOfCode": "def sidebar():\n    st.sidebar.title(\"对话管理\") \n    # 切换对话\n    conversation_names = list(st.session_state[\"conversations\"].keys())\n    selected_conversation = st.sidebar.selectbox(\"选择对话\", conversation_names) # 选择对话\n    if selected_conversation != st.session_state[\"current_conversation\"]:\n        st.session_state[\"current_conversation\"] = selected_conversation\n        st.session_state[\"messages\"] = st.session_state[\"conversations\"][selected_conversation]\n    # 添加新对话\n    new_conversation = st.sidebar.text_input(\"新对话名称\")",
         "detail": "project_generator.main",
         "documentation": {}
     },
@@ -13385,7 +14856,16 @@
         "kind": 2,
         "importPath": "project_generator.main",
         "description": "project_generator.main",
-        "peekOfCode": "def startGeneratConfirm():\n    st.session_state[\"generating\"] = True\n    st.session_state['button_ok'] = False\n    st.session_state['button_cancel'] = False\ndef drawButton():\n    def on_ok():\n        st.session_state['button_ok'] = True\n    def on_cancel():\n        st.session_state['button_cancel'] = True\n    st.session_state['button_ok'] = st.button(\"确定生成\", on_click=on_ok)",
+        "peekOfCode": "def startGeneratConfirm():\n    st.session_state[\"generating\"] = True\n    st.session_state['button_ok'] = False\n    st.session_state['button_cancel'] = False\n# 将消息保存到当前对话中\ndef add_message(role, content, msg_type=\"text\"):\n    current_conv = st.session_state[\"current_conversation\"]\n    st.session_state[\"conversations\"][current_conv].append({\"role\": role, \"content\": content, \"type\": msg_type})\ndef drawButton():\n    def on_ok():",
+        "detail": "project_generator.main",
+        "documentation": {}
+    },
+    {
+        "label": "add_message",
+        "kind": 2,
+        "importPath": "project_generator.main",
+        "description": "project_generator.main",
+        "peekOfCode": "def add_message(role, content, msg_type=\"text\"):\n    current_conv = st.session_state[\"current_conversation\"]\n    st.session_state[\"conversations\"][current_conv].append({\"role\": role, \"content\": content, \"type\": msg_type})\ndef drawButton():\n    def on_ok():\n        st.session_state['button_ok'] = True\n    def on_cancel():\n        st.session_state['button_cancel'] = True\n    st.session_state['button_ok'] = st.button(\"确定生成\", on_click=on_ok)\n    st.session_state['button_cancel'] = st.button(\"取消\", on_click=on_cancel)",
         "detail": "project_generator.main",
         "documentation": {}
     },
@@ -13408,21 +14888,156 @@
         "documentation": {}
     },
     {
-        "label": "st.session_state['language']",
-        "kind": 5,
+        "label": "rag_upload",
+        "kind": 2,
         "importPath": "project_generator.main",
         "description": "project_generator.main",
-        "peekOfCode": "st.session_state['language'] = st.selectbox(\"选择语言\", supported_langs)\nst_helper.stShowMessages()\nst.session_state['question'] = st.chat_input(\"项目需求\")\nif st.session_state['question']:\n    language = st.session_state['language']\n    question = st.session_state['question']\n    st_helper.stAddMessage(\"user\", \"text\", question)\n    with st.empty():\n        content = st_helper.stWrite(st.chat_message(\"ai\"), getRawStructureStream(question, language))\n        node = parseStructureString(content, language)",
+        "peekOfCode": "def rag_upload(uploaded_file):\n    if uploaded_file:\n        file_content = uploaded_file.read().decode(\"utf-8\")\n        st.session_state['uploaded_file_content'] = file_content\n        documents=split_documents(file_content)\n        embedding=get_embedding()\n        db=build_vector_db(documents,embedding)\n        st_helper.stAddMessage(\"user\", \"text\", f\"已上传并存储文件内容：\\n{file_content}\")\n        return db\nfrom langchain_community.chat_models import ChatOllama",
         "detail": "project_generator.main",
         "documentation": {}
     },
     {
-        "label": "st.session_state['question']",
-        "kind": 5,
+        "label": "generate_ai",
+        "kind": 2,
         "importPath": "project_generator.main",
         "description": "project_generator.main",
-        "peekOfCode": "st.session_state['question'] = st.chat_input(\"项目需求\")\nif st.session_state['question']:\n    language = st.session_state['language']\n    question = st.session_state['question']\n    st_helper.stAddMessage(\"user\", \"text\", question)\n    with st.empty():\n        content = st_helper.stWrite(st.chat_message(\"ai\"), getRawStructureStream(question, language))\n        node = parseStructureString(content, language)\n        st_helper.stAddMessage(\"ai\", \"text\", \"根据你的需求，我生成了以下项目结构：\")\n    st_helper.stAddMessage(\"ai\", \"markdown\", node.getStrucureString())",
+        "peekOfCode": "def generate_ai():\n    if st.session_state['question']:\n        question = st.session_state['question']\n        add_message(\"user\", question)\n        st_helper.stAddMessage(\"user\", \"text\", question) \n        llm = ChatOllama(model='llama3.2:latest')\n        rag_chain_ai = (\n            llm |\n            StrOutputParser()\n        )",
         "detail": "project_generator.main",
+        "documentation": {}
+    },
+    {
+        "label": "init_main",
+        "kind": 2,
+        "importPath": "project_generator.main",
+        "description": "project_generator.main",
+        "peekOfCode": "def init_main():\n    # -------------------- 初始化 -------------------- #\n    if \"initialized\" not in st.session_state:\n        init()\n    # -------------------- 绘制侧边栏 -------------------- #\n    # sidebar()\n    # -------------------- 绘制UI界面 -------------------- #\n    st.title(st.session_state[\"current_conversation\"])\n    st.session_state['model'] = st.selectbox('选择模式', supported_model)\n    st.session_state['language'] = st.selectbox(\"选择语言\", supported_langs)",
+        "detail": "project_generator.main",
+        "documentation": {}
+    },
+    {
+        "label": "documents",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "documents = PyPDFLoader(r\"test.pdf\").load()\nprint(documents)\nprint('load finished')\n# 文档分割\ntext_splitter = CharacterTextSplitter(chunk_size=65536, chunk_overlap=10)\ndocuments = text_splitter.split_documents(documents)\n# 词嵌入\nmodel_name = 'moka-ai/m3e-base'\nmodel_kwargs = {'device': 'cpu'}\nencode_kwargs = {'normalize_embeddings': True}",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "text_splitter",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "text_splitter = CharacterTextSplitter(chunk_size=65536, chunk_overlap=10)\ndocuments = text_splitter.split_documents(documents)\n# 词嵌入\nmodel_name = 'moka-ai/m3e-base'\nmodel_kwargs = {'device': 'cpu'}\nencode_kwargs = {'normalize_embeddings': True}\nembedding = HuggingFaceBgeEmbeddings(\n    model_name=model_name,\n    model_kwargs=model_kwargs,\n    encode_kwargs=encode_kwargs",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "documents",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "documents = text_splitter.split_documents(documents)\n# 词嵌入\nmodel_name = 'moka-ai/m3e-base'\nmodel_kwargs = {'device': 'cpu'}\nencode_kwargs = {'normalize_embeddings': True}\nembedding = HuggingFaceBgeEmbeddings(\n    model_name=model_name,\n    model_kwargs=model_kwargs,\n    encode_kwargs=encode_kwargs\n)",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "model_name",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "model_name = 'moka-ai/m3e-base'\nmodel_kwargs = {'device': 'cpu'}\nencode_kwargs = {'normalize_embeddings': True}\nembedding = HuggingFaceBgeEmbeddings(\n    model_name=model_name,\n    model_kwargs=model_kwargs,\n    encode_kwargs=encode_kwargs\n)\nprint('embedding finished')\n# 数据入库",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "model_kwargs",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "model_kwargs = {'device': 'cpu'}\nencode_kwargs = {'normalize_embeddings': True}\nembedding = HuggingFaceBgeEmbeddings(\n    model_name=model_name,\n    model_kwargs=model_kwargs,\n    encode_kwargs=encode_kwargs\n)\nprint('embedding finished')\n# 数据入库\npersist_directory = 'db'",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "encode_kwargs",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "encode_kwargs = {'normalize_embeddings': True}\nembedding = HuggingFaceBgeEmbeddings(\n    model_name=model_name,\n    model_kwargs=model_kwargs,\n    encode_kwargs=encode_kwargs\n)\nprint('embedding finished')\n# 数据入库\npersist_directory = 'db'\ndb = Chroma.from_documents(documents, embedding, persist_directory=persist_directory)",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "embedding",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "embedding = HuggingFaceBgeEmbeddings(\n    model_name=model_name,\n    model_kwargs=model_kwargs,\n    encode_kwargs=encode_kwargs\n)\nprint('embedding finished')\n# 数据入库\npersist_directory = 'db'\ndb = Chroma.from_documents(documents, embedding, persist_directory=persist_directory)\n# 检索",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "persist_directory",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "persist_directory = 'db'\ndb = Chroma.from_documents(documents, embedding, persist_directory=persist_directory)\n# 检索\nretriever = db.as_retriever()\n# 增强\ntemplate = \"\"\"\n    You are an assistant for question-answering tasks.\n    Use the following pieces of retrieved context to answer the question.\n    If you don't know the answer, just say that you don't know.\n    Use three sentences maximum and keep the answer concise.",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "db = Chroma.from_documents(documents, embedding, persist_directory=persist_directory)\n# 检索\nretriever = db.as_retriever()\n# 增强\ntemplate = \"\"\"\n    You are an assistant for question-answering tasks.\n    Use the following pieces of retrieved context to answer the question.\n    If you don't know the answer, just say that you don't know.\n    Use three sentences maximum and keep the answer concise.\n    Question: {question} Context: {context} Answer: \"\"\"",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "retriever",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "retriever = db.as_retriever()\n# 增强\ntemplate = \"\"\"\n    You are an assistant for question-answering tasks.\n    Use the following pieces of retrieved context to answer the question.\n    If you don't know the answer, just say that you don't know.\n    Use three sentences maximum and keep the answer concise.\n    Question: {question} Context: {context} Answer: \"\"\"\nprompt = ChatPromptTemplate.from_template(template)\n# 生成",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "template",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "template = \"\"\"\n    You are an assistant for question-answering tasks.\n    Use the following pieces of retrieved context to answer the question.\n    If you don't know the answer, just say that you don't know.\n    Use three sentences maximum and keep the answer concise.\n    Question: {question} Context: {context} Answer: \"\"\"\nprompt = ChatPromptTemplate.from_template(template)\n# 生成\nllm = ChatOllama(model='qwen:7b')\nrag_chain = (",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "prompt",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "prompt = ChatPromptTemplate.from_template(template)\n# 生成\nllm = ChatOllama(model='qwen:7b')\nrag_chain = (\n    {\"context\": retriever, \"question\": RunnablePassthrough()} |\n    prompt |\n    llm |\n    StrOutputParser()\n)\nasync def ask_question(llm, question):",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "llm = ChatOllama(model='qwen:7b')\nrag_chain = (\n    {\"context\": retriever, \"question\": RunnablePassthrough()} |\n    prompt |\n    llm |\n    StrOutputParser()\n)\nasync def ask_question(llm, question):\n    print(\"开始回答---------------\")\n    # 定义消息列表，包括用户的问题",
+        "detail": "project_generator.rag_demo",
+        "documentation": {}
+    },
+    {
+        "label": "rag_chain",
+        "kind": 5,
+        "importPath": "project_generator.rag_demo",
+        "description": "project_generator.rag_demo",
+        "peekOfCode": "rag_chain = (\n    {\"context\": retriever, \"question\": RunnablePassthrough()} |\n    prompt |\n    llm |\n    StrOutputParser()\n)\nasync def ask_question(llm, question):\n    print(\"开始回答---------------\")\n    # 定义消息列表，包括用户的问题\n    messages = [",
+        "detail": "project_generator.rag_demo",
         "documentation": {}
     },
     {
@@ -13439,7 +15054,7 @@
         "kind": 5,
         "importPath": "project_generator.share",
         "description": "project_generator.share",
-        "peekOfCode": "llm = ChatOllama(model='qwen:7b')\nsupported_langs = [\n    'c', 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'typescript'\n]\nlang_exts = {\n    'c': ['.c', '.h'],\n    'cpp': ['.cpp', '.h', '.hpp'],\n    'csharp': ['.cs'],\n    'go': ['.go'],\n    'java': ['.java'],",
+        "peekOfCode": "llm = ChatOllama(model='llama3.2:latest')\nsupported_langs = [\n    'c', 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'typescript'\n]\nsupported_model=[\n    '项目级代码生成','文档阅读','ai对话'\n]\nlang_exts = {\n    'c': ['.c', '.h'],\n    'cpp': ['.cpp', '.h', '.hpp'],",
         "detail": "project_generator.share",
         "documentation": {}
     },
@@ -13448,7 +15063,7 @@
         "kind": 5,
         "importPath": "project_generator.share",
         "description": "project_generator.share",
-        "peekOfCode": "supported_langs = [\n    'c', 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'typescript'\n]\nlang_exts = {\n    'c': ['.c', '.h'],\n    'cpp': ['.cpp', '.h', '.hpp'],\n    'csharp': ['.cs'],\n    'go': ['.go'],\n    'java': ['.java'],\n    'javascript': ['.js'],",
+        "peekOfCode": "supported_langs = [\n    'c', 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'typescript'\n]\nsupported_model=[\n    '项目级代码生成','文档阅读','ai对话'\n]\nlang_exts = {\n    'c': ['.c', '.h'],\n    'cpp': ['.cpp', '.h', '.hpp'],\n    'csharp': ['.cs'],",
         "detail": "project_generator.share",
         "documentation": {}
     },
@@ -13538,7 +15153,7 @@
         "kind": 5,
         "importPath": "project_generator.test_api",
         "description": "project_generator.test_api",
-        "peekOfCode": "url = \"http://localhost:8000/generate\"\n# 定义请求数据\ndata = {\n    \"question\": \"请生成一个简单的Python项目\",\n    \"language\": \"Python\"\n}\n# 设置请求头\nheaders = {\n    \"Content-Type\": \"application/json\"\n}",
+        "peekOfCode": "url = \"http://localhost:8000/generate\"\n# 定义请求数据\ndata = {\"question\": \"请生成一个贪吃蛇\", \"language\": \"Python\"}\n# 设置请求头\nheaders = {\"Content-Type\": \"application/json\"}\n# 发送POST请求\nresponse = requests.post(url, headers=headers, data=json.dumps(data))\n# 打印响应结果\nprint(\"状态码：\", response.status_code)\nprint(\"响应数据：\", response.json())",
         "detail": "project_generator.test_api",
         "documentation": {}
     },
@@ -13547,7 +15162,7 @@
         "kind": 5,
         "importPath": "project_generator.test_api",
         "description": "project_generator.test_api",
-        "peekOfCode": "data = {\n    \"question\": \"请生成一个简单的Python项目\",\n    \"language\": \"Python\"\n}\n# 设置请求头\nheaders = {\n    \"Content-Type\": \"application/json\"\n}\n# 发送POST请求\nresponse = requests.post(url, headers=headers, data=json.dumps(data))",
+        "peekOfCode": "data = {\"question\": \"请生成一个贪吃蛇\", \"language\": \"Python\"}\n# 设置请求头\nheaders = {\"Content-Type\": \"application/json\"}\n# 发送POST请求\nresponse = requests.post(url, headers=headers, data=json.dumps(data))\n# 打印响应结果\nprint(\"状态码：\", response.status_code)\nprint(\"响应数据：\", response.json())",
         "detail": "project_generator.test_api",
         "documentation": {}
     },
@@ -13556,7 +15171,7 @@
         "kind": 5,
         "importPath": "project_generator.test_api",
         "description": "project_generator.test_api",
-        "peekOfCode": "headers = {\n    \"Content-Type\": \"application/json\"\n}\n# 发送POST请求\nresponse = requests.post(url, headers=headers, data=json.dumps(data))\n# 打印响应结果\nprint(\"状态码：\", response.status_code)\nprint(\"响应数据：\", response.json())",
+        "peekOfCode": "headers = {\"Content-Type\": \"application/json\"}\n# 发送POST请求\nresponse = requests.post(url, headers=headers, data=json.dumps(data))\n# 打印响应结果\nprint(\"状态码：\", response.status_code)\nprint(\"响应数据：\", response.json())",
         "detail": "project_generator.test_api",
         "documentation": {}
     },
@@ -13567,6 +15182,51 @@
         "description": "project_generator.test_api",
         "peekOfCode": "response = requests.post(url, headers=headers, data=json.dumps(data))\n# 打印响应结果\nprint(\"状态码：\", response.status_code)\nprint(\"响应数据：\", response.json())",
         "detail": "project_generator.test_api",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "project_generator.useapp",
+        "description": "project_generator.useapp",
+        "peekOfCode": "conn = http.client.HTTPSConnection(\"127.0.0.1\", 8000)\npayload = json.dumps({\n   \"question\": \"生成一个冒泡排序\",\n   \"language\": \"python\"\n})\nheaders = {\n   'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',\n   'Content-Type': 'application/json'\n}\nconn.request(\"POST\", \"/generate\", payload, headers)",
+        "detail": "project_generator.useapp",
+        "documentation": {}
+    },
+    {
+        "label": "payload",
+        "kind": 5,
+        "importPath": "project_generator.useapp",
+        "description": "project_generator.useapp",
+        "peekOfCode": "payload = json.dumps({\n   \"question\": \"生成一个冒泡排序\",\n   \"language\": \"python\"\n})\nheaders = {\n   'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',\n   'Content-Type': 'application/json'\n}\nconn.request(\"POST\", \"/generate\", payload, headers)\nres = conn.getresponse()",
+        "detail": "project_generator.useapp",
+        "documentation": {}
+    },
+    {
+        "label": "headers",
+        "kind": 5,
+        "importPath": "project_generator.useapp",
+        "description": "project_generator.useapp",
+        "peekOfCode": "headers = {\n   'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',\n   'Content-Type': 'application/json'\n}\nconn.request(\"POST\", \"/generate\", payload, headers)\nres = conn.getresponse()\ndata = res.read()\nprint(data.decode(\"utf-8\"))",
+        "detail": "project_generator.useapp",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "project_generator.useapp",
+        "description": "project_generator.useapp",
+        "peekOfCode": "res = conn.getresponse()\ndata = res.read()\nprint(data.decode(\"utf-8\"))",
+        "detail": "project_generator.useapp",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "project_generator.useapp",
+        "description": "project_generator.useapp",
+        "peekOfCode": "data = res.read()\nprint(data.decode(\"utf-8\"))",
+        "detail": "project_generator.useapp",
         "documentation": {}
     },
     {

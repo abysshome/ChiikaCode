@@ -1,0 +1,112 @@
+{
+    "name": "project",
+    "type": "folder",
+    "children": [
+        {
+            "name": "src/",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "__init__.py",
+                    "type": "code",
+                    "content": "from src.data import csv_data, json_data\nfrom src.utils import logger, config, helper\nfrom src.models import User, Product\nfrom src.services import Auth, Order, Payment\nfrom src.repositories import UserRepository, ProductRepository"
+                },
+                {
+                    "name": "main.py",
+                    "type": "code",
+                    "content": "import os\nfrom src.utils.logger import init_logger\nfrom src.services.auth import Auth\nfrom src.services.order import OrderService\n\nif __name__ == \"__main__\":\n    # Initialize logger\n    logger = init_logger()\n\n    # Create authentication service\n    auth_service = Auth()\n    \n    # Create order service\n    order_service = OrderService()\n\n    # Test the services\n    print(\"Authentication Service:\")\n    if auth_service.verify_credentials():\n        print(\"Authenticated successfully\")\n    else:\n        print(\"Authentication failed\")\n\n    print(\"\\nOrder Service:\")\n    order = order_service.create_order()\n    print(f\"Order ID: {order.id}\")"
+                },
+                {
+                    "name": "data/",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "csv_data.py",
+                            "type": "code",
+                            "content": ""
+                        },
+                        {
+                            "name": "json_data.py",
+                            "type": "code",
+                            "content": "# project/src/data/json_data.py\n\nimport json\n\nclass JsonData:\n    @staticmethod\n    def load_json_file(file_path):\n        try:\n            with open(file_path, 'r', encoding='utf-8') as file:\n                data = json.load(file)\n                return data\n        except FileNotFoundError:\n            print(f\"file not found: {file_path}\")\n            return None\n        except json.JSONDecodeError:\n            print(f\"invalid json format: {file_path}\")\n            return None\n\n    @staticmethod\n    def save_json_file(data, file_path):\n        try:\n            with open(file_path, 'w', encoding='utf-8') as file:\n                json.dump(data, file, indent=4)\n        except Exception as e:\n            print(f\"save to file failed: {file_path}\")\n            raise e"
+                        }
+                    ]
+                },
+                {
+                    "name": "utils/",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "logger.py",
+                            "type": "code",
+                            "content": ""
+                        },
+                        {
+                            "name": "config.py",
+                            "type": "code",
+                            "content": "# src/utils/config.py\n\nimport json\nfrom pathlib import Path\n\nclass Config:\n    def __init__(self):\n        self._config = {}\n\n    @classmethod\n    def load(cls, file_path: str) -> 'Config':\n        \"\"\"Loads configuration from a JSON file.\"\"\"\n        with open(file_path, 'r') as f:\n            config_data = json.load(f)\n            return cls._create_config(config_data)\n\n    @classmethod\n    def _create_config(cls, config_data):\n        \"\"\"Creates a Config object from the loaded data.\"\"\"\n        config = cls()\n        for key, value in config_data.items():\n            setattr(config, key, value)\n        return config\n\n    def __getattr__(self, name):\n        \"\"\"Allows attribute access by configuration keys.\"\"\"\n        if hasattr(self, f'_{name.lower()}'):\n            return getattr(self, f'_{name.lower()}')\n        raise AttributeError(f\"Invalid configuration key: {name}\")\n\n# Example usage:\nif __name__ == \"__main__\":\n    config = Config.load(Path('config.json'))\n    print(config.DB_HOST)  # prints the value of 'db_host' from the JSON file"
+                        },
+                        {
+                            "name": "helper.py",
+                            "type": "code",
+                            "content": "# utils/helper.py\n\nclass Helper:\n    @staticmethod\n    def print_error_message(error_message):\n        \"\"\"\u6253\u5370\u9519\u8bef\u4fe1\u606f\"\"\"\n        print(\"Error:\", error_message)\n\n    @staticmethod\n    def print_success_message(success_message):\n        \"\"\"\u6253\u5370\u6210\u529f\u4fe1\u606f\"\"\"\n        print(\"Success:\", success_message)"
+                        }
+                    ]
+                },
+                {
+                    "name": "models/",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "user.py",
+                            "type": "code",
+                            "content": "# project/src/models/user.py\n\nclass User:\n    def __init__(self, id: int, username: str, email: str, password: str):\n        \"\"\"\n        Initializes a new user instance.\n\n        Args:\n            id (int): Unique identifier for the user.\n            username (str): Username chosen by the user.\n            email (str): Email address of the user.\n            password (str): Password chosen by the user.\n        \"\"\"\n        self.id = id\n        self.username = username\n        self.email = email\n        self.password = password\n\n    def __repr__(self):\n        \"\"\"\n        Returns a string representation of the user.\n\n        Returns:\n            str: A string containing the user's ID, username, and email address.\n        \"\"\"\n        return f\"User(id={self.id}, username='{self.username}', email='{self.email}')\"\n\n# Example usage:\n\nuser = User(1, \"john_doe\", \"johndoe@example.com\", \"password123\")\nprint(user)  # Output: User(id=1, username='john_doe', email='johndoe@example.com')"
+                        },
+                        {
+                            "name": "product.py",
+                            "type": "code",
+                            "content": "# project/src/models/product.py\n\nfrom dataclasses import dataclass\nfrom datetime import datetime\nfrom typing import List, Optional\n\n@dataclass\nclass Product:\n    \"\"\"\n    \u4ea7\u54c1\u6a21\u578b\n    \"\"\"\n\n    id: int = None  # \u4e3b\u952e\n    name: str = ''   # \u4ea7\u54c1\u540d\u79f0\n    description: str = ''  # \u4ea7\u54c1\u63cf\u8ff0\n    price: float = None  # \u4ea7\u54c1\u4ef7\u683c\n    created_at: datetime = None  # \u521b\u5efa\u65f6\u95f4\n    updated_at: datetime = None  # \u66f4\u65b0\u65f6\u95f4\n\n    def __init__(self, **kwargs) -> None:\n        \"\"\"\n        \u4ea7\u54c1\u6a21\u578b\u7684\u521d\u59cb\u5316\n        :param kwargs: keyword arguments\n        \"\"\"\n        for key, value in kwargs.items():\n            setattr(self, key, value)\n\n# Example usage:\n\nproduct = Product(\n    name='Apple iPhone',\n    description='Latest iPhone model.',\n    price=999.99,\n    created_at=datetime.now(),\n    updated_at=None\n)\n\nprint(product)"
+                        }
+                    ]
+                },
+                {
+                    "name": "services/",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "auth.py",
+                            "type": "code",
+                            "content": "# src/services/auth.py\n\nimport jwt\nfrom functools import wraps\nfrom datetime import datetime, timedelta\nfrom utils.config import Config\nfrom models.user import User\nfrom repositories.user_repository import UserRepository\n\nclass AuthService:\n    def __init__(self):\n        self.config = Config()\n        self.user_repo = UserRepository()\n\n    # \u5bf9User\u7684\u8ba4\u8bc1\uff0c\u751f\u6210token\n    @staticmethod\n    def login_user(user: User) -> str:\n        payload = {\n            'user_id': user.id,\n            'exp': datetime.utcnow() + timedelta(days=1)\n        }\n        return jwt.encode(payload, self.config.secret_key, algorithm='HS256')\n\n# \u6ce8\u89e3\uff1a\u53ef\u4ee5\u901a\u8fc7\u5c06\u51fd\u6570\u6ce8\u518c\u5230\u7cfb\u7edf\u4e2d\u6765\u5b9e\u73b0\u5355\u70b9\u767b\u5165\uff08SAML\uff09\u7b49\u5176\u4ed6\u8ba4\u8bc1\u673a\u5236\u3002\n    @staticmethod\n    def require_login(func):\n        @wraps(func)\n        def wrapper(*args, **kwargs):\n            token = request.headers.get('Authorization')\n            if not token:\n                return 'Access denied', 401\n\n            try:\n                payload = jwt.decode(token, self.config.secret_key, algorithms=['HS256'])\n                user = self.user_repo.get_user_by_id(payload['user_id'])\n                if not user:\n                    return 'User not found', 404\n                # \u5728\u6b64\u5904\u53ef\u4ee5\u8fdb\u884c\u591a\u79cd\u7c7b\u578b\u7684\u8ba4\u8bc1\u9a8c\u8bc1\uff08\u5982\u7528\u6237\u72b6\u6001\u3001\u89d2\u8272\u7b49\uff09\n                return func(*args, **kwargs)\n            except jwt.ExpiredSignatureError:\n                return 'Token expired', 401\n        return wrapper\n\n# \u6ce8\u89e3\uff1a\u4f7f\u7528try/except\u9519\u8bef\u5904\u7406\u6765\u9632\u6b62\u7a0b\u5e8f\u5f02\u5e38"
+                        },
+                        {
+                            "name": "order.py",
+                            "type": "code",
+                            "content": "# src/services/order.py\n\nclass Order:\n    def __init__(self, order_id, user_id, product_id, quantity):\n        self.order_id = order_id\n        self.user_id = user_id\n        self.product_id = product_id\n        self.quantity = quantity\n\n    def save(self, database):\n        # \u4fdd\u5b58\u8ba2\u5355\u5230\u6570\u636e\u5e93\n        pass\n\nclass OrderService:\n    def __init__(self, db_session):\n        self.db_session = db_session\n\n    def create_order(self, order_data):\n        # \u521b\u5efa\u65b0\u8ba2\u5355\n        if not isinstance(order_data, dict):\n            raise ValueError(\"Order data must be a dictionary\")\n        \n        order = Order(\n            order_id=order_data['id'],\n            user_id=order_data.get('user_id'),\n            product_id=order_data['product_id'],\n            quantity=order_data['quantity']\n        )\n\n        self.save_order(order)\n\n        return order\n\n    def save_order(self, order):\n        # \u4fdd\u5b58\u8ba2\u5355\u5230\u6570\u636e\u5e93\n        db_session = self.db_session\n        db_session.add(order)\n        db_session.commit()\n\n    def get_orders_by_user(self, user_id):\n        # \u83b7\u53d6\u7528\u6237\u7684\u6240\u6709\u8ba2\u5355\n        db_session = self.db_session\n        return db_session.query(Order).filter_by(user_id=user_id).all()"
+                        },
+                        {
+                            "name": "payment.py",
+                            "type": "code",
+                            "content": "# src/services/payment.py\n\nfrom utils.config import Config\n\nclass PaymentService:\n    def __init__(self, config: Config):\n        \"\"\"\n        payment service init\n        :param config: config object\n        \"\"\"\n        self.config = config\n\n    def process_payment(self, data: dict) -> bool:\n        \"\"\"\n        payment processing\n        :param data: payment data\n        :return: boolean result\n        \"\"\"\n        # add payment processing logic here\n        return True\n\nif __name__ == \"__main__\":\n    import logging\n    from utils.config import Config\n\n    config = Config()\n    payment_service = PaymentService(config)\n\n    data = {\n        \"payment_id\": 1,\n        \"amount\": 100.00,\n        \"currency\": \"USD\"\n    }\n\n    result = payment_service.process_payment(data)\n    print(result)  # prints: True"
+                        }
+                    ]
+                },
+                {
+                    "name": "repositories/",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "user_repository.py",
+                            "type": "code",
+                            "content": "# project/src/repositories/user_repository.py\n\nimport logging\n\nfrom src.utils.config import CONFIG\n\nlogger = logging.getLogger(__name__)\n\nclass UserRepository:\n    def __init__(self):\n        pass\n\n    # \u5bf9\u8c61\u7684CRUD\u64cd\u4f5c\u65b9\u6cd5\uff08\u589e\u5220\u6539\u67e5\uff09\n    def create(self, user_data: dict):\n        logger.info(f\"Creating new user with data: {user_data}\")\n        # \u4f7f\u7528User\u6a21\u578b\u7c7b\u6765\u521b\u5efa\u65b0\u7528\u6237\n        # \u5728\u5b9e\u9645\u5e94\u7528\u4e2d\u9700\u8981\u4e0e\u6570\u636e\u5e93\u8fdb\u884c\u4ea4\u4e92\n        pass\n\n    def read(self, user_id: int):\n        logger.info(f\"Reading user with id: {user_id}\")\n        # \u4f7f\u7528User\u6a21\u578b\u7c7b\u4ece\u6570\u636e\u5e93\u4e2d\u8bfb\u53d6\u7528\u6237\u4fe1\u606f\n        # \u5728\u5b9e\u9645\u5e94\u7528\u4e2d\u9700\u8981\u4e0e\u6570\u636e\u5e93\u8fdb\u884c\u4ea4\u4e92\n        pass\n\n    def update(self, user_id: int, user_data: dict):\n        logger.info(f\"Updating user with id: {user_id} and data: {user_data}\")\n        # \u4f7f\u7528User\u6a21\u578b\u7c7b\u66f4\u65b0\u7528\u6237\u4fe1\u606f\n        # \u5728\u5b9e\u9645\u5e94\u7528\u4e2d\u9700\u8981\u4e0e\u6570\u636e\u5e93\u8fdb\u884c\u4ea4\u4e92\n        pass\n\n    def delete(self, user_id: int):\n        logger.info(f\"Deleting user with id: {user_id}\")\n        # \u4f7f\u7528User\u6a21\u578b\u7c7b\u4ece\u6570\u636e\u5e93\u4e2d\u5220\u9664\u7528\u6237\n        # \u5728\u5b9e\u9645\u5e94\u7528\u4e2d\u9700\u8981\u4e0e\u6570\u636e\u5e93\u8fdb\u884c\u4ea4\u4e92\n        pass"
+                        },
+                        {
+                            "name": "product_repository.py",
+                            "type": "code",
+                            "content": "# src/repositories/product_repository.py\n\nfrom ..models.product import Product\nimport abc\n\nclass ProductRepository(abc.ABC):\n    @abc.abstractmethod\n    def get_all_products(self) -> list:\n        \"\"\"\u83b7\u53d6\u6240\u6709\u4ea7\u54c1\"\"\"\n        pass\n\n    @abc.abstractmethod\n    def get_product_by_id(self, product_id: int) -> Product:\n        \"\"\"\u6839\u636eID\u83b7\u53d6\u4e00\u4e2a\u4ea7\u54c1\"\"\"\n        pass\n\n    @abc.abstractmethod\n    def create_product(self, product: Product) -> None:\n        \"\"\"\u521b\u5efa\u4e00\u4e2a\u4ea7\u54c1\"\"\"\n        pass\n\n    @abc.abstractmethod\n    def update_product(self, product: Product) -> None:\n        \"\"\"\u66f4\u65b0\u4e00\u4e2a\u4ea7\u54c1\"\"\"\n        pass\n\n    @abc.abstractmethod\n    def delete_product(self, product_id: int) -> None:\n        \"\"\"\u5220\u9664\u4e00\u4e2a\u4ea7\u54c1\"\"\"\n        pass"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

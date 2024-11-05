@@ -26,34 +26,39 @@ class GenerateRequest(BaseModel):
     question: str
     language: str
 
-
 # 定义响应模型
 class GenerateResponse(BaseModel):
     status: str
     message: str
     project_structure: str = None
     files: dict = None
-
-
+    
 @app.post("/generate", response_model=GenerateResponse)
 def generate_project(request: GenerateRequest):
     try:
         question = request.question
         language = request.language
 
-        # 调用您的生成逻辑
+        # Call your generation logic
         content = getRawStructureStream(question, language)
         node = parseStructureString(content, language)
         project_structure = node.getStrucureString()
 
-        # 生成代码文件内容
         files = {}
         for f_node in node.getFileNodes(lang_exts[language]):
-            code_content = getRawCodeStream(
-                None, node.getStrucureString(), f_node.getPath(), language
-            )
-            f_node.content = getLongestCodeBlock(code_content)
-            files[f_node.getPath()] = f_node.content
+            code_content = list(getRawCodeStream(None, node.getStrucureString(), f_node.getPath(), language))
+            print(f"Code content for {f_node.getPath()}: {code_content}, Type: {type(code_content)}")
+
+            if code_content:
+                first_item = code_content[0]
+                print(f"First item: {first_item}, Type: {type(first_item)}")
+                if isinstance(first_item, str):
+                    f_node.content = getLongestCodeBlock(first_item)
+                    files[f_node.getPath()] = f_node.content
+                else:
+                    print(f"Expected a string but got: {type(first_item)}")
+            else:
+                print(f"No code content generated for {f_node.getPath()}")
 
         return GenerateResponse(
             status="success",
@@ -63,4 +68,5 @@ def generate_project(request: GenerateRequest):
         )
 
     except Exception as e:
+        print(f"An error occurred: {str(e)}")
         return GenerateResponse(status="error", message=str(e))

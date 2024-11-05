@@ -27,7 +27,6 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
     }
 
     private getHtmlForWebview(webview: vscode.Webview): string {
-        // 生成随机 nonce 用于 Content Security Policy
         const nonce = getNonce();
 
         return `
@@ -75,7 +74,6 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                     <option value="typescript">TypeScript</option>
                     <option value="java">Java</option>
                     <option value="csharp">C#</option>
-                    <!-- 可以根据需要添加更多语言选项 -->
                 </select>
 
                 <label for="requirements">项目需求：</label>
@@ -106,10 +104,67 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
         switch (message.command) {
             case 'generateProject':
                 const { language, requirements } = message;
-                // 在这里处理生成项目的逻辑，例如调用后端 API
-                vscode.window.showInformationMessage(`生成项目：语言=${language}, 需求=${requirements}`);
+                try {
+                    const response = await fetch('http://localhost:8000/generate', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            question: requirements,
+                            language: language,
+                        }),
+                    });
+    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+    
+                    const data = await response.json();
+                    console.log("收到的数据: ", data);  // 调试输出，查看返回的数据
+    
+                    if (data.status === "success") {
+                        if (data.result && data.result.files && typeof data.result.files === 'object') {
+                            console.log("文件信息:", data.result.files);
+                            await this.saveGeneratedFiles(data.result.files);
+                        } else {
+                            vscode.window.showErrorMessage("生成的文件信息缺失或格式不正确。");
+                        }
+                    } else {
+                        vscode.window.showErrorMessage("生成项目时失败: " + (data.message || "未知错误"));
+                    }
+    
+                } catch (error) {
+                    vscode.window.showErrorMessage(`请求失败: ${error instanceof Error ? error.message : String(error)}`);
+                }
                 break;
         }
+    }
+    
+
+    private async saveGeneratedFiles(files: { [path: string]: string }) {
+        const workspaceFolders = vscode.workspace.workspaceFolders;
+        if (!workspaceFolders) {
+            vscode.window.showErrorMessage("没有打开的工作区文件夹！");
+            return;
+        }
+
+        const workspacePath = workspaceFolders[0].uri.fsPath;
+
+        for (const [filePath, content] of Object.entries(files)) {
+            console.log(`保存文件: ${filePath}`);
+            console.log(`文件内容: ${content}`);
+            // 保存文件的逻辑
+            const fullPath = vscode.Uri.file(`${workspacePath}/${filePath}`);
+            const edit = new vscode.WorkspaceEdit();
+            edit.createFile(fullPath, { overwrite: true }); // 创建文件
+            edit.insert(fullPath, new vscode.Position(0, 0), content); // 插入内容
+            console.log(`保存文件: ${fullPath.toString()}`);
+            console.log(`文件内容: ${content}`);
+
+            await vscode.workspace.applyEdit(edit);
+        }
+        await vscode.workspace.saveAll();
     }
 }
 
