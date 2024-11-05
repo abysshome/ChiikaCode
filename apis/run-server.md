@@ -1,13 +1,17 @@
-# 1. 运行生成代码api
+# 1. 运行生成代码api和RAGapi
 
-cd apis 
+cd apis
 uvicorn generate_code_api:app --host 127.0.0.1 --port 8000
-cd apis 
-uvicorn generate:app --host 127.0.0.1 --port 8000
+
+cd apis
+uvicorn rag_api:app --host 127.0.0.1 --port 8001
 
 # 2. 测试api
 
 python apis\generate_code_api测试.py
+
+python apis\rag_api_upload_file_path测试.py
+python apis\rag_api_ask测试.py
 
 # 3. build vscode 插件
 

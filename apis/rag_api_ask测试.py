@@ -1,7 +1,7 @@
 import requests
 
 # 提问端点
-ask_url = "http://127.0.0.1:8000/ask"
+ask_url = "http://127.0.0.1:8001/ask"
 question_payload = {
     "question": "报名截止日期是哪一天"  # 替换为实际问题
 }

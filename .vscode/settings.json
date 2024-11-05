@@ -30,7 +30,7 @@
     "editor.defaultFormatter": "biomejs.biome",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
@@ -39,6 +39,6 @@
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   }
 }

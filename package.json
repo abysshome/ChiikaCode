@@ -65,6 +65,7 @@
     "@openctx/client": "^0.0.25",
     "@sourcegraph/telemetry": "^0.18.0",
     "ignore": "^5.3.1",
+    "node-fetch": "^2.7.0",
     "observable-fns": "^0.6.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -88,6 +89,9 @@
         }
       }
     },
-    "neverBuiltDependencies": ["deasync", "playwright"]
+    "neverBuiltDependencies": [
+      "deasync",
+      "playwright"
+    ]
   }
 }
