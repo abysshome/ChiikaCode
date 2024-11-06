@@ -2,6 +2,7 @@ import * as vscode from 'vscode'
 
 const fetch = require('node-fetch')
 
+const path = require('path')
 
 
 export class NewViewProvider implements vscode.WebviewViewProvider {
@@ -32,6 +33,7 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
 
     private getHtmlForWebview(webview: vscode.Webview): string {
         const nonce = this.getNonce()
+
 
         return `
             <!DOCTYPE html>
@@ -113,7 +115,6 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                             requirements: requirements
                         });
                     });
-
                     // 提问按钮点击事件
                     document.getElementById('askButton').addEventListener('click', () => {
                         const question = document.getElementById('questionInput').value;
@@ -129,35 +130,44 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                         }
                     });
 
-                    // 读取文件路径并上传
+                    // 上传文件
                     document.getElementById('fileUpload').addEventListener('change', () => {
                         const file = document.getElementById('fileUpload').files[0];
                         if (file) {
-                            const filePath = file.name;  // 获取文件名（相对路径）
-                            const fullPath = file.webkitRelativePath || file.name;  // 获取相对路径（浏览器支持的路径）
+                            const filePath = file.name;  // 仅获取文件名
+                            const fullPath = file.webkitRelativePath || file.name;  // 获取相对路径
+
+                            // 获取文件的完整路径，不依赖工作区路径
+                            const absoluteFilePath = file.path || fullPath;  // 在此我们尝试直接使用文件的绝对路径
 
                             // 将文件路径上传到后端
                             vscode.postMessage({
                                 command: 'uploadFile',
-                                filePath: fullPath  // 发送文件路径到后端
+                                filePath: absoluteFilePath  // 发送完整的文件路径到后端
                             });
                         }
                     });
-
-                    // 读取文件夹路径并上传
+                    // 上传文件夹
                     document.getElementById('folderUpload').addEventListener('change', () => {
                         const folder = document.getElementById('folderUpload').files;
                         if (folder.length > 0) {
-                            // 获取文件夹路径，这里我们只取第一个文件的路径来代表文件夹
-                            const filePath = folder[0].webkitRelativePath.split('/')[0];
+                            // 获取文件夹的相对路径（通常是第一个文件的路径），然后提取文件夹名称
+                            const relativeFolderPath = folder[0].webkitRelativePath.split('/')[0];
+                            console.log('上传文件夹名:', relativeFolderPath);
 
-                            // 将文件夹路径上传到后端
+                            // 只传递文件夹名，不需要完整路径
                             vscode.postMessage({
                                 command: 'uploadFolder',
-                                filePath: filePath  // 发送文件夹路径到后端
+                                folderName: relativeFolderPath,  // 发送文件夹名
                             });
+
+                        } else {
+                            vscode.window.showErrorMessage("没有选择文件夹中的任何文件！");
                         }
                     });
+
+
+
 
                     // 接收来自后端的响应
                     window.addEventListener('message', (event) => {
@@ -166,9 +176,10 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                         if (message.command === 'askQuestion') {
                             const responseContainer = document.getElementById('responseContainer');
                             if (responseContainer) {
-                                // 使用 innerText 确保只有纯文本插入，避免 HTML 解析引发问题
+                                // 如果后端没有返回 answer 字段，显示错误信息
                                 const answer = message.answer || '未找到答案';  // 如果没有返回答案，则显示默认消息
                                 responseContainer.innerHTML = '';  // 清空之前的内容
+
                                 const answerElement = document.createElement('p');
                                 const strongElement = document.createElement('strong');
                                 strongElement.innerText = '答案: ';
@@ -255,27 +266,31 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                 }
                 break
 
+
             case 'uploadFile':
-                const filePathUploadFile = message.filePath  // 修改变量名避免冲突
+                const { filePath } = message  // 获取文件路径
                 try {
-                    // 这里拼接工作区的绝对路径
+                    console.log(`上传文件路径: ${filePath}`)
+
+                    // 获取工作区路径
                     const workspaceFolders = vscode.workspace.workspaceFolders
                     if (!workspaceFolders) {
                         vscode.window.showErrorMessage("没有打开的工作区文件夹！")
                         return
                     }
+
                     const workspacePath = workspaceFolders[0].uri.fsPath
+                    const absoluteFilePath = path.join(workspacePath, filePath)  // 拼接工作区路径和文件路径
+                    console.log(`上传文件的绝对路径: ${absoluteFilePath}`)
 
-                    const absolutePath = vscode.Uri.file(`${workspacePath}/${filePathUploadFile}`).fsPath
-
-                    // 发送绝对路径到后端
-                    const response = await fetch('http://localhost:8001/upload_file_path', {
+                    // 调用后端 API 上传文件路径
+                    const response = await fetch('http://127.0.0.1:8001/upload_file_path', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            file_path: absolutePath,  // 使用绝对路径字段
+                            file_path: absoluteFilePath,  // 发送文件的绝对路径
                         }),
                     })
 
@@ -284,34 +299,41 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                     }
 
                     const data = await response.json()
-                    console.log("文件上传成功:", data)
-                    vscode.window.showInformationMessage("文件上传成功，RAG链已初始化")
+                    console.log(data)  // 打印后端返回的数据
+                    vscode.window.showInformationMessage("文件上传成功，RAG链已初始化！")
+
                 } catch (error) {
                     vscode.window.showErrorMessage(`上传文件失败: ${error instanceof Error ? error.message : String(error)}`)
                 }
                 break
 
             case 'uploadFolder':
-                const filePathUploadFolder = message.filePath  // 修改变量名避免冲突
+                const { folderName } = message  // 获取文件夹名
                 try {
-                    // 这里拼接工作区的绝对路径
+                    console.log(`上传的文件夹名: ${folderName}`)
+
+                    // 获取工作区路径
                     const workspaceFolders = vscode.workspace.workspaceFolders
                     if (!workspaceFolders) {
                         vscode.window.showErrorMessage("没有打开的工作区文件夹！")
                         return
                     }
+
                     const workspacePath = workspaceFolders[0].uri.fsPath
+                    console.log("工作区路径:", workspacePath)
 
-                    const absolutePath = vscode.Uri.file(`${workspacePath}/${filePathUploadFolder}`).fsPath
+                    // 拼接文件夹的绝对路径
+                    const absoluteFolderPath = path.join(workspacePath, folderName)
+                    console.log('拼接后的文件夹路径:', absoluteFolderPath)
 
-                    // 发送绝对路径到后端
-                    const response = await fetch('http://localhost:8001/upload_file_path', {
+                    // 调用后端 API 上传文件夹路径（可以上传整个文件夹或者做进一步操作）
+                    const response = await fetch('http://127.0.0.1:8001/upload_file_path', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            file_path: absolutePath,  // 使用绝对路径字段
+                            file_path: absoluteFolderPath,  // 发送拼接后的路径
                         }),
                     })
 
@@ -320,8 +342,9 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                     }
 
                     const data = await response.json()
-                    console.log("文件夹上传成功:", data)
-                    vscode.window.showInformationMessage("文件夹上传成功，RAG链已初始化")
+                    console.log(data)  // 打印后端返回的数据
+                    vscode.window.showInformationMessage("文件夹上传成功，RAG链已初始化！")
+
                 } catch (error) {
                     vscode.window.showErrorMessage(`上传文件夹失败: ${error instanceof Error ? error.message : String(error)}`)
                 }

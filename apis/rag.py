@@ -1,3 +1,13 @@
+import os
+from langchain.schema import Document
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.embeddings import HuggingFaceBgeEmbeddings
+from langchain_community.vectorstores import Chroma
+from openpyxl import load_workbook
+from pdfminer.high_level import extract_text
+from docx import Document as DocxDocument
+import csv
+
 import csv
 import os
 from langchain.schema import Document
@@ -20,7 +30,6 @@ from openpyxl import load_workbook
 from pdfminer.high_level import extract_text
 from pydantic import BaseModel
 
-
 class BaseLoader:
     def __init__(self, file_path):
         self.file_path = file_path
@@ -28,6 +37,7 @@ class BaseLoader:
     def load(self):
         raise NotImplementedError("This method should be overridden by subclasses")
 
+# 定义各种文件类型的加载器
 class PythonLoader(BaseLoader):
     def load(self):
         with open(self.file_path, 'r', encoding='utf-8') as file:
@@ -80,16 +90,11 @@ class CPPLoader(BaseLoader):
         with open(self.file_path, 'r', encoding='utf-8') as file:
             return file.read()
 
-app = FastAPI()
-
-# 定义一个请求模型，用于接收文件路径
-class FilePathRequest(BaseModel):
-    file_path: str
-
 # 数据加载
 def load_file(file_path):
     if not os.path.exists(file_path):
-        raise HTTPException(status_code=400, detail="文件路径不存在")
+        print("文件路径不存在")
+        return None
 
     if file_path.endswith('.py'):
         loader = PythonLoader(file_path)
@@ -118,16 +123,13 @@ def load_file(file_path):
 
 # 文档分割
 def split_documents(documents):
-    # 将字符串包装成 Document 对象
     if isinstance(documents, str):
         documents = [Document(page_content=documents)]
     elif isinstance(documents, list) and all(isinstance(item, str) for item in documents):
         documents = [Document(page_content=item) for item in documents]
     
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=65536, chunk_overlap=10)
-    print("文档分割中...")
     documents = text_splitter.split_documents(documents)
-    print("文档分割完成")
     return documents
 
 # 嵌入向量获取
@@ -152,19 +154,28 @@ def build_vector_db(documents, embedding):
     )
     return db
 
-# 获取向量数据库
-def get_vector_db(embedding):
+# 处理文件夹
+def handle_folder(folder_path):
+    for file in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, file)
+        if os.path.isdir(file_path):
+            handle_folder(file_path)
+        else:
+            print(f"处理文件: {file_path}")
+            if file_path.endswith(('.py', '.pdf', '.txt', '.csv', '.docx', '.xlsx', '.c', '.java', '.cpp')):
+                documents = load_file(file_path)
+                if documents:
+                    documents = split_documents(documents)
+                    embedding = get_embedding()
+                    build_vector_db(documents, embedding)
+def get_vector_db():
     persist_directory = 'db'
-    db = Chroma(persist_directory=persist_directory
-                , embedding_function=embedding)
-    return db
-
-# 构建检索器
+    db = Chroma(persist_directory=persist_directory)
+    return db                
 def build_retriever(db):
     retriever = db.as_retriever()
     return retriever
 
-# 构建RAG链
 def build_rag_chain(retriever):
     template = """
         根据context详细解释有关question的内容，并给出答案。
@@ -178,64 +189,29 @@ def build_rag_chain(retriever):
         StrOutputParser()
     )
     return rag_chain
-
-# 处理文件夹
-def handle_folder(folder_path):
-    for file in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, file)
-        if os.path.isdir(file_path):
-            handle_folder(file_path)
-        else:
-            print(file_path)
-            if file_path.endswith('.py') or file_path.endswith('.pdf') or file_path.endswith('.txt') or file_path.endswith('.csv'):
-                documents = load_file(file_path)
-                documents = split_documents(documents)
-                build_vector_db(documents, embedding)
-                
-# 全局变量，用于保存 RAG 链
-rag_chain = None
-
-# 上传文件路径并初始化 RAG 链
-@app.post("/upload_file_path")
-async def upload_file_path(request: FilePathRequest):
-    print(request)
-    global rag_chain
-    global embedding
-    embedding = get_embedding()
-    try:
-        # 如果是文件夹
-        if os.path.isdir(request.file_path):
-            handle_folder(request.file_path)
-        # 如果是文件
-        else:
-            documents = load_file(request.file_path)# 加载文件
+# 主函数
+def main(file_path):
+    if os.path.isdir(file_path):
+        handle_folder(file_path)
+    else:
+        documents = load_file(file_path)
+        if documents:
             documents = split_documents(documents)
+            embedding = get_embedding()
             build_vector_db(documents, embedding)
-        # 获取向量数据库
-        db=get_vector_db(embedding)
-        retriever = build_retriever(db)
-        rag_chain = build_rag_chain(retriever)
-        return {"message": "文件路径上传成功，RAG链已初始化"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"内部服务器错误: {str(e)}")
+    print("所有文件处理完毕")
+    db=get_vector_db()
+    retriever = build_retriever(db)
+    return build_rag_chain(retriever)
 
-# 定义提问模型
-class QuestionRequest(BaseModel):
-    question: str
-
-# 提问并获取答案
-@app.post("/ask")
-async def ask_question(request: QuestionRequest):
-    print(request)
-    global rag_chain
-    if not rag_chain:
-        raise HTTPException(status_code=400, detail="RAG链尚未初始化，请先上传文件路径")
-
-    question = request.question
-    answer = ""
-    async for chunk in rag_chain.astream(question):
-        answer += chunk
-    return {"answer": answer}
+async def chat(rag_chain):
+    query = input(">>> Please ask a question: ")
+    print(">>> RAG-bot:")
+    async for chunk in rag_chain.astream(query): # rag_chain.astream(query)返回一个异步生成器
+        print(chunk, end='', flush=True) # chunk表示生成的文本片段，end=''表示不换行，flush=True表示立即输出
+    print("\n")
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+
+    file_or_folder_path = input("请输入文件或文件夹路径: ")
+    rag_chain=main(file_or_folder_path)
