@@ -36,162 +36,258 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
 
 
         return `
-            <!DOCTYPE html>
-            <html lang="zh-CN">
-            <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'nonce-${nonce}'; style-src ${webview.cspSource};">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>项目级代码生成</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        padding: 10px;
-                    }
-                    label {
-                        display: block;
-                        margin-top: 10px;
-                        margin-bottom: 5px;
-                    }
-                    select, input, button {
-                        width: 100%;
-                        padding: 8px;
-                        margin-bottom: 10px;
-                        box-sizing: border-box;
-                    }
-                    button {
-                        background-color: #007acc;
-                        color: white;
-                        border: none;
-                        cursor: pointer;
-                    }
-                    button:hover {
-                        background-color: #005f99;
-                    }
-                </style>
-            </head>
-            <body>
-                <h1>项目级代码生成</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-                <label for="language">选择编程语言：</label>
-                <select id="language">
-                    <option value="javascript">JavaScript</option>
-                    <option value="python">Python</option>
-                    <option value="typescript">TypeScript</option>
-                    <option value="java">Java</option>
-                    <option value="csharp">C#</option>
-                </select>
+<head>
+  <title>Home</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <meta name="generator" content="GrapesJS Studio" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-                <label for="requirements">项目需求：</label>
-                <input type="text" id="requirements" placeholder="请输入需要生成的项目级别代码的需求" />
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #f9fafb;
+      color: #333;
+    }
 
-                <label for="fileUpload">上传文档：</label>
-                <input type="file" id="fileUpload" />
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
 
-                <label for="questionInput">提问：</label>
-                <input type="text" id="questionInput" placeholder="请输入您的问题" />
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      color: #007acc;
+      margin-bottom: 20px;
+    }
 
-                <label for="folderUpload">上传文件夹：</label>
-                <input type="file" id="folderUpload" webkitdirectory directory />
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #555;
+    }
+
+    select,
+    input[type="text"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+
+    select:focus,
+    input:focus {
+      border-color: #007acc;
+      box-shadow: 0 0 5px rgba(0, 122, 204, 0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #005f99;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .button-group button {
+      flex: 1 1 48%;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .button-group button {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Chiika <font color="#2463eb">Code</font></h1>
+    <div class="text-main-content" style="text-align: center; margin-bottom: 20px;">项目级代码生成工具</div>
+
+    <!-- 选择编程语言 -->
+    <div class="form-group">
+      <label for="language">选择编程语言</label>
+      <select id="language">
+        <option value="opt1">Python</option>
+        <option value="opt2">JavaScript</option>
+        <option value="opt3">C#</option>
+        <option value="opt4">TypeScript</option>
+      </select>
+    </div>
+
+    <!-- 输入项目需求 -->
+    <div class="form-group">
+      <label for="requirements">项目需求</label>
+      <input type="text" id="requirements" placeholder="请输入项目需求" />
+    </div>
+
+    <!-- 按钮组 -->
+    <div class="button-group">
+        <button type="button" id="uploadFileButton">上传文件</button>
+        <input type="file" id="fileUpload" style="display: none;">
+
+        <button type="button" id="uploadFolderButton">上传文件夹</button>
+        <input type="file" id="folderUpload" webkitdirectory directory style="display: none;"> 
+
+        <button type="button" id="generateButton">生成项目</button>
+        <button type="button" id="askButton">提问</button>
+    </div>
+  </div>
+    <script nonce="${nonce}">
+    const vscode = acquireVsCodeApi();
+
+    // 生成项目按钮点击事件
+    document.getElementById('generateButton').addEventListener('click', () => {
+        const language = document.getElementById('language').value;
+        const requirements = document.getElementById('requirements').value;
+
+        // 调用后端接口生成项目
+        vscode.postMessage({
+            command: 'generateProject',
+            language: language,
+            requirements: requirements
+        });
+    });
+    // 提问按钮点击事件
+    document.getElementById('askButton').addEventListener('click', () => {
+        const question = document.getElementById('requirements').value;
+
+        if (question.trim()) {
+            // 提交问题到后端
+            vscode.postMessage({
+                command: 'askQuestion',
+                question: question
+            });
+        } else {
+            alert("请输入问题！");
+        }
+    });
+    // 文件上传按钮点击事件
+    document.getElementById('uploadFileButton').addEventListener('click', function(event) {
+        event.preventDefault();  // 防止默认行为，确保触发 input
+        document.getElementById('fileUpload').click();
+    });
+
+    // 文件夹上传按钮点击事件
+    document.getElementById('uploadFolderButton').addEventListener('click', function(event) {
+        event.preventDefault();  // 防止默认行为，确保触发 input
+        document.getElementById('folderUpload').click();
+    });
+    // 上传文件
+    document.getElementById('fileUpload').addEventListener('change', () => {
+        const file = document.getElementById('fileUpload').files[0];
+        if (file) {
+            const filePath = file.name;  // 仅获取文件名
+            const fullPath = file.webkitRelativePath || file.name;  // 获取相对路径
+
+            // 获取文件的完整路径，不依赖工作区路径
+            const absoluteFilePath = file.path || fullPath;  // 在此我们尝试直接使用文件的绝对路径
+
+            // 将文件路径上传到后端
+            vscode.postMessage({
+                command: 'uploadFile',
+                filePath: absoluteFilePath  // 发送完整的文件路径到后端
+            });
+        }
+    });
+    // 上传文件夹
+    document.getElementById('folderUpload').addEventListener('change', () => {
+        const folder = document.getElementById('folderUpload').files;
+        if (folder.length > 0) {
+            // 获取文件夹的相对路径（通常是第一个文件的路径），然后提取文件夹名称
+            const relativeFolderPath = folder[0].webkitRelativePath.split('/')[0];
+            console.log('上传文件夹名:', relativeFolderPath);
+
+            // 只传递文件夹名，不需要完整路径
+            vscode.postMessage({
+                command: 'uploadFolder',
+                folderName: relativeFolderPath,  // 发送文件夹名
+            });
+
+        } else {
+            vscode.window.showErrorMessage("没有选择文件夹中的任何文件！");
+        }
+    });
 
 
-                <button id="generateButton">生成项目</button>
-                <button id="askButton">提问</button>
-
-                <div id="responseContainer"></div>
-
-                <script nonce="${nonce}">
-                    const vscode = acquireVsCodeApi();
-
-                    // 生成项目按钮点击事件
-                    document.getElementById('generateButton').addEventListener('click', () => {
-                        const language = document.getElementById('language').value;
-                        const requirements = document.getElementById('requirements').value;
-
-                        // 调用后端接口生成项目
-                        vscode.postMessage({
-                            command: 'generateProject',
-                            language: language,
-                            requirements: requirements
-                        });
-                    });
-                    // 提问按钮点击事件
-                    document.getElementById('askButton').addEventListener('click', () => {
-                        const question = document.getElementById('questionInput').value;
-
-                        if (question.trim()) {
-                            // 提交问题到后端
-                            vscode.postMessage({
-                                command: 'askQuestion',
-                                question: question
-                            });
-                        } else {
-                            alert("请输入问题！");
-                        }
-                    });
-
-                    // 上传文件
-                    document.getElementById('fileUpload').addEventListener('change', () => {
-                        const file = document.getElementById('fileUpload').files[0];
-                        if (file) {
-                            const filePath = file.name;  // 仅获取文件名
-                            const fullPath = file.webkitRelativePath || file.name;  // 获取相对路径
-
-                            // 获取文件的完整路径，不依赖工作区路径
-                            const absoluteFilePath = file.path || fullPath;  // 在此我们尝试直接使用文件的绝对路径
-
-                            // 将文件路径上传到后端
-                            vscode.postMessage({
-                                command: 'uploadFile',
-                                filePath: absoluteFilePath  // 发送完整的文件路径到后端
-                            });
-                        }
-                    });
-                    // 上传文件夹
-                    document.getElementById('folderUpload').addEventListener('change', () => {
-                        const folder = document.getElementById('folderUpload').files;
-                        if (folder.length > 0) {
-                            // 获取文件夹的相对路径（通常是第一个文件的路径），然后提取文件夹名称
-                            const relativeFolderPath = folder[0].webkitRelativePath.split('/')[0];
-                            console.log('上传文件夹名:', relativeFolderPath);
-
-                            // 只传递文件夹名，不需要完整路径
-                            vscode.postMessage({
-                                command: 'uploadFolder',
-                                folderName: relativeFolderPath,  // 发送文件夹名
-                            });
-
-                        } else {
-                            vscode.window.showErrorMessage("没有选择文件夹中的任何文件！");
-                        }
-                    });
 
 
+    // 接收来自后端的响应
+    window.addEventListener('message', (event) => {
+        const message = event.data;  // 获取消息数据
 
+        if (message.command === 'askQuestion') {
+            const responseContainer = document.getElementById('responseContainer');
+            if (responseContainer) {
+                // 如果后端没有返回 answer 字段，显示错误信息
+                const answer = message.answer || '未找到答案';  // 如果没有返回答案，则显示默认消息
+                responseContainer.innerHTML = '';  // 清空之前的内容
 
-                    // 接收来自后端的响应
-                    window.addEventListener('message', (event) => {
-                        const message = event.data;  // 获取消息数据
+                const answerElement = document.createElement('p');
+                const strongElement = document.createElement('strong');
+                strongElement.innerText = '答案: ';
+                answerElement.appendChild(strongElement);
+                answerElement.appendChild(document.createTextNode(answer));
+                responseContainer.appendChild(answerElement);
+            }
+        }
+    });
+    </script>
+    </body>
 
-                        if (message.command === 'askQuestion') {
-                            const responseContainer = document.getElementById('responseContainer');
-                            if (responseContainer) {
-                                // 如果后端没有返回 answer 字段，显示错误信息
-                                const answer = message.answer || '未找到答案';  // 如果没有返回答案，则显示默认消息
-                                responseContainer.innerHTML = '';  // 清空之前的内容
-
-                                const answerElement = document.createElement('p');
-                                const strongElement = document.createElement('strong');
-                                strongElement.innerText = '答案: ';
-                                answerElement.appendChild(strongElement);
-                                answerElement.appendChild(document.createTextNode(answer));
-                                responseContainer.appendChild(answerElement);
-                            }
-                        }
-                    });
-                </script>
-            </body>
-            </html>
+    </html>
 
         `
     }
