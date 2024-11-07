@@ -148,6 +148,13 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
         flex: 1 1 100%;
       }
     }
+    .response-container {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #eef;
+        border-radius: 5px;
+        color: #333;
+    }
   </style>
 </head>
 
@@ -184,6 +191,8 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
         <button type="button" id="generateButton">生成项目</button>
         <button type="button" id="askButton">提问</button>
     </div>
+    <!-- 添加用于显示答案的容器 -->
+    <div id="responseContainer" class="response-container"></div>
   </div>
     <script nonce="${nonce}">
     const vscode = acquireVsCodeApi();
