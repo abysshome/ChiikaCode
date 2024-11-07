@@ -160,10 +160,10 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
     <div class="form-group">
       <label for="language">选择编程语言</label>
       <select id="language">
-        <option value="opt1">Python</option>
-        <option value="opt2">JavaScript</option>
-        <option value="opt3">C#</option>
-        <option value="opt4">TypeScript</option>
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="C">C#</option>
+        <option value="typescript">TypeScript</option>
       </select>
     </div>
 
