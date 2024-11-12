@@ -6,6 +6,9 @@ uvicorn generate_code_api:app --host 127.0.0.1 --port 8000
 cd apis
 uvicorn rag_api:app --host 127.0.0.1 --port 8001
 
+cd apis
+uvicorn executable_code_api:app --host 127.0.0.1 --port 8002
+
 # 2. 测试api
 
 python apis\generate_code_api测试.py
