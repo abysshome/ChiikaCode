@@ -6,17 +6,21 @@ from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.runnable import RunnablePassthrough
 
 from share import getLongestCodeBlock, lang_exts, llm, supported_langs
-
+from rag_api import get_embedding,get_vector_db,build_retriever,build_rag_chain,handle_folder
 
 def getRawStructureStream(requirement: str, languange: str = 'python') -> Iterator[str]:
     """ 输入需求, 返回大语言模型生成的项目结构数据流 """
 
+    embedding=get_embedding()
+    db=get_vector_db(embedding)
+    retriever=build_retriever(db)
     languange = languange.lower()
     if languange not in supported_langs:
         raise ValueError(f"Unsupported language: {languange}. (Support: {supported_langs})")
 
     template = '项目需求：{requirement}\n'\
         f'你将为该项目生成基本的 {languange} 代码框架。\n'\
+        '可以参考{retriever}来获取相关代码片段。\n'\
         '请给出项目的文件目录结构，应尽可能包含所有的模块可能用到的文件。\n'\
         '路径中不要包含中文，请使用英文。\n'\
         '只需用4个空格的缩进表示文件的层级关系，请不要包含其它符号。\n'\
@@ -29,7 +33,7 @@ def getRawStructureStream(requirement: str, languange: str = 'python') -> Iterat
         '回答：'
     prompt = ChatPromptTemplate.from_template(template)
     llm_chain = (
-        {"requirement": RunnablePassthrough()} |
+        {"retriever":retriever,"requirement": RunnablePassthrough()} |
         prompt |
         llm |
         StrOutputParser()

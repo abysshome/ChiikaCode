@@ -325,11 +325,11 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                     console.log("收到的数据: ", data)
 
                     if (data.status === "success") {
-                        if (data.result && data.result.files && typeof data.result.files === 'object') {
-                            console.log("文件信息:", data.result.files)
-                            await this.saveGeneratedFiles(data.result.files)
+                        if (data.result && typeof data.result === 'object') {
+                            console.log("项目结构:", data.result)
+                            await this.saveGeneratedFiles(data.result)
                         } else {
-                            vscode.window.showErrorMessage("生成的文件信息缺失或格式不正确。")
+                            vscode.window.showErrorMessage("生成的项目结构缺失或格式不正确。")
                         }
                     } else {
                         vscode.window.showErrorMessage("生成项目时失败: " + (data.message || "未知错误"))
@@ -460,7 +460,7 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
         }
     }
 
-    private async saveGeneratedFiles(files: { [path: string]: string }) {
+    private async saveGeneratedFiles(node: any, parentPath = '') {
         const workspaceFolders = vscode.workspace.workspaceFolders
         if (!workspaceFolders) {
             vscode.window.showErrorMessage("没有打开的工作区文件夹！")
@@ -469,16 +469,36 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
 
         const workspacePath = workspaceFolders[0].uri.fsPath
 
-        for (const [filePath, content] of Object.entries(files)) {
-            console.log(`保存文件: ${filePath}`)
-            console.log(`文件内容: ${content}`)
+        // 开始递归遍历
+        await this.processNode(node, workspacePath, parentPath)
+    }
 
-            const absoluteFilePath = vscode.Uri.file(`${workspacePath}/${filePath}`)
+    private async processNode(node: any, workspacePath: string, parentPath: string) {
+        const nodeName = node.name
+        const nodeType = node.type
+        // 移除可能存在的尾随斜杠
+        const cleanNodeName = nodeName.replace(/\/$/, '')
+        const currentPath = parentPath ? `${parentPath}/${cleanNodeName}` : cleanNodeName
+
+        if (nodeType === 'folder') {
+            // 创建文件夹
+            const absoluteFolderPath = vscode.Uri.file(`${workspacePath}/${currentPath}`)
+            await vscode.workspace.fs.createDirectory(absoluteFolderPath)
+            if (node.children && Array.isArray(node.children)) {
+                for (const childNode of node.children) {
+                    await this.processNode(childNode, workspacePath, currentPath)
+                }
+            }
+        } else if (nodeType === 'code' || nodeType === 'file') {
+            // 创建文件
+            const content = node.content || ''
+            const absoluteFilePath = vscode.Uri.file(`${workspacePath}/${currentPath}`)
             const fileFolder = absoluteFilePath.with({ path: absoluteFilePath.path.split('/').slice(0, -1).join('/') })
 
-            const edit = new vscode.WorkspaceEdit()
-
+            // 确保目录存在
             await vscode.workspace.fs.createDirectory(vscode.Uri.file(fileFolder.path))
+
+            const edit = new vscode.WorkspaceEdit()
 
             edit.createFile(absoluteFilePath, { overwrite: true })
             edit.set(absoluteFilePath, [
@@ -486,8 +506,11 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
             ])
 
             await vscode.workspace.applyEdit(edit)
+        } else {
+            console.log("未知的节点类型:", nodeType)
         }
     }
+
 
 
     private getNonce(): string {
