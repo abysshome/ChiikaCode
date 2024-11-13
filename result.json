@@ -1,0 +1,93 @@
+{
+    "name": "project",
+    "type": "folder",
+    "children": [
+        {
+            "name": "src/",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "role_assignment_module.py",
+                    "type": "code",
+                    "content": "import json\n\nclass RoleAssignmentModule:\n    def __init__(self, role_assignments_file):\n        self.role_assignments = self.load_role_assignments(role_assignments_file)\n\n    def load_role_assignments(self, file_path):\n        with open(file_path, 'r') as f:\n            return json.load(f)\n\n    def get_player_role(self, player_id):\n        # Implement logic to get the role for a given player ID\n        pass\n\n# Example usage\nrole_assignments_file = 'data/role_assignments.json'\nrole_assignment_module = RoleAssignmentModule(role_assignments_file)\nplayer_id = 1\nplayer_role = role_assignment_module.get_player_role(player_id)\nprint(player_role)"
+                },
+                {
+                    "name": "dialogue_generation_module.py",
+                    "type": "code",
+                    "content": "# src/dialogue_generation_module.py\n\nimport json\nfrom utils import constants, logger\n\nclass DialogueGenerationModule:\n    def __init__(self):\n        self.vectorstore = constants.VECTORESTORE\n        self.search_kwargs = {}\n\n    def generate_dialogue(self, player_roles: dict, conversation_context: dict) -> str:\n        \"\"\"\n        Generate a dialogue based on the provided player roles and conversation context.\n\n        Args:\n            player_roles (dict): A dictionary containing the player roles.\n            conversation_context (dict): A dictionary containing the conversation context.\n\n        Returns:\n            str: The generated dialogue.\n        \"\"\"\n        # Load role assignments from JSON file\n        with open(constants.ROLE_ASSIGNMENTS_FILE, 'r') as f:\n            role_assignments = json.load(f)\n\n        # Initialize chat history manager\n        chat_history_manager = constants.CHAT_HISTORY_MANAGER\n\n        # Generate dialogue based on player roles and conversation context\n        dialogue = []\n        for role in player_roles.values():\n            # Get the role-specific dialogue from the vector store\n            role_vectorstore = self.vectorstore[role]\n            search_result = self.search_vector_store(role_vectorstore, conversation_context)\n\n            # Add the role-specific dialogue to the chat history\n            chat_history_manager.add Dialogue(search_result['dialogue'])\n\n        # Combine the role-specific dialogues into a single dialogue\n        for dialogue in chat_history_manager.get_dialogue():\n            if 'role' not in dialogue:\n                dialogue['role'] = player_roles[chat_history_manager.get_role()]\n\n        return ''.join(dialogue)\n\n    def search_vector_store(self, vectorstore: dict, conversation_context: dict) -> dict:\n        \"\"\"\n        Search for the most relevant dialogue based on the provided vector store and conversation context.\n\n        Args:\n            vectorstore (dict): A dictionary containing the vector store.\n            conversation_context (dict): A dictionary containing the conversation context.\n\n        Returns:\n            dict: The most relevant dialogue found in the vector store.\n        \"\"\"\n        # Initialize the search result\n        search_result = {'dialogue': '', 'role': ''}\n\n        # Search for the most relevant dialogue based on the conversation context\n        for role, vector in vectorstore.items():\n            similarity = self.calculate_similarity(conversation_context, vector)\n            if similarity > 0.5:  # Adjust this threshold as needed\n                search_result['dialogue'] += self.vectorstore[role]['dialogue']\n                search_result['role'] = role\n\n        return search_result\n\n    def calculate_similarity(self, conversation_context: dict, vector: dict) -> float:\n        \"\"\"\n        Calculate the similarity between two vectors.\n\n        Args:\n            conversation_context (dict): A dictionary containing the conversation context.\n            vector (dict): A dictionary containing a single vector.\n\n        Returns:\n            float: The similarity between the two vectors.\n        \"\"\"\n        # This function should calculate the similarity based on the provided vectors\n        # For simplicity, we will use cosine similarity here\n        import numpy as np\n\n        conversation_vector = np.array([conversation_context['vector']])\n        query_vector = np.array(vector)\n\n        dot_product = np.dot(conversation_vector, query_vector)\n        magnitude = np.linalg.norm(conversation_vector) * np.linalg.norm(query_vector)\n\n        return dot_product / magnitude"
+                },
+                {
+                    "name": "player.py",
+                    "type": "code",
+                    "content": "# src/player.py\n\nimport json\nfrom utils.constants import ROLE_ASSIGNMENTS, PLAYER_ROLES\nfrom utils.logger import logger\n\nclass Player:\n    def __init__(self):\n        self.role = None  # default role\n        self.role_history = []  # record of roles the player has taken\n\n    def assign_role(self, role_id: int):\n        \"\"\"\n        Assign a role to the player.\n\n        Args:\n            role_id (int): The ID of the role to be assigned.\n        \"\"\"\n        if role_id not in ROLE_ASSIGNMENTS:\n            logger.error(f\"Invalid role ID: {role_id}\")\n            return\n        self.role = ROLE_ASSIGNMENTS[role_id]\n        self.role_history.append(self.role)\n\n    def get_role(self):\n        \"\"\"\n        Get the current role of the player.\n\n        Returns:\n            str or None: The current role of the player, or None if no role is assigned.\n        \"\"\"\n        return self.role\n\n    def reset_role(self):\n        \"\"\"\n        Reset the role of the player to its default value.\n        \"\"\"\n        self.role = None\n        self.role_history = []"
+                },
+                {
+                    "name": "game.py",
+                    "type": "code",
+                    "content": "import logging\nfrom utils.constants import GAME_MODES, GAME_STAGES\nfrom role_assignment_module import assign_roles_to_players\nfrom dialogue_generation_module import generate_dialogue\nfrom player import Player\nfrom game import get_game_state\n\nclass Game:\n    def __init__(self):\n        self.players = []\n        self.game_mode = None\n        self.stage = None\n        self.chat_history = []\n\n    def initialize_game(self, role_assignments):\n        # Assign roles to players based on the role assignments file\n        self.players = assign_roles_to_players(role_assignments)\n        \n        # Initialize game mode and stage\n        if GAME_MODES == 'competitive':\n            self.game_mode = GAME_MODES\n            self.stage = GAME_STAGES['beginning']\n        elif GAME_MODES == 'cooperative':\n            self.game_mode = GAME_MODES\n            self.stage = GAME_STAGES['team_assembly']\n\n    def update_game_state(self, action):\n        # Update game state based on the player's action\n        self.players[0].action(action)\n\n    def get_game_state(self):\n        # Get current game state\n        return get_game_state(self.players[0])\n\n    def generate_dialogue(self):\n        # Generate dialogue for the game\n        return generate_dialogue(self.players[0], self.game_mode, self.stage)"
+                },
+                {
+                    "name": "main.py",
+                    "type": "code",
+                    "content": "import os\nfrom src.player import Player\nfrom src.game import Game\n\ndef main():\n    # init game and player\n    data_path = 'data'\n    vectorstore_path = os.path.join(data_path, 'vectorstores', 'chroma')\n\n    player = Player()\n    game = Game(player)\n\n    # start the game loop\n    while True:\n        print(\"Welcome to the role assignment game!\")\n        print(\"Please select an action:\")\n        print(\"1. Assign roles\")\n        print(\"2. Play the game\")\n        choice = input(\"> \")\n\n        if choice == \"1\":\n            # assign roles\n            pass  # todo: implement role assignment logic\n        elif choice == \"2\":\n            # play the game\n            game.play()\n        else:\n            print(\"Invalid choice\")\n\nif __name__ == \"__main__\":\n    main()"
+                }
+            ]
+        },
+        {
+            "name": "data/",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "role_assignments.json",
+                    "type": "file"
+                },
+                {
+                    "name": "player_roles.json",
+                    "type": "file"
+                }
+            ]
+        },
+        {
+            "name": "utils/",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "constants.py",
+                    "type": "code",
+                    "content": "# constants.py\n\n# Chroma vectorstore\nCHROMA_VECTORSTORE = '<langchain_community.vectorstores.chroma.Chroma object at 0x00000211E77CF940>'\n\n# HuggingFace BGE Embeddings vectorstore\nBGE_VECTORSTORE = 'HuggingFaceBgeEmbeddings'\n\n# Defaults for search_kwargs\nDEFAULT_SEARCH_KWARGS = {}\n\n# Role assignments file path\nROLE_ASSIGNMENTS_FILE_PATH = 'data/role_assignments.json'\n\n# Player roles file path\nPLAYER_ROLES_FILE_PATH = 'data/player_roles.json'"
+                },
+                {
+                    "name": "logger.py",
+                    "type": "code",
+                    "content": "# utils/logger.py\n\nimport logging\nfrom functools import wraps\n\nclass Logger:\n    def __init__(self):\n        self.logger = logging.getLogger(__name__)\n        self.logger.setLevel(logging.INFO)\n        handler = logging.StreamHandler()\n        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')\n        handler.setFormatter(formatter)\n        self.logger.addHandler(handler)\n\ndef log_decorator(func):\n    @wraps(func)\n    def wrapper(*args, **kwargs):\n        result = func(*args, **kwargs)\n        if result:\n            print(f\"Success: {result}\")\n        else:\n            print(\"Failure\")\n        return result\n    return wrapper\n\n# Example usage:\n\n# Create a logger instance\nlogger = Logger()\n\n# Define a function to be logged\ndef example_function():\n    # Simulate some work\n    import time\n    time.sleep(1)\n    return \"Example message\"\n\n# Log the function call\nlog_result = logger.log_decorator(example_function)()"
+                },
+                {
+                    "name": "chat_history_manager.py",
+                    "type": "code",
+                    "content": "# utils/chat_history_manager.py\n\nimport json\nfrom data.player_roles import PLAYER_ROLES  # assuming player_roles.json contains the list of roles\nfrom typing import Dict, List, Tuple\n\nclass ChatHistoryManager:\n    def __init__(self):\n        self.chat_history = {}  # dictionary to store chat history for each player\n        self.current_player_id: int = None  # id of the current player\n\n    def add_to_chat_history(self, message: str, player_id: int):\n        \"\"\"Add a message to the chat history of the specified player\"\"\"\n        if player_id not in self.chat_history:\n            self.chat_history[player_id] = []\n        \n        self.chat_history[player_id].append(message)\n\n    def get_current_player_id(self) -> int:\n        \"\"\"Get the id of the current player\"\"\"\n        return self.current_player_id\n\n    def set_current_player_id(self, player_id: int):\n        \"\"\"Set the id of the current player\"\"\"\n        self.current_player_id = player_id\n\n# Example usage:\nif __name__ == \"__main__\":\n    chat_manager = ChatHistoryManager()\n    \n    # Add a message to the chat history\n    chat_manager.add_to_chat_history(\"Hello, how are you?\", 1)\n    print(chat_manager.chat_history)  # Output: {1: ['Hello, how are you?']}"
+                }
+            ]
+        },
+        {
+            "name": "tests/",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "test_role_assignment_module.py",
+                    "type": "code",
+                    "content": "import unittest\nfrom role_assignment_module import RoleAssignmentModule  # Assuming this is the module to be tested\nfrom game import Game  # Assuming this is the module that uses the RoleAssignmentModule\n\nclass TestRoleAssignmentModule(unittest.TestCase):\n\n    def setUp(self):\n        self.game = Game()  # Create an instance of the Game class\n        \n    def test_role_assignment_module_init(self):\n        ra_module = RoleAssignmentModule()\n        self.assertIsInstance(ra_module, RoleAssignmentModule)\n    \n    def test_role_assignment_module_assign_role(self):\n        ra_module = RoleAssignmentModule()\n        role = 'player'  # Assuming this is the role to be assigned\n        result = ra_module.assign_role(role)\n        self.assertEqual(result, True)  # Assuming assign_role returns True\n    \n    def test_role_assignment_module_unassign_role(self):\n        ra_module = RoleAssignmentModule()\n        role = 'player'\n        ra_module.assign_role(role)  # Assign the role first\n        result = ra_module.unassign_role()\n        self.assertEqual(result, True)  # Assuming unassign_role returns True\n\nif __name__ == '__main__':\n    unittest.main()"
+                },
+                {
+                    "name": "test_dialogue_generation_module.py",
+                    "type": "code",
+                    "content": "import unittest\nfrom role_assignment_module import DialogueGenerationModule\n\nclass TestDialogueGenerationModule(unittest.TestCase):\n    def setUp(self):\n        self.dialogue_generation_module = DialogueGenerationModule()\n\n    def test_generate_dialogue(self):\n        # \u5047\u8bbe\u9700\u8981\u6d4b\u8bd5\u751f\u6210\u5bf9\u8bdd\u7684\u529f\u80fd\uff0c\u4f8b\u5982\u6d4b\u8bd5\u89d2\u8272\u9009\u62e9\u548c\u5bf9\u8bdd\u6d41\u7a0b\n        expected_output = \"Hello, how can I assist you today?\"\n        actual_output = self.dialogue_generation_module.generate_dialogue(\"player\")\n        self.assertEqual(actual_output, expected_output)\n\n    def test_generate_dialogue_with_error(self):\n        # \u5047\u8bbe\u9700\u8981\u6d4b\u8bd5\u751f\u6210\u5bf9\u8bdd\u65f6\u53d1\u751f\u9519\u8bef\u7684\u529f\u80fd\uff0c\u4f8b\u5982\u6d4b\u8bd5\u89d2\u8272\u9009\u62e9\u9519\u8bef\u6216\u5bf9\u8bdd\u6d41\u7a0b\u9519\u8bef\n        with self.assertRaises(ValueError):\n            self.dialogue_generation_module.generate_dialogue(\"error\")\n\nif __name__ == \"__main__\":\n    unittest.main()"
+                },
+                {
+                    "name": "test_player.py",
+                    "type": "code",
+                    "content": "# project/tests/test_player.py\nimport unittest\nfrom player import Player, RoleAssignmentError\n\nclass TestPlayer(unittest.TestCase):\n    def test_init(self):\n        # \u6d4b\u8bd5\u73a9\u5bb6\u521d\u59cb\u5316\n        player = Player()\n        self.assertIsNotNone(player)\n        self.assertEqual(player.role, None)\n\n    def test_assign_role(self):\n        # \u6d4b\u8bd5\u89d2\u8272\u5206\u914d\n        player = Player()\n        role = 'admin'\n        try:\n            player.assign_role(role)\n        except RoleAssignmentError as e:\n            self.fail(f\"assign_role() raised unexpected error: {e}\")\n        self.assertEqual(player.role, role)\n\n    def test_assign_invalid_role(self):\n        # \u6d4b\u8bd5\u89d2\u8272\u5206\u914d\u9519\u8bef\n        player = Player()\n        role = ' invalid_role'\n        with self.assertRaises(RoleAssignmentError):\n            player.assign_role(role)\n        self.assertEqual(player.role, None)\n\nif __name__ == '__main__':\n    unittest.main()"
+                }
+            ]
+        }
+    ]
+}
