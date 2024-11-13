@@ -148,6 +148,7 @@ def getExecutable(functionName: str, arguements: List[str], docString: str) -> s
 @app.post("/generate_code", response_model=CodeResponse)
 async def generate_code(request: CodeRequest):
     code = getExecutable(request.function_name, request.arguments, request.doc_string)
+    print(code)
     return {"code": code}
 
 # 启动FastAPI应用的部分

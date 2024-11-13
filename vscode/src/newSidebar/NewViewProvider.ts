@@ -2,7 +2,7 @@ import * as vscode from 'vscode'
 
 const fetch = require('node-fetch')
 
-// const path = require('path')
+const path = require('path')
 
 
 export class NewViewProvider implements vscode.WebviewViewProvider {
@@ -180,6 +180,20 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
       <input type="text" id="requirements" placeholder="请输入项目需求" />
     </div>
 
+    <!-- 新增输入函数名、参数和文档字符串 -->
+    <div class="form-group">
+      <label for="functionName">函数名</label>
+      <input type="text" id="functionName" placeholder="请输入函数名" />
+    </div>
+    <div class="form-group">
+      <label for="functionArgs">函数参数</label>
+      <input type="text" id="functionArgs" placeholder="请输入函数参数，多个参数用逗号分隔" />
+    </div>
+    <div class="form-group">
+      <label for="docString">函数文档</label>
+      <input type="text" id="docString" placeholder="请输入函数文档" />
+    </div>
+
     <!-- 按钮组 -->
     <div class="button-group">
         <button type="button" id="uploadFileButton">上传文件</button>
@@ -190,6 +204,8 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
 
         <button type="button" id="generateButton">生成项目</button>
         <button type="button" id="askButton">提问</button>
+
+        <button type="button" id="generateCodeButton">生成代码</button>
     </div>
     <!-- 添加用于显示答案的容器 -->
     <div id="responseContainer" class="response-container"></div>
@@ -209,6 +225,22 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
             requirements: requirements
         });
     });
+
+    // 生成代码按钮点击事件
+    document.getElementById('generateCodeButton').addEventListener('click', () => {
+        const functionName = document.getElementById('functionName').value;
+        const functionArgs = document.getElementById('functionArgs').value.split(',').map(arg => arg.trim());
+        const docString = document.getElementById('docString').value;
+
+        // 调用后端接口生成代码
+        vscode.postMessage({
+            command: 'generateCode',
+            functionName: functionName,
+            arguments: functionArgs,
+            docString: docString
+        });
+    });
+
     // 提问按钮点击事件
     document.getElementById('askButton').addEventListener('click', () => {
         const question = document.getElementById('requirements').value;
@@ -277,16 +309,15 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
     window.addEventListener('message', (event) => {
         const message = event.data;  // 获取消息数据
 
-        if (message.command === 'askQuestion') {
+        if (message.command === 'generateCode') {
             const responseContainer = document.getElementById('responseContainer');
             if (responseContainer) {
-                // 如果后端没有返回 answer 字段，显示错误信息
                 const answer = message.answer || '未找到答案';  // 如果没有返回答案，则显示默认消息
                 responseContainer.innerHTML = '';  // 清空之前的内容
 
                 const answerElement = document.createElement('p');
                 const strongElement = document.createElement('strong');
-                strongElement.innerText = '答案: ';
+                strongElement.innerText = '生成的代码: ';
                 answerElement.appendChild(strongElement);
                 answerElement.appendChild(document.createTextNode(answer));
                 responseContainer.appendChild(answerElement);
@@ -301,251 +332,231 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
         `
     }
 
-    // private async handleMessage(message: any, webviewView: vscode.WebviewView) {
-    //     switch (message.command) {
-    //         case 'generateProject':
-    //             const { language, requirements } = message
-    //             try {
-    //                 const response = await fetch('http://localhost:8000/generate', {
-    //                     method: 'POST',
-    //                     headers: {
-    //                         'Content-Type': 'application/json',
-    //                     },
-    //                     body: JSON.stringify({
-    //                         question: requirements,
-    //                         language: language,
-    //                     }),
-    //                 })
-
-    //                 if (!response.ok) {
-    //                     throw new Error(`HTTP error! status: ${response.status}`)
-    //                 }
-
-    //                 const data = await response.json()
-    //                 console.log("收到的数据: ", data)
-
-    //                 if (data.status === "success") {
-    //                     if (data.result && typeof data.result === 'object') {
-    //                         console.log("项目结构:", data.result)
-    //                         await this.saveGeneratedFiles(data.result)
-    //                     } else {
-    //                         vscode.window.showErrorMessage("生成的项目结构缺失或格式不正确。")
-    //                     }
-    //                 } else {
-    //                     vscode.window.showErrorMessage("生成项目时失败: " + (data.message || "未知错误"))
-    //                 }
-
-    //             } catch (error) {
-    //                 vscode.window.showErrorMessage(`请求失败: ${error instanceof Error ? error.message : String(error)}`)
-    //             }
-    //             break
-
-    //         case 'askQuestion':
-    //             const { question } = message
-    //             try {
-    //                 const response = await fetch('http://127.0.0.1:8001/ask', {
-    //                     method: 'POST',
-    //                     headers: {
-    //                         'Content-Type': 'application/json',
-    //                     },
-    //                     body: JSON.stringify({
-    //                         question: question
-    //                     }),
-    //                 })
-
-    //                 if (!response.ok) {
-    //                     throw new Error(`HTTP error! status: ${response.status}`)
-    //                 }
-
-    //                 const data = await response.json()
-    //                 console.log("收到的数据: ", data)
-
-    //                 // 向 Webview 发送答案
-    //                 webviewView.webview.postMessage({
-    //                     command: 'askQuestion',
-    //                     answer: data.answer || '未找到答案'
-    //                 })
-
-    //             } catch (error) {
-    //                 vscode.window.showErrorMessage(`请求失败: ${error instanceof Error ? error.message : String(error)}`)
-    //             }
-    //             break
-
-
-    //         case 'uploadFile':
-    //             const { filePath } = message  // 获取文件路径
-    //             try {
-    //                 console.log(`上传文件路径: ${filePath}`)
-
-    //                 // 获取工作区路径
-    //                 const workspaceFolders = vscode.workspace.workspaceFolders
-    //                 if (!workspaceFolders) {
-    //                     vscode.window.showErrorMessage("没有打开的工作区文件夹！")
-    //                     return
-    //                 }
-
-    //                 const workspacePath = workspaceFolders[0].uri.fsPath
-    //                 const absoluteFilePath = path.join(workspacePath, filePath)  // 拼接工作区路径和文件路径
-    //                 console.log(`上传文件的绝对路径: ${absoluteFilePath}`)
-
-    //                 // 调用后端 API 上传文件路径
-    //                 const response = await fetch('http://127.0.0.1:8001/upload_file_path', {
-    //                     method: 'POST',
-    //                     headers: {
-    //                         'Content-Type': 'application/json',
-    //                     },
-    //                     body: JSON.stringify({
-    //                         file_path: absoluteFilePath,  // 发送文件的绝对路径
-    //                     }),
-    //                 })
-
-    //                 if (!response.ok) {
-    //                     throw new Error(`HTTP error! status: ${response.status}`)
-    //                 }
-
-    //                 const data = await response.json()
-    //                 console.log(data)  // 打印后端返回的数据
-    //                 vscode.window.showInformationMessage("文件上传成功，RAG链已初始化！")
-
-    //             } catch (error) {
-    //                 vscode.window.showErrorMessage(`上传文件失败: ${error instanceof Error ? error.message : String(error)}`)
-    //             }
-    //             break
-
-    //         case 'uploadFolder':
-    //             const { folderName } = message  // 获取文件夹名
-    //             try {
-    //                 console.log(`上传的文件夹名: ${folderName}`)
-
-    //                 // 获取工作区路径
-    //                 const workspaceFolders = vscode.workspace.workspaceFolders
-    //                 if (!workspaceFolders) {
-    //                     vscode.window.showErrorMessage("没有打开的工作区文件夹！")
-    //                     return
-    //                 }
-
-    //                 const workspacePath = workspaceFolders[0].uri.fsPath
-    //                 console.log("工作区路径:", workspacePath)
-
-    //                 // 拼接文件夹的绝对路径
-    //                 const absoluteFolderPath = path.join(workspacePath, folderName)
-    //                 console.log('拼接后的文件夹路径:', absoluteFolderPath)
-
-    //                 // 调用后端 API 上传文件夹路径（可以上传整个文件夹或者做进一步操作）
-    //                 const response = await fetch('http://127.0.0.1:8001/upload_file_path', {
-    //                     method: 'POST',
-    //                     headers: {
-    //                         'Content-Type': 'application/json',
-    //                     },
-    //                     body: JSON.stringify({
-    //                         file_path: absoluteFolderPath,  // 发送拼接后的路径
-    //                     }),
-    //                 })
-
-    //                 if (!response.ok) {
-    //                     throw new Error(`HTTP error! status: ${response.status}`)
-    //                 }
-
-    //                 const data = await response.json()
-    //                 console.log(data)  // 打印后端返回的数据
-    //                 vscode.window.showInformationMessage("文件夹上传成功，RAG链已初始化！")
-
-    //             } catch (error) {
-    //                 vscode.window.showErrorMessage(`上传文件夹失败: ${error instanceof Error ? error.message : String(error)}`)
-    //             }
-    //             break
-
-
-
-    //     }
-    // }
     private async handleMessage(message: any, webviewView: vscode.WebviewView) {
         switch (message.command) {
-            case 'generateProject': {
+            case 'generateProject':
                 const { language, requirements } = message
                 try {
-                    const response = await fetch('http://127.0.0.1:8002/generate_code', {
+                    const response = await fetch('http://localhost:8000/generate', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
                         body: JSON.stringify({
-                            function_name: "projectGenerator",
-                            arguments: [language],
-                            doc_string: requirements
-                        })
+                            question: requirements,
+                            language: language,
+                        }),
                     })
 
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`)
+                    }
 
                     const data = await response.json()
                     console.log("收到的数据: ", data)
+
                     if (data.status === "success") {
-                        await this.saveGeneratedFiles(data.result)
+                        if (data.result && typeof data.result === 'object') {
+                            console.log("项目结构:", data.result)
+                            await this.saveGeneratedFiles(data.result)
+                        } else {
+                            vscode.window.showErrorMessage("生成的项目结构缺失或格式不正确。")
+                        }
                     } else {
-                        vscode.window.showErrorMessage("生成项目失败: " + (data.message || "未知错误"))
+                        vscode.window.showErrorMessage("生成项目时失败: " + (data.message || "未知错误"))
                     }
+
                 } catch (error) {
-                    vscode.window.showErrorMessage(`请求失败: ${error}`)
+                    vscode.window.showErrorMessage(`请求失败: ${error instanceof Error ? error.message : String(error)}`)
                 }
                 break
-            }
 
-            case 'askQuestion': {
+            case 'askQuestion':
                 const { question } = message
                 try {
                     const response = await fetch('http://127.0.0.1:8001/ask', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ question })
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            question: question
+                        }),
                     })
 
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
-                    const data = await response.json()
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`)
+                    }
 
+                    const data = await response.json()
+                    console.log("收到的数据: ", data)
+
+                    // 向 Webview 发送答案
                     webviewView.webview.postMessage({
                         command: 'askQuestion',
                         answer: data.answer || '未找到答案'
                     })
+
                 } catch (error) {
-                    vscode.window.showErrorMessage(`请求失败: ${error}`)
+                    vscode.window.showErrorMessage(`请求失败: ${error instanceof Error ? error.message : String(error)}`)
                 }
                 break
-            }
 
-            case 'uploadFile': {
-                const { filePath } = message
+
+            case 'uploadFile':
+                const { filePath } = message  // 获取文件路径
                 try {
+                    console.log(`上传文件路径: ${filePath}`)
+
+                    // 获取工作区路径
+                    const workspaceFolders = vscode.workspace.workspaceFolders
+                    if (!workspaceFolders) {
+                        vscode.window.showErrorMessage("没有打开的工作区文件夹！")
+                        return
+                    }
+
+                    const workspacePath = workspaceFolders[0].uri.fsPath
+                    const absoluteFilePath = path.join(workspacePath, filePath)  // 拼接工作区路径和文件路径
+                    console.log(`上传文件的绝对路径: ${absoluteFilePath}`)
+
+                    // 调用后端 API 上传文件路径
                     const response = await fetch('http://127.0.0.1:8001/upload_file_path', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ file_path: filePath })
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            file_path: absoluteFilePath,  // 发送文件的绝对路径
+                        }),
                     })
 
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
-                    vscode.window.showInformationMessage("文件上传成功！")
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`)
+                    }
+
+                    const data = await response.json()
+                    console.log(data)  // 打印后端返回的数据
+                    vscode.window.showInformationMessage("文件上传成功，RAG链已初始化！")
+
                 } catch (error) {
-                    vscode.window.showErrorMessage(`上传文件失败: ${error}`)
+                    vscode.window.showErrorMessage(`上传文件失败: ${error instanceof Error ? error.message : String(error)}`)
                 }
                 break
-            }
 
-            case 'uploadFolder': {
-                const { folderName } = message
+            case 'uploadFolder':
+                const { folderName } = message  // 获取文件夹名
                 try {
+                    console.log(`上传的文件夹名: ${folderName}`)
+
+                    // 获取工作区路径
+                    const workspaceFolders = vscode.workspace.workspaceFolders
+                    if (!workspaceFolders) {
+                        vscode.window.showErrorMessage("没有打开的工作区文件夹！")
+                        return
+                    }
+
+                    const workspacePath = workspaceFolders[0].uri.fsPath
+                    console.log("工作区路径:", workspacePath)
+
+                    // 拼接文件夹的绝对路径
+                    const absoluteFolderPath = path.join(workspacePath, folderName)
+                    console.log('拼接后的文件夹路径:', absoluteFolderPath)
+
+                    // 调用后端 API 上传文件夹路径（可以上传整个文件夹或者做进一步操作）
                     const response = await fetch('http://127.0.0.1:8001/upload_file_path', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ file_path: folderName })
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            file_path: absoluteFolderPath,  // 发送拼接后的路径
+                        }),
                     })
 
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
-                    vscode.window.showInformationMessage("文件夹上传成功！")
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`)
+                    }
+
+                    const data = await response.json()
+                    console.log(data)  // 打印后端返回的数据
+                    vscode.window.showInformationMessage("文件夹上传成功，RAG链已初始化！")
+
                 } catch (error) {
-                    vscode.window.showErrorMessage(`上传文件夹失败: ${error}`)
+                    vscode.window.showErrorMessage(`上传文件夹失败: ${error instanceof Error ? error.message : String(error)}`)
                 }
                 break
-            }
+
+            case 'generateCode':
+                const { functionName, arguments: functionArgs, docString } = message
+                try {
+                    // 调试输出
+                    console.log("发送给后端的请求数据: ", {
+                        function_name: functionName,
+                        arguments: functionArgs,
+                        doc_string: docString
+                    })
+
+                    // 调用后端 API 生成代码
+                    const response = await fetch('http://localhost:8002/generate_code', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            function_name: functionName,  // 后端期望的字段名
+                            arguments: functionArgs,      // 前端传入的参数数组
+                            doc_string: docString        // 后端期望的字段名
+                        }),
+                    })
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`)
+                    }
+
+                    const data = await response.json()
+                    console.log("生成的代码: ", data)
+
+                    // 获取工作区路径
+                    const workspaceFolders = vscode.workspace.workspaceFolders
+                    if (!workspaceFolders) {
+                        vscode.window.showErrorMessage("没有打开的工作区文件夹！")
+                        return
+                    }
+
+                    const workspacePath = workspaceFolders[0].uri.fsPath
+                    console.log("工作区路径: ", workspacePath)
+
+                    // 构建文件路径，使用函数名作为文件名
+                    const filePath = vscode.Uri.joinPath(vscode.Uri.file(workspacePath), `${functionName}.py`) // 假设你想要保存为 Python 文件
+
+                    // 创建文件并写入代码
+                    const codeToWrite = data.code || '生成的代码格式不正确'
+                    const writeData = new TextEncoder().encode(codeToWrite) // 将代码转换为字节数组
+
+                    // 写入文件
+                    await vscode.workspace.fs.writeFile(filePath, writeData)
+                    vscode.window.showInformationMessage(`成功生成并保存文件: ${filePath.fsPath}`)
+
+                    // 打开文件
+                    const document = await vscode.workspace.openTextDocument(filePath)
+                    vscode.window.showTextDocument(document)
+
+                    // 向 Webview 返回生成的代码（可选）
+                    webviewView.webview.postMessage({
+                        command: 'generateCode',
+                        code: data.code || '生成的代码格式不正确'
+                    })
+
+                } catch (error) {
+                    vscode.window.showErrorMessage(`生成代码请求失败: ${error instanceof Error ? error.message : String(error)}`)
+                }
+                break
+
+
+
         }
     }
+
 
     private async saveGeneratedFiles(node: any, parentPath = '') {
         const workspaceFolders = vscode.workspace.workspaceFolders
