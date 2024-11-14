@@ -240,6 +240,7 @@ async def ask_question(request: QuestionRequest):
     answer = ""
     async for chunk in rag_chain.astream(question):
         answer += chunk
+    print(answer)
     return {"answer": answer}
 
 # 项目级代码生成
@@ -264,6 +265,7 @@ from executable_code_api import CodeRequest, CodeResponse, getExecutable
 # 创建API路由
 @app.post("/generate_executable_code", response_model=CodeResponse)
 async def generate_code(request: CodeRequest):
+    print(request)
     code = getExecutable(request.function_name, request.arguments, request.doc_string)
     print(code)
     return {"code": code}
