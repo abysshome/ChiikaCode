@@ -1,6 +1,9 @@
 # 1. 运行生成代码api和RAGapi
 
 cd apis
+uvicorn all_api:app --host 127.0.0.1 --port 8000
+
+cd apis
 uvicorn generate_code_api:app --host 127.0.0.1 --port 8000
 
 cd apis

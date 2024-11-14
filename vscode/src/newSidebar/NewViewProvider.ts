@@ -309,7 +309,7 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
     window.addEventListener('message', (event) => {
         const message = event.data;  // 获取消息数据
 
-        if (message.command === 'generateCode') {
+        if (message.command === 'askQuestion') {
             const responseContainer = document.getElementById('responseContainer');
             if (responseContainer) {
                 const answer = message.answer || '未找到答案';  // 如果没有返回答案，则显示默认消息
@@ -317,7 +317,7 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
 
                 const answerElement = document.createElement('p');
                 const strongElement = document.createElement('strong');
-                strongElement.innerText = '生成的代码: ';
+                strongElement.innerText = '回答: ';
                 answerElement.appendChild(strongElement);
                 answerElement.appendChild(document.createTextNode(answer));
                 responseContainer.appendChild(answerElement);
@@ -337,7 +337,7 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
             case 'generateProject':
                 const { language, requirements } = message
                 try {
-                    const response = await fetch('http://localhost:8000/generate', {
+                    const response = await fetch('http://localhost:8000/generate_project', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -374,7 +374,7 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
             case 'askQuestion':
                 const { question } = message
                 try {
-                    const response = await fetch('http://127.0.0.1:8001/ask', {
+                    const response = await fetch('http://127.0.0.1:8000/rag_ask', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -420,7 +420,7 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                     console.log(`上传文件的绝对路径: ${absoluteFilePath}`)
 
                     // 调用后端 API 上传文件路径
-                    const response = await fetch('http://127.0.0.1:8001/upload_file_path', {
+                    const response = await fetch('http://127.0.0.1:8000/upload_file_path', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -463,7 +463,7 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                     console.log('拼接后的文件夹路径:', absoluteFolderPath)
 
                     // 调用后端 API 上传文件夹路径（可以上传整个文件夹或者做进一步操作）
-                    const response = await fetch('http://127.0.0.1:8001/upload_file_path', {
+                    const response = await fetch('http://127.0.0.1:8000/upload_file_path', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -497,7 +497,7 @@ export class NewViewProvider implements vscode.WebviewViewProvider {
                     })
 
                     // 调用后端 API 生成代码
-                    const response = await fetch('http://localhost:8002/generate_code', {
+                    const response = await fetch('http://localhost:8000/generate_executable_code', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
