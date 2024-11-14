@@ -1,12 +1,12 @@
 import csv
 import os
-from langchain.schema import Document
 
 import openpyxl
 import uvicorn
 from docx import Document as DocxDocument
 from fastapi import FastAPI, HTTPException
 from langchain.prompts import ChatPromptTemplate
+from langchain.schema import Document
 from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.text_splitter import (CharacterTextSplitter,

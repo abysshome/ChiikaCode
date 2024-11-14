@@ -1,22 +1,12 @@
-import os
-from langchain.schema import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
-from langchain_community.vectorstores import Chroma
-from openpyxl import load_workbook
-from pdfminer.high_level import extract_text
-from docx import Document as DocxDocument
-import csv
-
 import csv
 import os
-from langchain.schema import Document
 
 import openpyxl
 import uvicorn
 from docx import Document as DocxDocument
 from fastapi import FastAPI, HTTPException
 from langchain.prompts import ChatPromptTemplate
+from langchain.schema import Document
 from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.text_splitter import (CharacterTextSplitter,
@@ -29,6 +19,7 @@ from langchain_community.vectorstores import Chroma
 from openpyxl import load_workbook
 from pdfminer.high_level import extract_text
 from pydantic import BaseModel
+
 
 class BaseLoader:
     def __init__(self, file_path):

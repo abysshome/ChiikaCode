@@ -5,10 +5,10 @@ from fastapi import FastAPI, HTTPException
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from pydantic import BaseModel
-
+from rag_api import (build_rag_chain, build_retriever, get_embedding,
+                     get_vector_db, handle_folder)
 from share import getLongestCodeBlock, lang_exts, llm, supported_langs
 from structure import Node, getRawStructureStream, parseStructureString
-from rag_api import get_embedding,get_vector_db,build_retriever,build_rag_chain,handle_folder
 
 app = FastAPI()
 
@@ -18,6 +18,7 @@ class RequestData(BaseModel):
     language: str
 
 from langchain.schema.runnable import RunnablePassthrough
+
 
 def getRawCodeStream(user_requirement: str, code_structure: str, filename: str, language: str) -> Iterator[str]:
     """通过用户需求、代码结构、语言、文件名，生成大模型回答的原始字符流"""

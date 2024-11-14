@@ -1,17 +1,19 @@
-from fastapi import FastAPI, HTTPException
-from generate_code_api import RequestData,supported_langs, generate_code_structure
 import uvicorn
+from fastapi import FastAPI, HTTPException
+from generate_code_api import (RequestData, generate_code_structure,
+                               supported_langs)
+
 app = FastAPI()
 
 import csv
 import os
-from langchain.schema import Document
 
 import openpyxl
 import uvicorn
 from docx import Document as DocxDocument
 from fastapi import FastAPI, HTTPException
 from langchain.prompts import ChatPromptTemplate
+from langchain.schema import Document
 from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.text_splitter import (CharacterTextSplitter,
@@ -256,7 +258,9 @@ async def generate_project(data: RequestData):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"生成代码时出错: {str(e)}")
     
-from executable_code_api import getExecutable, CodeResponse,CodeRequest
+from executable_code_api import CodeRequest, CodeResponse, getExecutable
+
+
 # 创建API路由
 @app.post("/generate_executable_code", response_model=CodeResponse)
 async def generate_code(request: CodeRequest):

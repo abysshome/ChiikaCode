@@ -74,10 +74,10 @@ return_statement_value()
 
 # ------------------------------------
 
-from math import cos
+from math import comb, cos
+
 #    |
 
 # ------------------------------------
 
-from math import comb
 #                |

@@ -4,9 +4,10 @@ from typing import Iterator, List
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.runnable import RunnablePassthrough
-
+from rag_api import (build_rag_chain, build_retriever, get_embedding,
+                     get_vector_db, handle_folder)
 from share import getLongestCodeBlock, lang_exts, llm, supported_langs
-from rag_api import get_embedding,get_vector_db,build_retriever,build_rag_chain,handle_folder
+
 
 def getRawStructureStream(requirement: str, languange: str = 'python') -> Iterator[str]:
     """ 输入需求, 返回大语言模型生成的项目结构数据流 """
