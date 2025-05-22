@@ -1,173 +1,106 @@
-<div align=center>
 
-# <img src="https://storage.googleapis.com/sourcegraph-assets/cody/20230417/logomark-default.svg" width="26"> Cody
+# ChiikaCode
 
-**Code AI with codebase context**
+<p align="center">
+  <img src="https://storage.googleapis.com/sourcegraph-assets/blog/vs-code-onboarding-walkthrough-dec-2023-cody-autocomplete-tsx.gif" width="600" alt="ChiikaCode 演示">
+</p>
 
-Cody is an AI coding assistant that uses search and codebase context to help you understand, write, and fix code faster.
+## 项目简介
 
-[Docs](https://sourcegraph.com/docs/cody) • [cody.dev](https://about.sourcegraph.com/cody?utm_source=github.com&utm_medium=referral)
+ChiikaCode 是一个基于 Cody 的智能代码辅助工具，它利用先进的 AI 技术帮助开发者更快地理解、编写和修复代码。ChiikaCode 使用增强检索生成（RAG）技术，能够从本地和远程代码库中提取上下文信息，使您能够在 VS Code 中利用整个代码库中的 API、符号和使用模式等上下文信息，无论代码库规模如何。
 
-[![vscode extension](https://img.shields.io/vscode-marketplace/v/sourcegraph.cody-ai.svg?label=vscode%20ext)](https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![test](https://github.com/sourcegraph/cody/actions/workflows/ci.yml/badge.svg)](https://github.com/sourcegraph/cody/actions/workflows/ci.yml)
-[![Twitter](https://img.shields.io/twitter/follow/sourcegraph.svg?label=Follow%20%40Sourcegraph&style=social)](https://twitter.com/sourcegraph)
-[![Discord](https://dcbadge.vercel.app/api/server/s2qDtYGnAE?style=flat)](https://discord.gg/s2qDtYGnAE)
+## 主要功能
 
-</div>
+### 代码自动补全
 
-## Get started
+ChiikaCode 可以在任何编程语言、配置文件或文档中自动补全单行代码或整个函数。它由最新的即时大语言模型提供支持，确保准确性和性能。
 
-[⭐ **Install Cody from the VS Code Marketplace**](https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai) or the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/9682-cody-ai-by-sourcegraph), then check out the [demos](#demos) to see what you can do.
+### 智能对话
 
-_&mdash; or &mdash;_
+通过 ChiikaCode 的聊天功能，您可以询问有关一般编程主题或特定代码库的问题。您可以启用增强上下文功能，让 ChiikaCode 包含您打开的项目信息，或标记特定文件和符号以优化您的聊天提示。
 
-- Build and run the VS Code extension locally: `pnpm install && cd vscode && pnpm run dev`
-- See [all supported editors](https://sourcegraph.com/docs/cody/clients)
+示例问题：
+- "我们的应用在 Linux 上如何实现密钥存储？"
+- "Web 集成测试的 CI 配置在哪里？"
+- "为 AuditLog 编写一个新的 GraphQL 解析器"
+- "为什么 UserConnectionResolver 给出'未知用户'错误，如何修复？"
+- "添加有用的调试日志语句"
 
-## What is Cody?
+### 内置命令
 
-Cody is an open-source AI coding assistant that helps you understand, write, and fix code faster. It uses advanced search to pull context from both local and remote codebases so that you can use context about APIs, symbols, and usage patterns from across your codebase at any scale, all from within your IDE. Cody works with the newest and best large language models, including Claude 3.5 Sonnet and GPT-4o.
+通过使用 ChiikaCode 命令，简化您的开发过程，帮助理解、改进、修复、记录代码并为代码生成单元测试。
 
-Cody is available for [VS Code](https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai), [JetBrains](https://plugins.jetbrains.com/plugin/9682-cody-ai-by-sourcegraph), and [on the web](https://sourcegraph.com/cody/chat).
+### 自定义命令（测试版）
 
-See [cody.dev](https://about.sourcegraph.com/cody?utm_source=github.com&utm_medium=referral) for more info.
+您还可以构建自己的自定义命令，使 ChiikaCode 适应您的工作流程。自定义命令在您的代码库中定义为 JSON，可以保存到工作区供团队成员重复使用。
 
-## What can Cody do?
+### RAG 技术支持
 
-- **Chat:** Ask Cody questions about your codebase. Cody will use semantic search to retrieve files from your codebase and use context from those files to answer your questions. You can @-mention files to target specific context, and you can also add remote repositories as context on Cody Enterprise.
-- **Autocomplete:** Cody makes single-line and multi-line suggestions as you type, speeding up your coding and shortcutting the need for you to hunt down function and variable names as you type.
-- **Inline Edit:** Ask Cody to fix or refactor code from anywhere in a file.
-- **Commands:** Cody has quick commands for common actions. Simply highlight a code snippet and run a command, like “Document code,” “Explain code,” or “Generate Unit Tests.”
-- **Swappable LLMs:** Support for Anthropic Claude 3.3 Sonnet, OpenAI GPT-4o, Mixtral, Gemini 1.5, and more.
-  - **Free LLM usage included** Cody Free gives you access to Anthropic Claude 3.5 Sonnet and other models. It's available for individual devs on both personal and work code, subject to reasonable per-user rate limits ([more info](#usage)).
+ChiikaCode 采用检索增强生成（RAG）技术，通过知识检索和生成模型的结合来提升生成代码的质量和准确性。
 
-## Demos
+## 安装指南
 
-**Autocomplete**
+### 环境要求
 
-> <img src="https://storage.googleapis.com/sourcegraph-assets/website/Product%20Animations/GIFS/cody-completions-may2023-optim-sm2.gif" width=400>
+- Node.js >= 18
+- pnpm >= 8.6.7
 
-**Codebase-wide chat:**
+### 安装步骤
 
-> <img src="https://storage.googleapis.com/sourcegraph-assets/website/Product%20Animations/GIFS/cody-chat-may2023-optim.gif" width=400>
+1. 安装 [asdf](https://asdf-vm.com/)
+2. 运行 `asdf install`（如有需要，运行 `asdf plugin add NAME` 安装缺失的插件）
+3. 运行 `pnpm install && pnpm build`
 
-## Contributing
+## 使用说明
 
-All code in this repository is open source (Apache 2).
+### 启动开发服务器
 
-Quickstart: `pnpm install && pnpm build && cd vscode && pnpm run dev` to run a local build of the Cody VS Code extension.
+```bash
+pnpm -C agent agent
+```
 
-See [development docs](doc/dev/index.md) for more.
+### 构建项目
 
-### Feedback
+```bash
+pnpm build
+```
 
-Cody is often magical and sometimes frustratingly wrong. Cody's goal is to be powerful _and_ accurate. You can help:
+### 运行测试
 
-- Use the <kbd>👍</kbd>/<kbd>👎</kbd> buttons in the chat sidebar to give feedback.
-- [File an issue](https://github.com/sourcegraph/cody/issues) (or submit a PR!) when you see problems.
-- [Discussions](https://github.com/sourcegraph/cody/discussions)
-- [Discord](https://discord.gg/s2qDtYGnAE)
+```bash
+pnpm test          # 运行所有测试
+pnpm test:unit     # 仅运行单元测试
+pnpm test:integration  # 运行集成测试
+pnpm test:e2e      # 运行端到端测试
+```
 
+## 项目架构
 
-### Individual usage
+ChiikaCode 项目由以下主要组件构成：
 
-Individual usage of Cody currently requires a (free) [Sourcegraph.com](https://sourcegraph.com/?utm_source=github.com&utm_medium=referral) account because we need to prevent abuse of the free Anthropic/OpenAI LLM usage. We're working on supporting more swappable LLM options (including using your own Anthropic/OpenAI account or a self-hosted LLM) to make it possible to use Cody without any required third-party dependencies.
+- **前端**：VS Code 扩展，提供用户界面和交互功能
+- **代理（Agent）**：实现 JSON-RPC 服务器，通过 stdout/stdin 与 Cody 交互
+- **API**：提供代码生成、RAG 检索等核心功能
+- **后端**：处理复杂的代码分析和生成任务
 
-### Codying at work
+## 参考资料
 
-You can use Cody Free or Cody Pro when Codying on your work code. If that doesn't meet your needs (because you need higher rate limits, a dedicated/single-tenant instance, audit logs, etc.), upgrade to [Cody Enterprise](https://sourcegraph.com/pricing).
+- Visual Studio Code 插件开发指南
+- RAG 检索增强生成技术指南
+- 开源大语言模型部署指南
+- Python 编码标准与代码质量提升指南
+- 大模型集成及推理框架
+- VSCode API 参考文档
+- Embedding 模型使用手册
 
-### Existing Sourcegraph customers
+## 许可证
 
-The Cody editor extensions work with:
+[Apache-2.0](LICENSE)
 
-- Sourcegraph Cloud
-- Sourcegraph Enterprise Server (self-hosted) instances on version 5.1 or later
-<div align=center>
+## 贡献指南
 
-# <img src="https://storage.googleapis.com/sourcegraph-assets/cody/20230417/logomark-default.svg" width="26"> Cody
+欢迎对 ChiikaCode 项目做出贡献！请参阅我们的开发文档了解更多信息。
 
-**Code AI with codebase context**
+## 联系我们
 
-Cody is an AI coding assistant that uses search and codebase context to help you understand, write, and fix code faster.
-
-[Docs](https://sourcegraph.com/docs/cody) • [cody.dev](https://about.sourcegraph.com/cody?utm_source=github.com&utm_medium=referral)
-
-[![vscode extension](https://img.shields.io/vscode-marketplace/v/sourcegraph.cody-ai.svg?label=vscode%20ext)](https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![test](https://github.com/sourcegraph/cody/actions/workflows/ci.yml/badge.svg)](https://github.com/sourcegraph/cody/actions/workflows/ci.yml)
-[![Twitter](https://img.shields.io/twitter/follow/sourcegraph.svg?label=Follow%20%40Sourcegraph&style=social)](https://twitter.com/sourcegraph)
-[![Discord](https://dcbadge.vercel.app/api/server/s2qDtYGnAE?style=flat)](https://discord.gg/s2qDtYGnAE)
-
-</div>
-
-## Get started
-
-[⭐ **Install Cody from the VS Code Marketplace**](https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai) or the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/9682-cody-ai-by-sourcegraph), then check out the [demos](#demos) to see what you can do.
-
-_&mdash; or &mdash;_
-
-- Build and run the VS Code extension locally: `pnpm install && cd vscode && pnpm run dev`
-- See [all supported editors](https://sourcegraph.com/docs/cody/clients)
-
-## What is Cody?
-
-Cody is an open-source AI coding assistant that helps you understand, write, and fix code faster. It uses advanced search to pull context from both local and remote codebases so that you can use context about APIs, symbols, and usage patterns from across your codebase at any scale, all from within your IDE. Cody works with the newest and best large language models, including Claude 3.5 Sonnet and GPT-4o.
-
-Cody is available for [VS Code](https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai), [JetBrains](https://plugins.jetbrains.com/plugin/9682-cody-ai-by-sourcegraph), and [on the web](https://sourcegraph.com/cody/chat).
-
-See [cody.dev](https://about.sourcegraph.com/cody?utm_source=github.com&utm_medium=referral) for more info.
-
-## What can Cody do?
-
-- **Chat:** Ask Cody questions about your codebase. Cody will use semantic search to retrieve files from your codebase and use context from those files to answer your questions. You can @-mention files to target specific context, and you can also add remote repositories as context on Cody Enterprise.
-- **Autocomplete:** Cody makes single-line and multi-line suggestions as you type, speeding up your coding and shortcutting the need for you to hunt down function and variable names as you type.
-- **Inline Edit:** Ask Cody to fix or refactor code from anywhere in a file.
-- **Commands:** Cody has quick commands for common actions. Simply highlight a code snippet and run a command, like “Document code,” “Explain code,” or “Generate Unit Tests.”
-- **Swappable LLMs:** Support for Anthropic Claude 3.3 Sonnet, OpenAI GPT-4o, Mixtral, Gemini 1.5, and more.
-  - **Free LLM usage included** Cody Free gives you access to Anthropic Claude 3.5 Sonnet and other models. It's available for individual devs on both personal and work code, subject to reasonable per-user rate limits ([more info](#usage)).
-
-## Demos
-
-**Autocomplete**
-
-> <img src="https://storage.googleapis.com/sourcegraph-assets/website/Product%20Animations/GIFS/cody-completions-may2023-optim-sm2.gif" width=400>
-
-**Codebase-wide chat:**
-
-> <img src="https://storage.googleapis.com/sourcegraph-assets/website/Product%20Animations/GIFS/cody-chat-may2023-optim.gif" width=400>
-
-## Contributing
-
-All code in this repository is open source (Apache 2).
-
-Quickstart: `pnpm install && pnpm build && cd vscode && pnpm run dev` to run a local build of the Cody VS Code extension.
-
-See [development docs](doc/dev/index.md) for more.
-
-### Feedback
-
-Cody is often magical and sometimes frustratingly wrong. Cody's goal is to be powerful _and_ accurate. You can help:
-
-- Use the <kbd>👍</kbd>/<kbd>👎</kbd> buttons in the chat sidebar to give feedback.
-- [File an issue](https://github.com/sourcegraph/cody/issues) (or submit a PR!) when you see problems.
-- [Discussions](https://github.com/sourcegraph/cody/discussions)
-- [Discord](https://discord.gg/s2qDtYGnAE)
-
-## Usage
-
-### Individual usage
-
-Individual usage of Cody currently requires a (free) [Sourcegraph.com](https://sourcegraph.com/?utm_source=github.com&utm_medium=referral) account because we need to prevent abuse of the free Anthropic/OpenAI LLM usage. We're working on supporting more swappable LLM options (including using your own Anthropic/OpenAI account or a self-hosted LLM) to make it possible to use Cody without any required third-party dependencies.
-
-### Codying at work
-
-You can use Cody Free or Cody Pro when Codying on your work code. If that doesn't meet your needs (because you need higher rate limits, a dedicated/single-tenant instance, audit logs, etc.), upgrade to [Cody Enterprise](https://sourcegraph.com/pricing).
-
-### Existing Sourcegraph customers
-
-The Cody editor extensions work with:
-
-- Sourcegraph Cloud
-- Sourcegraph Enterprise Server (self-hosted) instances on version 5.1 or later
+如有任何问题或建议，请通过 GitHub Issues 与我们联系。
